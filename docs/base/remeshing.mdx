@@ -1,0 +1,37 @@
+---
+title: "Survey Remeshing"
+tags: [stope, base]
+#commented frontmatter is optional
+sidebar_label: "Remeshing"
+#sidebar_position: 1
+#slug:/relativetobaseurl
+---
+
+## Remeshing Variables
+
+Remeshing algorithm creates a new surface by:
+
+1. Creating a dense grid covering the input mesh.
+2. Creating a new surface from the grid.
+3. Relaxing the surface to better match the input mesh.
+4. Simplifying the surface to remove redundant triangles
+
+### Surface Net
+
+These variables control the creation and refinement of the remeshed surface. This surface _should_ be manifold which is required for some algorithms to work correctly. It is expected for the remeshed surface not to perfectly reproduce the input mesh e.g. it will smooth sharp features.
+
+| Variables                                                                                                                                                                                |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `Resolution` Defines the size of the smallest grid resolution used to remesh a surface. Relates to the feature size which needs to be preserved but limited by computational constraints |
+| `Iterations` The number of iterations to use for original surface nets algorithm.                                                                                                        |
+| `Clamp Range` Value to clamp vertex movement to within this range of the original position. A value of 1 allows each vertex to move a full grid cell.                                    |
+| `Delta` The amount to relax the net each iteration as a proportion of the grid size. A value between 0 and 1.                                                                            |
+
+### Mesh Simplification
+
+The remesh surface initially has redundant faces that should be removed. Unnecessary dense meshes will be larger to store on disk, take longer to load, and increase the calculation time for algorithms that use them.
+
+| Variables                                                                                                                                                                                                                       |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `Simplify Iterations` The attempts the algorithm will make to simplify the remeshed surface. This should be high enough to remove redundant faces.                                                                              |
+| `Target Triangle Reduction` The percentage of triangles to remove during the simplification of the remeshed surface. Setting this too high will cause features to be lost while too low the mesh will have redundant triangles. |

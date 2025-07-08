@@ -1,0 +1,117 @@
+---
+title: "mXrap 6.0.6 - Release notes and Changelogs"
+date: 2024-09-26
+authors: "team"
+tags: [changelogs, developers]
+---
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+mXrap version 6.0.6 is now available to all users. This release is focused on bugfixes and performance improvements and will be the final release for version 6.0. Follow one of the links in the banner at the top of the Apps window to upgrade.
+
+{/* truncate */}
+
+![](/img/606upgrade.png)
+
+<Tabs>
+
+<TabItem value="users" label="Users">
+
+## mXrap 6.0.6 - What's new for Users
+
+Release Date: 26 September 2024
+
+### User Interface
+
+- Fixed Chart picking problems on screens set to DPI scaling higher than 100%.
+- Fixed scrolling-numbers behaviour with some kinds of mice.
+- Root folder now shown at the bottom of windows, to help confirm which root you are using.
+- Fix Tableview scrolling behaviour.
+
+### Survey Import
+
+- Keep vertex attributes when decimating surveys (aka the error message "Lost entity IDs after polygon decimation").
+- Fix DXF imports when faces are on a different layer to vertices.
+
+### Codemeter / Dongle
+
+- Fix problems related to cmu.exe
+- Fix button to access local Codemeter WebAdmin.
+- Fix Licence diagnostic "Send Email" button.
+- Error messages are improved and now translated into more languages.
+
+### mXsync
+
+- Limit number of CPUs used to avoid overloading the computer (this limit can be increased via menu bar)
+- Fixed problems with roots on `\\network\path` locations.
+- Fixed problems when a root folder is directly mapped to a drive, eg `Z:\the-root-files`
+- Performance improvements... faster decompression startup, faster disk scans.
+- Correctly clean up temp files.
+- Fixed the download/upload speed estimation.
+
+</TabItem>
+
+<TabItem value="developers" label="Developers">
+
+## What's new for Developers - mXrap 6.0.6
+
+## Developers
+
+Release Date: 26 September 2024
+
+### Tableview / Action
+
+- Ensure numbers are exported with the requested precision (was exporting with full precision always).
+
+### Tablecalc
+
+- Improved speed for unfiltered and unsorted input tables.
+- Improved speed for cancelling Tablecalcs during startup.
+- Allow access to more memory (at the cost of some speed).
+- HeapStats builtin now can give you more information about the system's RAM.
+- Can extend some types of memory limits with a call inside Tablecalc to the HeapStats builtin (contact support for information).
+
+### Tablecalc FileIO
+
+- Introduced `FileIO.File.fopen_create_must_not_exist()`  
+  Use this when you want to guarantee that the file you are creating did not already exist.
+
+### HTML View
+
+- Don't cache resources / images - helps to reload the content when (eg) reports are updated.
+- Allow resources to be loaded from within bundles.
+
+### System Information
+
+- SystemMonitor tool now has Total Physical RAM value.
+
+### Bug Fixes
+
+- Allow a bundled Import-CSV's preview to see its own content.
+- Fix behaviour of Configure Dialogs for Chart and View3d in the Analysis Window (would sometimes get melted into the main window).
+
+- When saving Tools in Settings Window:
+
+- Don't scan special folders such as "CON" and "NUL" (these names are reserved in Windows).
+
+- Populate the list of existing files in a folder.
+
+### Other recent changes of note:
+
+- ML Rating and b-value Isos are exposed from the Grid Based Analysis bundle.
+- Windows that use '!/Grid Based Analysis/@public/Coarse Grid Picks' and Selections now point to '!/Grid Based Analysis/@public/Grid Table Picks and Selections'.
+- mx_js updates:
+  - `exportDXF` supports RGB / transparency / multiple mesh entities per layer
+  - added `polybool.js`, `base64.js`, `error_checking.js`, `sgm_equations.js`, `octree.js`, `quickhull3d`, `stoer-wagner min cut`, `volume-slicing.js`, `mcmc.js`, `jDBSCAN.js`
+- Changes to HTML
+  - To improve compatibility with relative paths do not use `file://Folder/File` Instead use `file:Folder/File`
+
+- Cleaned up unused tools in ! folder. Please let us know if anything breaks.
+- JS memory limits improved (6.0.6).
+- Modified Strong Ground Motion calibration equations and standardised to use the `sgm_equations.js` library.
+- Added a data anomaly detection and filter tool for S:P Energy and Corner Frequency. Any existing references to these parameters in site specific quality filters may cause issues.
+- Removed max energy and max moment from quality filter.
+
+</TabItem>
+</Tabs>

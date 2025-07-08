@@ -1,0 +1,50 @@
+---
+title: "Export events from an ESG MS SQL Server"
+date: 2023-01-13
+tags: [esg]
+---
+
+Install the 'mXrap Export ESG' program (usually on the ESG processing server, but this is not necessary - install on a computer that is running all the time).  
+Once installed, find it in the Start menu and run the program.  
+It will appear as a little X in the 'notification area' (bottom right near the clock on the screen).
+
+To set up the mXrap Export ESG program, you need to know the SQL Server address,
+
+the username,  
+the password,  
+and the database name.
+
+To find these out, you open ESG's WaveVis, File menu -> Data Source  
+Make the window slightly wider, and you'll see something like this:
+
+![](/img/export_events_1.png)
+
+The key line is the Data Source File/Server Database line:
+
+'Csomething @ SUD-SERVER-SQLSQLEXPRESS'
+
+The SUD-SERVER-SQLSQLEXPRESS is the 'SQL Server' address.
+
+The 'Csomething' is the 'Database Name'
+
+Now go to the mXrap ESG Exporter,
+
+![](/img/export_events_2.png)
+
+Choose “Import from MS SQL Server”
+
+And then fill in like this:
+
+![](/img/export_events_3.png)
+
+After filling in the server and user/pass, click “Scan Server”.
+
+If the password is right, then you'll get a list which you can choose from.
+
+Note that the password may not be the same as the computer's login password.
+
+If you don't know this password, ask the site IT people (the SQL Server is typically provided by and owned by the site, not ESG).
+
+ESG may know the password, so you could also try asking them.
+
+Click OK and you are good to go.

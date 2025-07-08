@@ -1,0 +1,40 @@
+---
+title: "Replacing ESG Server"
+date: 2023-01-13
+tags: [esg, deployment]
+---
+
+import Obfuscate from "react-obfuscate";
+
+## How do I switch from ESG's MS Access database to MS SQL Server?
+
+Have a look [here](https://mxrap.com/export-events/ "Exporting Events").
+
+## Installing mXrap after replacing your ESG server
+
+### 1. Where is the root located?
+
+- If it was on the old ESG server, we need to move it to the new ESG server.
+- If it is on a corporate network drive, we need to ensure that the ESG server can access that network share so it can write files to the #Events folder.
+
+### 2. Does the new server have the complete database?
+
+Sometimes ESG starts again with a blank seismic.mdb, which means you lose all your seismic history.  
+If this is the case, we need to do some things to keep that history. Let us know and we will expand on this topic.
+
+### 3. Install ESG Export program on the ESG (processing) server
+
+Install from [here](https://downloads.mxrap.com/mXrap/mXrap-Export-ESG-latest.msi). There is a username and password required to access the downloads page. Contact <Obfuscate email="support@mxrap.com" /> if you don't know it.
+
+### 4. Run ESG Export program
+
+Run it via the Start menu. It will be in the Start Up group (so it automatically starts when the computer logs in), and in its own folder.
+
+### 5. Open ESG Export program
+
+Click the little X icon down near the clock (in the system-tray / notification area), its window will pop up.
+
+### 6. Set up ESG Export program
+
+- Use the menu bar to set the location of the new seismic.mdb database file.
+- Use the menu bar to set the location of the “#Events Import ESG” folder, which is found in the site's mXrap root folder.

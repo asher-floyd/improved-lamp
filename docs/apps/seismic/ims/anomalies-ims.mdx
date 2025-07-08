@@ -1,0 +1,21 @@
+---
+title: "IMS anomalies"
+draft: true
+tags: [seismic, ims, theory]
+---
+
+I've had an opportunity to look through the events you sent me and I have found the following:
+These are mostly very small events and therefore have high dominant frequencies.
+The high frequencies are generally at the limit of the sensors, which means the corner frequency is poorly estimated.
+Corner frequency is the parameter used when estimating a whole lot of other seismic parameters, which is generally why these events are flagged by mxrap.
+These events are all during a period before we started limiting the frequency band used when estimating source parameters.
+
+There are a few events larger than m-2.0, and I will go and try to fix these ones. For the smaller events, below m-2.0 you should not be using these for any analysis which relies on source parameters. That is not to say we can't try to improve on the source estimates. A couple of ways we can do this is as follows:
+Specify the frequency band to use for source estimates in the historic data and recalculate source parameters.
+Do the same as option 1 above, but be more conservative with the source calculations.
+Option 2 would be the more correct solution, as we would not try to calculate source estimates if we don't have data from at least 2 P waves and 2 S waves. This is important when calculating separate P and S wave parameters like energy P and energy S. The previous way this was handled was, if we didn't have enough of say the S waves, we'd assume some ratio of the P wave source parameters for the S wave. Again, this is really only an issue with the very small events. The down-side to this is that some events would not have enough information to calculate source parameters at all. We would only know the time and location of the event. Previously our analysis software could not handle events with no source parameters, which is why we were not so conservative in the past. Now we can handle these type of events and, strictly speaking, this is the more accurate way to handle the very small events, where source estimates are uncertain. The consequence is that some of the events would no longer have source parameters calculated, only time and location.
+
+In summary, the events highlighted by mxrap are generally very small and their source parameters are not very reliable. These should not be used when doing any analysis involving source parameters (anything other than time and location). We can try to improve on the source estimates of the very small events. The simplest way is to fix the frequency band and recalculate source estimates (option 1). The very small events may still have unreliable source parameters. We can take this a step further (option 2) and be more conservative when calculating source parameters, which may mean the smallest events would no longer have source parameters saved in the seismic database, only time and location. This should not have any impact on the events with magnitude greater than about -1.5.
+
+Let me know if you have any questions and if you'd like us to action option 1 or 2 as discussed above.
+I should point out, there may still be 'anomalies' as per mxrap, as the sensors can still record very small events. Events smaller than what we can reliably estimate source parameters for.

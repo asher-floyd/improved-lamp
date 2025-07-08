@@ -1,0 +1,112 @@
+---
+title: "Troubleshooting Licence Issues"
+date: 2024-06-13
+tags: [support, licence, faqs]
+description: "Troubleshooting and resolving licence issues in mXrap"
+---
+
+import Obfuscate from "react-obfuscate";
+
+## Error Codes
+
+:::info
+
+### \[CM35\] Licence Expired{#cm35}
+
+_The license has expired. Please contact us using the button at the bottom left, **Compose an email to support**._
+
+:::
+
+Get in touch with us at Support to discuss your options. If you are not using the latest version of mXrap, upgrading may solve this issue.
+
+:::info
+
+### \[CM101\] Licence server not found{#cm101}
+
+_Please plug the Codemeter USB device into your computer, or check your connection to the network server._
+
+:::
+
+1. **Ensure the Licence is Set Up:**
+   - If you are using a physical dongle locally, ensure it is plugged in and the port is working correctly.
+   - If you are using a licence server, ensure the license server is set up correctly by referring to the 'Licence server' section in the [IT Personnel's Guide to Installing and Managing mXrap](https://mxrap.com/it-guide-to-installing-and-managing-mxrap/).
+     - Note, the CodeMeter drivers must be installed with the “Network Server” option enabled on the licence server.
+2. **Check Licence Server Status:**
+   - Ensure the licence server is running.
+   - If you are using a physical dongle, ensure that it is plugged into the licence server.
+   - Verify that the server is contactable over the network. Recent network rearrangements may have disrupted the connection.
+   - Ensure there is no firewall on the server computer preventing a connection on the required ports (default TCP/UDP port `22350`).
+3. **Reboot the Licence Server:**
+   - Sometimes, the CodeMeter driver may have bugs causing it to get 'stuck'. A simple reboot of the licence server might resolve the issue.
+4. **Reinstall or update CodeMeter Driver:**
+   - Install the latest version of the CodeMeter runtime, found on our [Downloads page](https://mxrap.com/downloads), and reboot your computer.
+5. **Configure Licence Server in CodeMeter:**
+   - If connecting via VPN, ensure the client points to the correct licence server:
+     1. Open the 'About mXrap' program.
+     2. Press the 'Codemeter WebAdmin' button.
+     3. Navigate to **`Configuration` -> `Basic` -> `Server Search List`.**
+     4. Click `Add` and enter the IP or hostname of the licence server.
+     5. Hit `Apply`.
+6. **Collect and submit logs:**
+   - If the problem persists, press the "Compose email to support" button on the licence error screen and paste the contents of your clipboard into the body of the email. No personal data beyond your Windows username and LAN IP are supplied within the log - see below for a sample of what the log contains.
+
+:::info
+
+### \[CM106\] Temporary Licence Error{#cm106}
+
+_There was an error accessing the licence, but will likely work if you try again. Please retry._
+
+:::
+
+:::info
+
+### \[CM200\] Licence not found{#cm200}
+
+_Please plug the Codemeter USB device into your computer, or check your connection to the network server._
+
+:::
+
+:::info
+
+### \[CM231\] Access Denied to Codemeter{#cm231}
+
+_Access was denied to this Codemeter, check the server settings, or provide another Codemeter._
+
+:::
+
+1. Open the **CodeMeter Control Center** on the license server (alternatively, you can access it from your device if access has been set up).
+2. Click on the **WebAdmin** button to open the web interface.
+3. Navigate to **`Configuration > Server > License Access Permissions.`**
+4. Check the current license access permissions. If your device name is not listed, you may need to add it to the clients list. Note, if the list is empty, this means there should be no restrictions. This means that there may be a different issue and you should not add any devices to the list.
+
+There may be someone on site who manages this. If this is the case, you can contact them to get them to update the access list for you.
+
+These steps should help resolve the licensing issues you are encountering with mXrap. If you continue to experience problems, please <Obfuscate email="support@mxrap.com" >contact our support team</Obfuscate> for further assistance.
+
+## Removing a licence from another user {#remove-licence}
+
+**Step 1:** Open the Codemeter Control Centre from your system tray.
+
+![](/img/support_1-1.jpg)
+
+**Step 2:** Click the WebAdmin button
+
+![](/img/support_2-1.jpg)
+
+**Step 3:** Your web browser should open to the CodeMeter WebAdmin page (you may get a message saying the website is not secure, proceed to the page). Ensure you are connected to the server which your silver codemeter dongle is plugged into, by clicking the server on the bottom left and selecting the correct one, then clicking Apply.
+
+![](/img/support_3-1.jpg)
+
+**Step 4:** Switch to write access by clicking the **R** button in the top right. You may need to put in a password to get write access. If you cannot change to write, you may need to [set up your server for write access](/docs/deployment/licence-server).
+
+**Step 5:** Go to License Monitoring -> Sessions. This will allow you to see who has a session open. Click on the client that you want to remove.
+
+![](/img/support_4-1.jpg)
+
+**Step 5:** This will open the License Monitoring details page. From here you can see how many licenses you have total, and how many you have total.
+
+![](/img/support_5-1.jpg)
+
+You can see who is using the licences on the left and you can remove them by clicking the trash can icon on the right, and clicking OK when the dialog box appears
+
+![](/img/support_6-1.jpg)

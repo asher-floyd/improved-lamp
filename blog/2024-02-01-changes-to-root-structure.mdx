@@ -1,0 +1,34 @@
+---
+title: "Changes to root structure"
+date: 2024-02-01
+authors: "dan"
+---
+
+There has been some rearrangement to the ! folder within the root folder, which may affect some of your apps. This was primarily a move of tools which are not seismic specific from the ! folder to !/Base (so that mines without the seismic suite can use these tools). The most commonly used parts of this migration are anything that uses Filter Volumes, Grid definitions or Plane definitions.
+
+{/* truncate */}
+
+Apps that you created that are being used on site will break as a result of these broken connection in upgraded root folders. As we transition to v6 of mXrap, root upgrades will be required, and any of your custom apps will require fixing. To rectify missing sources, you can either manually change links (on an updated root folder) from the old to the new location, or use mXrap's redirect source/table/column feature in the menu bar of the Settings window:
+
+![](/img/Redicrect-screenshot.png)
+
+The moves are as follows:  
+!/Filter Volumes -> !/Base/Filter Volumes  
+! Standard Data/File Locations -> !/Base/Standard Data/File Locations
+
+Some of ! Standard Data/Parameters -> !/Base/Standard Data/Parameters , including:  
+Filter Volumes  
+Grid Definitions  
+Plane Definitions  
+Import/Filer Volumes Auto-ID  
+Import/Filer Volumes CSV  
+Import/Filer Volumes Staging  
+Import/Grid Definitions Auto-ID  
+Import/Grid Definitions CSV  
+Import/Grid Definitions Staging  
+Import/Plane Definitions Auto-ID  
+Import/Plane Definitions CSV
+
+A summary of the new locations are shown below
+
+![](/img/Base-migration-screenshot.png)

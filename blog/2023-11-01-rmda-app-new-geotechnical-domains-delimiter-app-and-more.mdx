@@ -1,0 +1,69 @@
+---
+title: "RMDA app: new geotechnical domains delimiter app and more!"
+date: 2023-11-01
+tags:
+  - "base"
+  - "rmda"
+authors: "audrey"
+---
+
+A new app has appeared in the Rock Mass Data Analyser suite: the Geotechnical Domains Delimiter. This app allows you to create your own geotechnical domains; either from boundaries (e.g. lithological contacts or fault planes) or volumes (e.g. lithologies, domains, selection boxes).
+
+{/* truncate */}
+
+![](/img/Fig1_SurveysImported.png)
+**_Figure 1_**: _Surveys imported to create geotechnical domains_
+
+The app uses the HW/FW filter to classify the space in relation to each survey imported (inside a survey = 'ore'; hanging wall = hang; footwall = foot). Each unique fingerprint combination is represented by a point (see pink dots in **Figure 2)**. To identify key areas, these points need to be assigned as a 'reference point' by giving it a name (**Figure 2**).
+
+![](/img/Fingerprints-pts-to-reference-pts-_-Dyke-example.png)
+
+_**Figure 2**: Assigned reference point to unique fingerprint region_
+
+Afterwards, geotechnical domains names can be assigned to the defined reference points (**Figure 3**). A single geotechnical domain may have multiple fingerprints, thus it needs to be defined by more than one reference point. In this example, most of the geotechnical domains were associated with two fingerprints each.
+
+![](/img/AssigendGeoDomain-to-ref-points.png)
+
+_**Figure 3**: Assigned geotechnical domains name to reference points_
+
+The geotechnical domains created automatically classify all the data in the Rock Mass Data Analyser: the rock mass quality data (e.g. RQD, G, RMR, GSI), the structures, the geology observed in borehole segments, stress measurements etc. **Figure 4** shows the lab tests, the rock mass quality intervals along boreholes and stress measurements in Region2 with ticks in the Filter panel.
+
+![](/img/AllData_FilterRegion2.png)
+
+_**Figure 4**: Rock mass data filtered for Region2_
+
+For more information, view the five _training videos_ detailing the **Geotechnical Domains Delimiter** app.
+
+## **_Borehole ID: more flexibility to show text in 3D_**
+
+For all borehole sources, you now have the ability to show the borehole ID along the dip of the hole and at the top or bottom. To do so, the controls of the text series related to the borehole IDs must be adjusted (see **Figure 5**). If more than 1,000 boreholes need to be displayed, do not forget to increase the 'Max # to plot' field!
+
+![](/img/BoreholeID.png)
+
+_**Figure 5**: Options to display borehole ID in 3D_
+
+## **_Detailed data errors_**
+
+There is now a detailed error panel of the data imported and saved for all data sources (rock mass quality, structures, lab tests etc.). These panels detail the boreholes or sample for which the data is outside the expected range, the concerned parameter, and its value. A table summarising all the rows containing 'bad quality data' is available in Rock Mass Data Analyser. The values outside expected ranges are clearly highlighted in red. The segments containing 'bad quality' data can also be seen in 3D space (**Figure 6)**.
+
+![](/img/QualityData_AlongBorehole.png)
+
+_**Figure 6**: Quality of rock mass quality data visualised in 3D_
+
+The 'good data' table only shows the data used for calculations; if a sample/borehole interval contained a 'bad value' for a parameter, only that parameter is ignored in the calculations, not the entire data for the segment/sample.
+
+## **_Rock mass quality data: using RQD from another source_**
+
+New features in the Rock Mass Data Importer/Analyser allow you to import RQD values with intervals other than the one defined with your rock mass quality data csv. The first step is to import the csv containing the RQD data along the borehole, in the following column order: Borehole ID, From, To, RQD value (see **Figure 7**).
+
+![](/img/RQD_fig0.png)
+
+_**Figure 7**: Import RQD data csv_
+
+Afterwards, the newly imported RQD values can be seen alongside the RQD values from your rock mass quality data imported, if it exists. You can choose which RQD values to use for the further analysis (Tables, Charts & 3D View) in 'Select RQD sources' (see **Figure 8**). The same panel can be found in both the **Rock Mass Data Importer app** and the **Rock Mass Data Analyser app**.
+
+![](/img/RQD_fig1.png)
+
+_**Figure 8**: Select which source or RQD to use for further calculations/display_
+
+Do not hesitate to contact the mXrap support team for an app upgrade to get all these features!

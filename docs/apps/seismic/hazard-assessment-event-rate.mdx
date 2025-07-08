@@ -1,0 +1,57 @@
+---
+title: "Hazard Assessment - Event Rate"
+date: 2024-05-29
+tags:
+  - "base"
+  - "theory"
+authors: "stuart"
+---
+
+The Hazard Assessment application uses a grid-based approach to describe the seismic hazard throughout your mine. Each grid point essentially represents a seismic source with a specific frequency-magnitude relationship. A frequency-magnitude relationship is defined from the $M_{UL}$, $Mmin$, $b$-value, and event rate. We've previously delved into $M_{UL}$ in [this post](https://mxrap.com/2018/08/24/mul-explained/). We also discussed how $Mmin$ and $b$-value are calculated along with other gridding parameters in [this post](https://mxrap.com/2020/10/05/grid-based-analysis-parameters/). The event rate is something we haven't taken a dive into yet, so we'll get into it in this post.
+
+Event rate sounds like a simple calculation but there are quite a few complexities worth explaining here. There are also a couple of controls for event rate hidden away in the Advanced Tools that might be worth investigating at your site. These controls will be explained below too.
+
+![](/img/Advanced-Controls.png)
+
+The event rate refers to the number of events above a certain reference magnitude, usually $Mmin$. On the frequency-magnitude chart, essentially the $b$-value is the slope and event rate is the intercept. It is related to the _a_\-value of the Gutenberg-Richter distribution. You might also see the event rate referred to as the lambda (_λ_) value. This comes from the Poisson distribution where _λ_ is the rate parameter.
+
+The event rate parameter refers to a specific time interval and volume. The number of events during the data period is adjusted to refer to one year's worth of activity. For the hazard calculations, the event rate is associated with the number of events within the 3D cubic volume of the grid cell. However, the event rate that is plotted in 3D with isosurfaces is adjusted to refer to the event rate within a 50 m spherical volume. The standard volume adjustment is done so that you can modify the grid spacing and the event rate will remain the same.
+
+## Event Splattering
+
+Events within the data period are assigned to the grid with a 'splattering' process. Just like if you throw a ripe tomato, it might splatter onto the wall, events are splattered onto its nearby grid points. The kernel function controls the distribution of an event onto the grid. Grid cells closer to the event have a higher weighting. A cubic kernel function is used to assign a portion of each event to grid points within a maximum radius, _Rmax_. The total contribution of a single event to the grid is always normalised to be equal to one. This avoids the problem of overcounting or undercounting events and ending up with an inaccurate grid event count. If you have 1,000 events in the data period, you want the total event count of the grid points to also work out to 1,000. When all events have been splattered, each grid point then has the number of events associated with its cubic volume.
+
+![](/img/Splatter.png)
+
+The maximum radius, _Rmax_, of the kernel function is adjusted for each event. Larger magnitude events have a bigger area of influence. The radius is also expanded in lower density areas to reduce the artifacts around the edges of seismic clusters. The _Rmax_ is generally the maximum of the following parameters:
+
+- **20 m**. Minimum Rmax for all events.
+- **1.5 x Grid Spacing**. To avoid events missing grid points when grid spacing is large.
+- **Event Source Radius**. To increase the zone of influence of large events.
+- **Distance to the 5th Nearest Event**. To smooth areas with sparse event density.
+
+These parameters are capped at 100 m so _Rmax_ can't go higher than that. There is a final smoothing factor applied to _Rmax_ that is a control in the Advanced window. The default smoothing factor is to double the calculated _Rmax_. The figure below shows the effect of the smoothing factor on event rate at the Unicorn Gold mine. Increasing the smoothing factor generally lowers the peaks and raises the troughs of the event rate distribution throughout the mine.
+
+![](/img/Smoothing-Factor.png)
+
+## Small Event Weighting
+
+Event rate calculations generally use events above the global $Mmin$. The trouble is this excludes a significant portion of the database and limits the resolution of the seismic hazard assessment. To try and utilise additional data, events just below the global $Mmin$ are also considered. Events below $Mmin$ within a magnitude range, _Δ_, are splattered onto the grid as an alternate estimation of event rate. Since these events are under recorded, their contribution onto the grid is increased to compensate. The figure below shows how the small event weighting is calculated by estimating the amount of under recording compared to a complete dataset.
+
+![](/img/Small-Event-Weighting.png)
+
+The two event rate calculations, from events above the global $Mmin$, and smaller events, are compared and the higher of the two rates is used. The use of smaller events is turned on by default, but you can turn this off in the Advanced window. You can see the difference in the event rate calculations at the Unicorn Gold mine with and without the small events. The differences are small but there is generally more information at the edges of the seismic clusters when small events are used.
+
+![](/img/Use-Small-Events.png)
+
+## Using Local Mmin
+
+The event rate calculations generally don't consider the spatial variation in $Mmin$. However, we have made a recent addition to give you the option of using the local $Mmin$ calculated at each grid point. The same approach is taken, except an event is only splattered onto a grid point if its' magnitude is above the local $Mmin$. The small event adjustment still works but the global trend in under recording is used for the small event weightings.
+
+The local $Mmin$ option is available in the Advanced window and the results are compared for the Unicorn Gold mine below. The same general trends are there when using local $Mmin$ although it does increase the variability. The differences are more prevalent in areas with lots of data.
+
+![](/img/Use-Local-Mmin.png)
+
+## Concluding remarks
+
+Feel free to investigate these event rate controls at your site and consider if they might be of use to you. In general, the differences will be small as the event rate is fairly insensitive to these variables but it will vary case-by-case. Remember that for hazard assessment, $b$-value is a far more sensitive parameter than event rate ([previous post](https://mxrap.com/2018/09/14/seismic-hazard-sensitivity-to-b-value/)) so hopefully the decisions and assumptions made here won't have too much impact on your interpretations of hazard.

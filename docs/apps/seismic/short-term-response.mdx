@@ -1,0 +1,41 @@
+---
+title: "Short-term response analysis application"
+tags: [seismic]
+draft: true
+#commented frontmatter is optional
+sidebar_label: "Short-term response"
+#sidebar_position: 1
+#slug:/relativetobaseurl
+authors: "stuart"
+---
+
+import ReactPlayer from "react-player/vimeo";
+
+Another new app has been added to the Seismic Suite for the general analysis of short-term seismic responses. There are multiple features to analyse the short-term response to different triggers (events or blasts) in time and space. In later versions, this app will replace all of the tools in the previous 'Omori Analysis Tools' app but version 1 currently only replaces the old 'response to blasting' window.
+
+There are two main aspects of the app, the simple response viewer and trigger assessment windows. The new app has [training videos here](https://www.mxrap.com/mxvideos/link/15).
+
+## Simple response viewer
+
+This window is for the assessment of short-term responses. Triggers must be selected (ticked) from the list and response events for the selected triggers can be assessed with a number of tools.
+
+- **Responses 3D** -- View the trigger locations and response events within range. Adjust the spheroid controls to include/exclude events related to the trigger. 'Nearby events' are events just outside the spatial or temporal range of the trigger.
+- **Time after Trigger** -- Chart the events as a function of time after trigger. Can plot events as a histogram or cumulatively. The time bin used for the histogram can be adjusted. When multiple triggers have been selected, can either view responses individually or stacked together. The best fit Modified Omori Law (MOL) is calculated automatically, if the calculation fails a message will appear in the control panel. You can override the MOL parameters (p, K and c) in the control panel.
+- **Distance from Trigger** -- Chart the events as a function of distance to trigger. Options for X distance, Y distance, Z distance, Horizontal distance and 3D distance. You can normalise the chart by the number of events or by the volume under consideration. Normalisation by number of events changes the Y axis to a percentage of events from 0-100%. Normalisation by volume changes the X axis so that the volume increases linearly as the distance increases (expanding sphere). If the cumulative events is linear for the chart normalised by volume, this represents a constant event density.
+- **Density 2D** -- View the distribution of events in the 2D plane (XY, XZ or YZ). Events are divided into spatial bins and then ranked from highest to lowest density. The grid points are coloured by cumulative events, where the accumulation is from highest to lowest density points.
+- **Density 3D** -- Similar to the Density 2D plot, uses the same grid spacing controls. Isosurfaces are used to show the cumulative events distribution in 3D.
+
+## Trigger Assessment Window
+
+This window is for the analysis of triggers; either blasts, events or user defined points in space and time. If the response viewer is to assess the area of exclusion and time of re-entry, the trigger assessment window is to assess which blasts should have an exclusion and which events should have an evacuation.
+
+- **Triggers 3D** -- View triggers in 3D and use the marker style colours and scales to assess the location of triggers that typically have a response.
+- **Trigger Summary Tables** -- These tables summarise triggers by various characteristics. For example, you can use these tables to assess what type of blasts have the biggest response, what magnitude events typically have aftershocks, how the responses to triggers vary by depth etc. The tables currently use the following parameters to assess potential triggers for exclusion or evacuation:
+  - Blast tonnes
+  - Blast type
+  - Trigger date
+  - Trigger elevation
+  - Event magnitude
+  - Location (VSA)
+
+---

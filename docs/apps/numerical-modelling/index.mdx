@@ -1,0 +1,31 @@
+---
+title: "Numerical Modelling Integration"
+tags: [numerical-modelling]
+hide_title: true
+pagination_next: null
+pagination_prev: null
+sidebar_position: 1
+hide_table_of_contents: true
+---
+
+import { FaTable } from "react-icons/fa6";
+import DocCardList from "@theme/DocCardList";
+import ReactPlayer from "react-player/vimeo";
+
+# <FaTable /> Numerical Modelling Integration
+
+Facilitates the creation of clean models for input into numerical modelling packages along with visualisation of the results of numerical models along with other monitoring data.
+
+## Mine Geometry Models
+
+This app was developed for the purpose of easily generating clean geometries on a regular grid pattern. Survey files (dxf, dtm) are used as input geometry to the app. The specified volume is discretised into a regular grid of cubic cells. The algorithm detects which cells are inside and outside excavations, and which cells are being cut by the boundaries of excavations. The models can be directly exported in different formats for use in mXrap apps or other software, such as numerical modelling packages. Map3D .inp files and FLAC3D grid files can be generated directly, allowing for mine-scale models to be built and ported to numerical modelling packages in a matter of minutes.
+
+**Principal authors**: Stuart Tierney, Matthew Heinsen Egan
+
+**Contributing authors**: Chun Wei Ho, Paul Harris, Johan Wesseloo
+
+Tierney, S & Heinsen Egan, M 2017, _mXrap software app, Mine Geometry Models_, version 1, Australian Centre for Geomechanics, Perth, [mxrap.com](https://mxrap.com/)
+
+<ReactPlayer controls src="https://vimeo.com/466472362" />
+
+<DocCardList />

@@ -1,0 +1,40 @@
+---
+title: "Filters"
+tags: [base, general-analysis, seismic]
+#commented frontmatter is optional
+#sidebar_label: "if different from title"
+#sidebar_position: 1
+#slug:/relativetobaseurl
+---
+
+import ReactPlayer from "react-player/vimeo";
+
+## Reset variables and filters
+
+Have you ever been using mXrap and wanted to reset your filters or reset all your variables to the defaults? We have a button for that!
+
+Simply open up the workspaces menu in the top left of the Viewer window, then press the 'Reset Variables to Defaults'. This should reset all variables, resetting all filters in mXrap.
+
+![](/img/Picture1.png)
+
+## Selections in Event Filters
+
+You can use selections to filter events in General Analysis. This gives you a lot more freedom than being restricted to the traditional min/max range filters. Follow the steps below to see how you can use this feature to plot the frequency-magnitude chart for events occurring during periods of high apparent stress.
+
+You can also watch the "[Selection boxes](https://www.mxrap.com/mxvideos/link/7)" and "[Selections in the Base Filter](https://www.mxrap.com/mxvideos/link/17)" videos.
+
+**Step 1** \- Create a new selection on the apparent stress time history chart. Note that selections can be made in any 3D view, chart or table in a similar way.
+
+![](/img/Selections-to-Base-Step-1.png)
+
+**Step 2** - To apply the selected events to the filter, go to the Events Ranges panel, hit 'Copy selections to Base filter' and switch on the selection filter below. Now only the selected events will be used in the frequency-magnitude chart.
+
+![](/img/Selections-to-Base-Step-2.png)
+
+**Step 3** - To turn off the blue selection icons, go to the Events series and turn off the 'Highlight selected' option.
+
+![](/img/Selections-to-Base-Step-3.png)
+
+Note that if you adjust the selection box or make another selection, you need to hit the 'Copy selections' button again to apply the changes. Use the switch to turn off the selection filter and return to original filter.
+
+In the case of the apparent stress time history chart, selection boxes are applied to the frequency line rather than the events in the background. The series that is active for selection can be modified. Look for the 'Select' option in the series controls on the right-hand panel.

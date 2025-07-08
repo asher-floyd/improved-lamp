@@ -1,0 +1,39 @@
+---
+title: "What are Bundles?"
+date: 2023-04-13
+tags:
+  - "base"
+  - "developers"
+  - "faqs"
+authors: "liam"
+---
+
+Bundles are a form of protection which we use to limit access to specific parts of mXrap applications.
+
+One of the primary incentives behind the use of Bundles is to reduce the amount of the root folder which is exposed to users for editing. While we encourage users to modify the root folder to suit their specific needs, modifications to core parts of the app can hamper our ability to maintain and upgrade root folders efficiently. Bundles provide us with the flexibility to prevent users from editing important parts of the app while leaving other parts accessible for customisation. This helps us to deliver and upgrade bundled apps much more reliably.
+
+Bundles can also be used to provide protection of mXrap's and other developers' intellectual property (IP). By being able to lock down important parts of the code using Bundles, it allows us to distribute mXrap to a wider audience without worrying about sensitive IP being exposed. In addition, access to Bundles in mXrap is tied to a user's license key by a Bundle License ID. This feature allows us to ensure apps are only accessed by the permitted users and cannot be freely distributed.
+
+We have begun to roll out the Bundles in two stages. Stage one is to lock everything down and see what no longer works. Stage two involves opening back up again as required. If you encounter limited access to a tool which you believe would be beneficial to either use, view or customise please email us at using the support email.
+
+**Developer notes - how it works:**
+
+Bundle settings are defined by a permission file called `\_mxbundle.mxperms` which is stored in each folder.  
+The permission file also affects each subfolder. If there is a new permission file it will override its parent's settings.  
+The format for a permission file is:
+
+     _LicenceId, Access, Export
+     NUM, ACCESS, EXPORT_
+     _NUM, ACCESS, EXPORT_
+
+Where NUM is the Bundle License ID that should be allowed access.  
+ACCESS is either: none, secret, hidden, visible, editable or overridable.  
+EXPORT is either: internal or exported.  
+Different Bundle Licence IDs can be assigned different permissions by adding multiple lines.  
+The behaviour of the different combinations is summarised below.
+
+![](/img/Bundle-Table.png)
+
+![](/img/Bundle-Legend-Final-3.png)
+
+If you are an mXrap app developer and are interested in bundling your own application please contact us at the support email address.

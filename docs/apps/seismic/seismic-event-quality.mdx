@@ -1,0 +1,41 @@
+---
+title: "Seismic Event Quality"
+date: 2024-09-27
+tags:
+  - "seismic"
+authors: "liam"
+---
+
+## Data Anomaly Detection
+
+We've added a new window to the **Seismic Event Quality** app: **Anomaly Detection**. This window, located under the Data Quality Analyses section, is designed to help analyse your seismic event database and identify any anomalies in the frequency of readings for certain seismic parameters. Currently, the tool is focused on identifying issues with the **S-Wave Corner Frequency** and **S-P Energy Ratio**.
+
+Anomalies often stem from default values, null entries, manual input or rounding mistakes. While many of these anomalies indicate bad data, not all do. However, if any data is found to be incorrect, it's important to clear these values to prevent skewing your analysis. The Anomaly Detection window provides visualization tools to help you investigate any flagged anomalies and take appropriate action.
+
+![Data Anomaly Window](/img/Data-Anomaly.png)
+
+When an anomaly exceeds the alert threshold, you will receive an alert upon opening the Seismic Event Quality app. From there, you have the option to:
+
+- Ignore the alert,
+- Accept the recommended settings, or
+- Open the Anomaly Detection window for further investigation.
+
+![Anomaly Alert Popup](/img/Alert.png)
+
+The recommended settings will clear any flagged values from the database.
+
+Within the Anomaly Detection window, you can choose to either **ACCEPT** or **CLEAR** the flagged readings:
+
+- **ACCEPT**: Set a threshold for when the alert should re-trigger (optional).
+- **CLEAR**: Specify which event tags the clearing applies to (optional).
+
+**Important Note**: When you choose to **CLEAR**, this will also clear any **derived parameters** associated with the source parameter. For example:
+
+- Clearing the **S-Wave Corner Frequency** will also clear the **Source Radius**.
+- Clearing the S-P Energy Ratio will also clear the **S-Wave Energy** and **P-Wave Energy**.
+
+Remember to click the **“Save Changes”** button on the right-hand side to save any modifications.
+
+Events highlighted in orange indicate that they have exceeded the warning threshold but have not yet reached the alert threshold.
+
+As always, if you have any questions or need help adjusting your settings, please feel free to reach out to our support team.

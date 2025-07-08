@@ -1,0 +1,82 @@
+---
+title: "Seismic energy and moment"
+date: 2018-10-12
+tags:
+  - "theory"
+  - "base"
+  - "seismic"
+authors: "stuart"
+---
+
+You know that energy and moment are parameters to describe seismic events. But what exactly is their physical meaning for a seismic event source and how are they calculated?
+
+![](/img/Crank.png)Moment and energy are both separate (but related) measures of the strength of a seismic event. A similar example is a car engine, the performance is described with two separate (but related) measures: power (hp or kW) and torque (Nm). In a simplified piston and crankshaft arrangement, the torque is the twisting force exerted by the force of the piston on the lever arm (crankshaft). Power relates to the rate at which work is done and how fast the torque is applied (torque x RPM). So, moment, energy and power are all related measures of the system performance.
+
+You might have heard that energy and moment are independent source parameters. This is to distinguish them from derived parameters (parameters that are calculated from energy, moment, corner frequency etc). They **_are_** independently calculated but they **_are not_** unrelated to one another. Moment is related to the displacement (strain) of the source. Energy is related to the speed at which the displacement happens. In general, higher stress conditions lead to higher rates of displacement and therefore higher energy relative to moment.
+
+## What does Moment physically mean?
+
+So, you know that moment is a force applied to a lever arm. You might be wondering, where is the lever arm for a seismic source? In the context of seismic sources, moment is a force couple. Two equal and opposite forces, with a notional distance between them, forms a definite moment.
+
+![](/img/moment.png)
+
+Let's look at a force couple applied to a small crack. The images below are displacement results from a simple Phase2 model of a small horizontal and vertical crack. The arrows indicate the direction of the displacement. Notice that the displacement pattern is essentially the same for both force couples. This is why, when you do an inversion from the observed waves trying to model the source, the solution comes down to a double-couple. There is no way to distinguish between the two possible solutions.
+
+![](/img/Crack-displ.png)
+
+![](/img/moment2.png)
+
+The displacement field caused by a dislocation on a plane is fundamentally equivalent to that produced by a double-couple. For a homogeneous and isotropic medium, the moment of a seismic event caused by the shear fracture on a plane is:
+
+M = G x D x A
+
+Where,
+
+- G = Shear stiffness of the rock
+- D = Average displacement
+- A = Area of slip
+
+## How is Moment calculated?
+
+We are rarely in a position to be able to measure the area of slip or the amount of displacement. In practice, moment is calculated from seismic waveforms, usually in the far-field (outside the source volume). The Brune model is used to relate the characteristics of the seismic source to the characteristics of the recorded waveform. The model is based on a circular disc (penny) shaped dislocation surface where a tangential stress drop is applied instantaneously, resulting in a shear wave propogating perpendicular to the fault surface.
+
+To compute Moment, a Fourier transform is required to convert the displacement waveform from the time domain to the frequency domain. The frequency content is also referred to as the spectrum of the signal. Moment is proportional to the spectral level (Ω0); the plateau of the displacement spectrum at lower frequencies.
+
+![](/img/disp-spectrum.png)
+
+![](/img/Mo.png)
+
+The spectra for each sensor must be corrected for geometric attenuation and decay and the Brune model must be fitted to the signal. Moment can then be computed as:
+
+M0 = 4πρV3Ω0R
+
+Where:
+
+- ρ = rock density
+- V = the sonic velocity in rock
+- R = the distance to the source
+
+In theory, the Brune model is only applicable to the S-wave but in practice, the same method is used for the P-wave. The final Moment for a seismic event is the average of the S-wave and P-wave moment.
+
+M0 = (Mp + Ms)/2
+
+## What does Energy physically mean?
+
+While seismic moment is a better description of the intensity of a seismic event within the near-field, seismic energy is a better description of the potential damage outside the source volume. The energy source parameter does not represent the total work done during the event, rather the energy that is radiated away from the source. The elastic energy radiated by a seismic event is only a fraction of the total work done by the source.
+
+## How is Energy calculated?
+
+Similarly to moment, energy is calculated in the frequency domain, except energy uses the velocity spectrum rather than displacement. The radiated energy is proportional to the velocity-squared spectrum integrated across the full frequency domain. The total energy for a seismic event is the sum of the P-wave and S-wave energy.
+
+E = Ep + Es
+
+![](/img/energy-1.png)
+
+## Conclusions
+
+The calculations for seismic energy and moment are complex and there are several assumptions and sources of error such as:
+
+- Error associated with integrating recorded wave to displacement in the time domain
+- Assumptions associated with the Brune source model
+- Error associated with fitting the Brune model to the displacement and velocity spectra, including when bandwidth limitations of seismic systems result in a poorly constrained fit
+- Error associated with the calculation of source location (R)

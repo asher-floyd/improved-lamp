@@ -1,0 +1,492 @@
+---
+title: "mXrap Version 6.0.0 - Release notes and Changelogs"
+date: 2024-03-07
+tags:
+  - "updates"
+  - "changelogs"
+  - "developers"
+authors: "team"
+---
+
+## Highlights
+
+We're pleased to announce the release of mXrap version 6, bringing with it a range of enhancements to elevate your mXrap experience. This major update includes improvements to the user interface, as well as enhancements to speed when loading the root folder and applications. Additionally, we've upgraded the 3D rendering and navigation capabilities in the 3D views.
+
+{/* truncate */}
+
+![](/img/image16.gif)
+_New: Tilt View and automatic grid_
+
+However, it's important to note that older root folders may not function properly in version 6 due to incompatibilities. Therefore, it's crucial that all root folders and apps are upgraded and checked to ensure they work correctly before transitioning. If you haven't received communication about this upgrade yet, expect an email in the coming weeks with instructions on how to complete the process.
+
+:::warning
+Please be aware that mXrap version 5 is scheduled to cease functioning in May 2024. Your cooperation during this transition period is greatly appreciated and will help facilitate a smooth migration to the new version.
+:::
+
+The notable changes that would effect development includes the change in scope for Table Calcs and data structure changes (octal literals, null locations, etc.). These changes mean that some Table Calcs or Row Calcs may break. Please read the change logs on how to address this.
+
+<Tabs>
+
+<TabItem value="users" label="Users">
+
+## What's new for Users - mXrap 6.0.0
+
+Last update: 14 November 2023
+
+### Introduction
+
+Short story: Ask the mXrap team to upgrade your root folder, and then you can install and use Version 6. Be sure to check any site-specific Apps that you have in your root.
+
+Version 6 is intended to be backwards and forward compatible with Version 5.
+
+This means you can switch between Version 6.0 and Version 5 without compatibility issues.
+
+Version 6.1 will bring changes that are incompatible with Version 5, so please help us upgrade you to Version 6.0 soon so we can ensure any problems are fixed before we move onwards into the future.
+
+Contact support if you require a root folder, or help upgrading your own Apps.
+
+### Operating System Support
+
+Full support for Windows Server 2022+ and Windows 10+
+
+We are unable to fully support old operating systems such as Windows Server 19, Windows Server 16 and Windows 7.  
+Many IT departments will be running Windows Server 16 on their Virtual Machines, so this could be an issue at some sites.
+
+The simplest way to check if your computers are supported, is to run mXrap v6 and try it out. If mXrap detects problems, it will tell you.
+
+- Windows 7 and Windows Server 16 can work with plain filenames (no accented characters, etc) and a workaround installed in C:\Windows\System32.
+- Windows Server 19 can work with plain filenames (no accented characters, etc).
+
+### Codemeter Update - 7.60d
+
+WIBU recently announced a software update to address a CVE security issue (Common Vulnerability and Exposure) that relates to an exploit available from the SOCKS5 proxy. You may not have such a proxy configured, but in theory, Malware could use this issue as part of a combined attack.
+
+[https://cdn.wibu.com/fileadmin/wibu_downloads/security_advisories/AdvisoryWIBU-231017-01.pdf](https://www.google.com/url?q=https://cdn.wibu.com/fileadmin/wibu_downloads/security_advisories/AdvisoryWIBU-231017-01.pdf&sa=D&source=editors&ust=1702511384362936&usg=AOvVaw3Xxf6fA-p2gSVGP7J-jESG)
+
+The solution is to upgrade the CodeMeter Runtime to the latest version.  
+A link to the latest version of the CodeMeter Runtime can be found here:
+
+[https://downloads.mxrap.com/Dongles/CodeMeterRuntime.exe](https://www.google.com/url?q=https://downloads.mxrap.com/Dongles/CodeMeterRuntime.exe&sa=D&source=editors&ust=1702511384363435&usg=AOvVaw1nqDtbeXS53fal784oTiof)
+
+or here: [https://www.wibu.com/support/user/user-software.html](https://www.google.com/url?q=https://www.wibu.com/support/user/user-software.html&sa=D&source=editors&ust=1702511384363726&usg=AOvVaw2yhaJ2zzy7h94lEdMy5txJ)
+
+### mXrap Optimisations
+
+We've made many improvements to the way we load the Root folder and files from disk.  
+Our developers have been using Version 6 Beta for months, and the speed difference alone is such that we don't like switching back to Version 5. We hope you will also find Version 6 faster in your environment.
+
+### Improved Display
+
+mXrap now works properly on higher resolution monitors. Version 5 relied on automatic scaling, so it could appear fuzzy and out of focus. Version 6 is now crisp and sharp.
+
+We have also changed the GUI styling of mXrap (eg. the buttons and spacing look different). We aren't happy with the current state and hope to make some more changes in this area.
+
+Note that the fixed-width font (used for numbers) has changed to the newest Microsoft font: "Cascadia Mono".  
+As a result, the width of columns and text might be different to before, and column widths may need to be adjusted.  
+Depending on your operating system, you may have been using Courier New or (more likely) Consolas in the past.
+
+![](https://mxrap.com/changelog/6.0.0/users/images/image9.png?t=1702507921)
+
+### mXrap Tips
+
+We have now added some helpful tips in mXrap. Try clicking the ? buttons to view the tips.
+
+| 3D Tips        | ![](https://mxrap.com/changelog/6.0.0/users/images/image19.png?t=1702507921) |
+| -------------- | ---------------------------------------------------------------------------- |
+| Chart Tips     | ![](https://mxrap.com/changelog/6.0.0/users/images/image5.png?t=1702507921)  |
+| Tableview Tips | ![](https://mxrap.com/changelog/6.0.0/users/images/image10.png?t=1702507921) |
+
+### 3D Navigation
+
+Version 5's 3D view could be confusing when looking at a plan view of your mine. Dragging the left mouse button up and down would rotate the view in such a way that your mine would end up sideways.
+
+Starting from Version 6, dragging the view up and down will always rotate the mine vertically between a plan view and a section view.
+
+Dragging the mouse side to side will always rotate the mine around the vertical axis.
+
+To make navigation easier, you can:
+
+- Force a horizontal rotation by holding the Shift key while dragging the mouse side to side.
+- Force a vertical rotation by holding the Shift and Alt key while dragging the mouse up and down.
+
+| Rotate the View<br />Mouse side-to-side<br /><br />Force Rotation: <br />Shift + Drag                        | ![](https://mxrap.com/changelog/6.0.0/users/images/image15.gif?t=1702507921) |
+| ------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------- |
+|                                                                                                              |                                                                              |
+| Tilt the View<br /><br /><br />Mouse up-and-down<br /><br /><br /><br />Force Tilt: <br />Shift + Alt + Drag | ![](https://mxrap.com/changelog/6.0.0/users/images/image16.gif?t=1702507921) |
+|                                                                                                              |                                                                              |
+| Gridlines rotate with the View                                                                               | ![](https://mxrap.com/changelog/6.0.0/users/images/image8.gif?t=1702507921)  |
+
+### Improved 3D View
+
+We've made an update to mXrap that improves several aspects regarding its display. A short list of the changes can be seen below.
+
+- 3D point attenuation improved when perspective is off
+- Improved rendering quality and speed
+- Clipping updates are applied much faster
+- Point selection highlights are updated faster
+- Anti-aliasing option added for points
+- Better fly-to-point performance
+
+- Able to cancel fly-to-point animations half-way
+
+- Ability to pick vertices from surface or line series (using F2 picking)
+- Ability to select vertices in a surface or line series using a selection box
+- Ability to highlight selected vertices in a surface or line series
+
+| Select and Highlight Vertices in a Surface or Line Series in 3D | <ul class="c39 lst-kix_zezy5kuesvqb-0"><li class="c4 c21 li-bullet-0"><img alt="" src="https://mxrap.com/changelog/6.0.0/users/images/image17.png?t=1702507921" title=""></img></li></ul> |
+| --------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+
+- Depth Peeling improved
+
+- Depth Peeling automatically updates the 3d view when changed
+- Depth Peeling can now be enabled or disabled for specific 3d views within “Drawing Options”
+- Depth Peeling can still be accessed in “Cog”&gt;“Advanced Settings”
+
+| Depth Peeling Controls in the <br />3D Panel | ![](https://mxrap.com/changelog/6.0.0/users/images/image18.png?t=1702507921) |
+| -------------------------------------------- | ---------------------------------------------------------------------------- |
+|                                              |                                                                              |
+| Global controls that affect all 3D views     | ![](https://mxrap.com/changelog/6.0.0/users/images/image7.png?t=1702507921)  |
+|                                              |                                                                              |
+| Depth Peeling Off                            | ![](https://mxrap.com/changelog/6.0.0/users/images/image3.png?t=1702507921)  |
+|                                              |                                                                              |
+| Depth Peeling On                             | ![](https://mxrap.com/changelog/6.0.0/users/images/image2.png?t=1702507921)  |
+
+### Improved Marker Symbol Dialog Box
+
+While choosing a Marker Style symbol, you can preview all symbols in a chosen colour.
+
+| Choose a Symbol                    | ![](https://mxrap.com/changelog/6.0.0/users/images/image21.png?t=1702507921) |
+| ---------------------------------- | ---------------------------------------------------------------------------- |
+|                                    |                                                                              |
+| Preview in <br />different colours | ![](https://mxrap.com/changelog/6.0.0/users/images/image4.png?t=1702507921)  |
+
+### Local Cache Changes
+
+mXrap keeps a copy of a lot of data in your "User Profile" folders on the C: system disk. This can be problematic if your C: is running low on disk space.
+
+You have always been able to choose another location to store this cache (eg on a larger data disk), however, Version 5 still stored quite a lot of stuff on the C:
+
+Version 6 will now store all of its Cache where you choose, and, it will also detect and clean up unused cache files left behind in your User Profile.
+
+| Access the Settings                                                                                    | ![](https://mxrap.com/changelog/6.0.0/users/images/image6.png?t=1702507921)  |
+| ------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------- |
+|                                                                                                        |                                                                              |
+| Change the Location of <br />the Cache<br /><br /><br />You will need to choose your root folder again | ![](https://mxrap.com/changelog/6.0.0/users/images/image11.png?t=1702507921) |
+|                                                                                                        |                                                                              |
+| Old cache auto-detected                                                                                | ![](https://mxrap.com/changelog/6.0.0/users/images/image13.png?t=1702507921) |
+|                                                                                                        |                                                                              |
+| Clearing old Cache files                                                                               | ![](https://mxrap.com/changelog/6.0.0/users/images/image12.png?t=1702507921) |
+
+### File Path Update
+
+mXrap now supports more special characters, white spaces in file paths and deeper folder paths. Stricter file naming is also enforced.
+
+If you have any issues regarding any special characters, please try to use plain ascii instead and let us know via support.
+
+### Credentials Pop-Up
+
+mXrap may read files from network drives, such as seismic event files. The username/password credentials for these network shares are sometimes forgotten by Windows, and mXrap Version 5 would fail to access the file and not tell you that there was a problem.
+
+As of Version 6, mXrap will ask the user for the username and password if the Network share needs the credentials.
+
+### App Translations
+
+We've implemented a language translation system for translating Apps into different languages.
+
+You can choose the language mXrap uses via the About dialog.
+
+| Click "About mXrap" | ![](https://mxrap.com/changelog/6.0.0/users/images/image1.png?t=1702507921)  |
+| ------------------- | ---------------------------------------------------------------------------- |
+|                     |                                                                              |
+| Choose a Language   | ![](https://mxrap.com/changelog/6.0.0/users/images/image14.png?t=1702507921) |
+
+The current languages available for mXrap include English, Spanish, French, Portuguese and Swedish.
+
+We have only just started translating some Apps. If you are interested in contributing to the translations, please let us know.
+
+| Example: English<br />General Analysis  | ![](https://mxrap.com/changelog/6.0.0/users/images/image20.png?t=1702507921) |
+| --------------------------------------- | ---------------------------------------------------------------------------- |
+|                                         |                                                                              |
+| Exemple: Français<br />Analyse Générale | ![](https://mxrap.com/changelog/6.0.0/users/images/image22.png?t=1702507921) |
+
+</TabItem>
+
+<TabItem value="developers" label="Developers">
+
+## mXrap - What's new for Developers - mXrap 6.0.0
+
+Last update: 14 November 2023
+
+### Introduction
+
+We are pleased to announce the first release of version 6 of mXrap!
+
+Version 6 is intended to be backwards and forwards compatible with Version 5.
+
+This means you can switch between Version 6 and Version 5 without compatibility issues.
+
+You can develop Apps in Version 6, and deploy to a Version 5 site, and everything will work.
+
+...
+
+Almost.
+
+...
+
+You do need to upgrade the root before using Version 6 (see the "Migration Guide" for more information),
+
+and, you need to avoid some new features while it can be used with Version 5.
+
+The mXrap team's standard code in your root folders has been upgraded, so ensure we have upgraded your root folder BEFORE you start using Version 6.
+
+Contact support if you require a root upgrade, or help upgrading your own Apps.
+
+### Hotkey to Save
+
+You can now save tools with Ctrl + S.
+
+![](https://mxrap.com/changelog/6.0.0/devs/images/image2.png)
+
+![](https://mxrap.com/changelog/6.0.0/devs/images/image6.png)
+
+### Tab Icons
+
+You can now add icons to tool tabs.
+
+![](https://mxrap.com/changelog/6.0.0/devs/images/image7.png)
+
+### Inline CSS for Panels, Headers and Footers, ...
+
+You can now use inline CSS to style your text as HTML using CSS selectors.
+
+You can use this technique in places such as:
+
+- Headers and footers in Charts, 3D Views and Table Views
+- HTML Views
+- Panels
+
+- Text Element (type the HTML into the entry box)
+- Value Display (link the HTML text in from a Calculation)
+
+Note for Panel Views: Some CSS techniques cannot be done via the "Stylesheet (CSS)" tab, and must be done using inline-CSS.
+
+| Example: HTML + Inline-CSS                                    |
+| ------------------------------------------------------------- |
+| ![](https://mxrap.com/changelog/6.0.0/devs/images/image4.png) |
+|                                                               |
+| Example: HTML + Inline-CSS in a Header/Footer                 |
+| ![](https://mxrap.com/changelog/6.0.0/devs/images/image5.png) |
+|                                                               |
+| Example: HTML + Inline-CSS in a Panel                         |
+| ![](https://mxrap.com/changelog/6.0.0/devs/images/image3.png) |
+
+#### Example HTML with Inline CSS
+
+```html
+<html>
+  <style>
+    .title {
+      font-weight: bold;
+
+      text-decoration: underline;
+
+      font-size: 20px;
+    }
+
+    .sub.title {
+      font-size: 14px;
+    }
+
+    #keynote {
+      color: #006400;
+
+      font-style: italic;
+    }
+
+    .keyWord {
+      font-weight: bold;
+
+      text-decoration: underline;
+
+      font-size: 13px;
+    }
+  </style>
+
+  <div class="title">Example Title</div>
+
+  <div class="sub title">Example Sub Title</div>
+
+  <div id="keynote">This is just an <span class="keyWord">example</span>!</div>
+
+  <div>
+    This is an <span class="keyWord">example</span> on how you can use
+    <span class="keyWord">inline CSS</span> to style
+
+    <span class="keyWord">HTML items</span> using
+    <span class="keyWord">CSS selectors</span>.
+
+    <div id="keynote">
+      Note: This is <span class="keyWord">not</span> the full extent of its
+      capabilities.
+    </div>
+  </div>
+</html>
+```
+
+### Table Calc and Row Calc Update
+
+Table and Row Calcs have been treated to a very large upgrade.
+
+#### New Javascript Language Support
+
+New Engine: We've upgraded our Javascript engine to support the latest version of (JS 2021/2022), allowing for further flexibility in table calcs and row calcs. Please note that these new features will not be compatible with mXrap v5, so only use them once the users of your apps have been upgraded to v6.
+
+mXrap supported ECMAScript 5. Version 6 brings support for the following language changes:
+
+- ECMAScript 6 2015: [https://www.w3schools.com/js/js_es6.asp](https://www.w3schools.com/js/js_es6.asp)
+- ECMAScript 6 2016: [https://www.w3schools.com/js/js_2016.asp](https://www.w3schools.com/js/js_2016.asp)
+- ECMAScript 6 2017: [https://www.w3schools.com/js/js_2017.asp](https://www.w3schools.com/js/js_2017.asp)
+- ECMAScript 6 2018: [https://www.w3schools.com/js/js_2018.asp](https://www.w3schools.com/js/js_2018.asp)
+- ECMAScript 6 2019: [https://www.w3schools.com/js/js_2019.asp](https://www.w3schools.com/js/js_2019.asp)
+- ECMAScript 6 2020: [https://www.w3schools.com/js/js_2020.asp](https://www.w3schools.com/js/js_2020.asp)
+- ECMAScript 6 2021/2022: [https://www.w3schools.com/js/js_2021.asp](https://www.w3schools.com/js/js_2021.asp)
+
+#### Access more RAM in your Calculations
+
+mXrap is now able to support bigger memory allocations. You create a shortcut to the mxrap.exe and add these to the command line parameters.
+
+- For per buffer allocation
+
+- `--js_max_per_buffer_gb=N`
+
+- For total buffer allocation
+
+- `--js_max_all_buffers_gb=N`
+
+- For native object/array allocation
+
+- `--js_max_native_gb=N`
+
+- Where N is the size you want to specify for memory allocation, in Gigabytes.
+- Example:
+
+- Add the following to the back of a shortcut in the target section:
+- `--js_max_all_buffers_gb=8 --js_max_per_buffer_gb=4 --js_max_native_gb=4`
+- ![](https://mxrap.com/changelog/6.0.0/devs/images/image1.png)
+
+### Storing Data files and CSVs in Bundles
+
+The "Bundle" feature allows developers to put their Apps in a protected and controlled package that is ideal for deployment.
+
+One problem in the past was distributing and reading fixed data files - e.g. tables of mathematical constants for computation.
+
+The solution was to store the CSV files outside the bundle, but that was annoying to deploy.
+
+Version 6 adds the ability to store CSVs inside bundles like any other tool. You can import that CSV with an ImportCSV tool from within the same bundle, or, mark that file for "Export" to read that file from outside the bundle.
+
+Please note, you will need to manually set the Input File path to the CSV, as the "Browse" button does not list files within Bundles.
+
+</TabItem>
+
+<TabItem value="migration" label="Migration Guide">
+
+## mXrap Developer Migration Guide: Version 5 to 6.0.0
+
+Last update: 13 November 2023
+
+[Introduction](https://mxrap.com/changelog/6.0.0/migrate/#h.g24p7ajc9oir)
+
+[Returning Points in a Row Calculation](https://mxrap.com/changelog/6.0.0/migrate/#h.xuf2n6dwrf8g)
+
+[Returning Null Points](https://mxrap.com/changelog/6.0.0/migrate/#h.kl5zelovtxd)
+
+[Checking Null Points in a Row Calculation](https://mxrap.com/changelog/6.0.0/migrate/#h.owamna81zd01)
+
+[Octal Literals](https://mxrap.com/changelog/6.0.0/migrate/#h.ne5xx9g5km0y)
+
+[Problems with Omori Library](https://mxrap.com/changelog/6.0.0/migrate/#h.lywazqyquvv)
+
+[Table Column Widths](https://mxrap.com/changelog/6.0.0/migrate/#h.p6s9dac9m30)
+
+### Introduction
+
+Short story: Ask the mXrap team to upgrade the root folder, and check your own Apps for the problems described below.
+
+Version 6 is intended to be backwards and forward compatible with Version 5.
+
+This means you can switch between Version 6 and Version 5 without compatibility issues.
+
+You can develop Apps in Version 6, and deploy to a Version 5 site, and everything will work.
+
+...
+
+We almost achieved that goal.
+
+...
+
+The new Javascript engine in Version 6 delivers "ECMAScript 6" support, which brings changes to the way the JS language works.
+
+Your Javascript code MAY require changes to work in Version 6.
+
+The mXrap team's standard code in your root folders has been upgraded, so ensure we have upgraded your root folder BEFORE you start using Version 6.
+
+Contact support if you require a root upgrade, or help upgrading your own Apps.
+
+| Returning Points in a Row Calculation |
+| ------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Screenshot                            | ![](https://mxrap.com/changelog/6.0.0/migrate/images/image14.png)                                                                                                                                              |
+| Code                                  | return [1,2,3];                                                                                                                                                                                                |
+| Warning Message                       | WARNING: use the provided 'result' variable to return array results for efficiency.                                                                                                                            |
+| Solution                              | A "result" variable is automatically provided. <br/>Fill it with the results and return it, like so:<br/><br/><br/><br/>result[0] = 1;<br/><br/>result[1] = 2;<br/><br/>result[2] = 3;<br/><br/>return result; |
+| Reason                                | return [1,2,3]; creates an unnecessary Array - this is slower and consumes more memory.<br/><br/>We want to encourage good consistent coding practices and use the same code pattern everywhere.               |
+| Before                                | ![](https://mxrap.com/changelog/6.0.0/migrate/images/image1.png)                                                                                                                                               |
+| After                                 | ![](https://mxrap.com/changelog/6.0.0/migrate/images/image10.png)                                                                                                                                              |
+
+| Returning Null Points |
+| --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Screenshot            | ![](https://mxrap.com/changelog/6.0.0/migrate/images/image8.png)                                                                                   |
+| Code                  | return [null,null,null];                                                                                                                           |
+| Warning Message       | WARNING: do not return [null,null,null], instead return null                                                                                       |
+| Solution              | use instead: return null;                                                                                                                          |
+| Reason                | Null coordinates are now specified as null instead of [null,null,null]. This is more efficient and simpler to code, as there is no Array involved. |
+| Before                | ![](https://mxrap.com/changelog/6.0.0/migrate/images/image11.png)                                                                                  |
+| After                 | ![](https://mxrap.com/changelog/6.0.0/migrate/images/image5.png)                                                                                   |
+
+| Checking Null Points in a Row Calculation                                                                                   |
+| --------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --- | ------------------- | --- | -------------------- | --- | ---------------------------------------------------------------------------------------------------- |
+| Screenshot                                                                                                                  | ![](https://mxrap.com/changelog/6.0.0/migrate/images/image3.png)                                                                                                                                                                 |
+| Code                                                                                                                        | if(override[0] == null                                                                                                                                                                                                           |     | override[1] == null |     | override[2] == null) |
+| Warning Message                                                                                                             | TypeError: Cannot read properties of null (reading ‘0')                                                                                                                                                                          |
+| Solution for Version 6 only<br/><br/><br/><br/>This is the future: use this if you don't need to support users on Version 5 | use instead: <br/><br/><br/>if(override === null)<br/><br/><br/><br/>Note the use of 3 = signs, not 2.<br/><br/>=== compares both type and value: you want this!<br/><br/>== will do conversions and may not do what you expect. |
+| Backwards Compatible Solution for both<br/><br/>Version 5 and 6                                                             | use instead: <br/><br/><br/>if(override === null                                                                                                                                                                                 |     | override[0] == null |     | override[1] == null  |     | override[2] == null)<br/><br/><br/><br/>Tip: add override === null to the front of the if statement. |
+| Reason                                                                                                                      | Null coordinates are now specified as null instead of [null,null,null]. Thus the check should be much simpler, as there is no Array involved anymore.                                                                            |
+| Before                                                                                                                      | ![](https://mxrap.com/changelog/6.0.0/migrate/images/image4.png)                                                                                                                                                                 |
+| After                                                                                                                       | ![](https://mxrap.com/changelog/6.0.0/migrate/images/image13.png)                                                                                                                                                                |
+
+| Octal Literals  |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Screenshot      | ![](https://mxrap.com/changelog/6.0.0/migrate/images/image7.png)                                                                                                                                                                                                                                                               |
+| Code            | new Date(2023,10,01);                                                                                                                                                                                                                                                                                                          |
+| Warning Message | WARNING: Program failed to compile<br/><br/>SyntaxError: Octal literals are not allowed in strict mode.                                                                                                                                                                                                                        |
+| Solution        | use instead: new Date(2023,10,1);                                                                                                                                                                                                                                                                                              |
+| Reason          | The new Javascript does not accept numbers written with a leading zero, eg 01 or 02. <br/><br/><br/>These are known as Octals, and were a common source of confusion.<br/><br/>ie 08 and 09 are invalid, and 010 translates to 8 in decimal.<br/><br/>This was a source of bugs, so Octals are disallowed as a blanket policy. |
+| Before          | ![](https://mxrap.com/changelog/6.0.0/migrate/images/image12.png)                                                                                                                                                                                                                                                              |
+| After           | ![](https://mxrap.com/changelog/6.0.0/migrate/images/image2.png)                                                                                                                                                                                                                                                               |
+
+| Problems with Omori Library<br/>similar errors are seen as: ReferenceError: something is not defined |
+| ---------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Screenshot                                                                                           | ![](https://mxrap.com/changelog/6.0.0/migrate/images/image6.png)                                                                                                                                                                                                        |
+| Error Message                                                                                        | ReferenceError: results_best is not defined                                                                                                                                                                                                                             |
+| Solution                                                                                             | This requires a root upgrade for a newer version of this library.<br/><br/>Contact support to arrange a full root upgrade.                                                                                                                                              |
+| Reason                                                                                               | We have tightened up "global scoping" rules for better coding practices.<br/><br/><br/><br/>In Version 5, scripts imported via require.mx() could access global variables defined in the main calculation code.<br/><br/>This is bad practice and is no longer allowed. |
+
+### Table Column Widths
+
+Note that the fixed-width font (used for numbers) has changed to the newest Microsoft font: "Cascadia Mono".  
+As a result, the width of columns and text might be different to before, and column widths may need to be adjusted.  
+Depending on your operating system, you may have been using Courier New or (more likely) Consolas in the past.
+
+![](https://mxrap.com/changelog/6.0.0/migrate/images/image9.png)
+
+</TabItem>
+</Tabs>

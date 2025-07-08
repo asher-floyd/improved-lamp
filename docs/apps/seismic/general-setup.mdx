@@ -1,0 +1,36 @@
+---
+title: "General Setup"
+tags: [seismic]
+draft: false
+#commented frontmatter is optional
+#sidebar_label: "if different from title"
+#sidebar_position: 1
+#slug:/relativetobaseurl
+authors: "dan"
+---
+
+import ReactPlayer from "react-player/vimeo";
+
+## Survey input configuration
+
+Are you unable to see your surveys, but can't work out why? Are some of your surveys located a long way away from the rest of your mine when they shouldn't be?
+
+This could be due to the input configuration of your survey files. The order of the co-ordinate components (Easting, Northing, RL) are sometimes different for some survey formats, so we have to 'flip' the X and Y co-ordinates. This is often the case for DTM files. To fix this:
+
+Open the survey setup window (can be found in the General Analysis app) and find the surveys with an issue. Click on input config, then turn on the override using the tick box. Click the swap button between X and Y to change whether X and Y are the first or second column. Don't forget to rebuild the cache and hit save!
+
+If you need a refresher on updating surveys, watch [the Survey Setup training video](https://www.mxrap.com/mxvideos/link/2).
+
+![](/img/Survey_setup-1.png)
+
+## Survey decimation
+
+Are your surveys really slow to load? Are you having difficulty rotating your 3D view?
+
+The problem might be the level of detail in your survey files. If the level of detail of survey files is unnecessarily high, it will slow down the 3D view for no reason. This is often the case with stope CMS files. To reduce the level of unnecessary detail in your survey files:
+
+Open the survey setup window (can be found in the General Analysis app) and select the surveys you're interested in (on the left). Click on decimation, then turn on the decimation override using the tick box. Set the Target Reduction. This number is how much mXrap will try to reduce the size of your surveys (i.e. with a Target Reduction of 90%, mXrap will try to reduce the number of points to 10% of the original size). You should set this to as high a number as possible, while still being able to see the level of detail in your surveys that you need (somewhere between 60 and 90% often improves the speed of the 3D view dramatically, without making the surveys look awful). Don't forget to rebuild the cache and hit save before looking at your 3D view!
+
+If you need a refresher on updating surveys, watch [the Survey Setup training video](https://www.mxrap.com/mxvideos/link/2).
+
+![](/img/survey-decimation.png)

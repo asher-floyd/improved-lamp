@@ -1,0 +1,103 @@
+---
+title: "IT guide to installing and managing mXrap"
+date: 2023-01-13
+---
+
+## Deployment Overview
+
+Note that your setup may not include some of the servers in this diagram.
+
+- Consultants and Researchers will not have Seismic or Instrumentation servers.
+- The CodeMeter Licence Server is not required for Wibu users.
+- The CodeMeter Licence Server is not required if a physical CodeMeter dongle is plugged into the user's computer directly.
+- Webforms servers and clients are only required for sites using the Damage Mapping system.
+- A Corporate File Server is not required if the user stores the data locally on their computer.
+
+Simple Full [![](/img/mXrap-deployment-diagram-simple_Page_1.png)](/img/mXrap-deployment-diagram-simple_Page_1.png)[![](/img/mXrap-deployment-diagram-full.png)](/img/mXrap-deployment-diagram-full.png)[![](/img/mXrap-deployment-diagram-simple_Page_1.png)](/img/mXrap-deployment-diagram-simple_Page_1.png)[![](/img/mXrap-deployment-diagram-full.png)](/img/mXrap-deployment-diagram-full.png)
+
+## mXrap Servers
+
+### Licence hosting
+
+#### Server requirements
+
+- The licence server can be any machine that is accessible by mXrap user PCs through the network.
+- The CodeMeter driver needs to be installed and configured to act as a Network Server.
+- If you are using a physical dongle the CodeMeter key must be plugged into the server.
+- The CodeMeter server can be a virtual server. The USB dongle can be accessed by the server via products such as AnywhereUSB.
+- Note that ONLY the one server should access the dongle via AnywhereUSB. Do NOT set up the system so the clients access the dongle via AnywhereUSB.  
+   The CodeMeter dongle is not designed to operate that way, and we have seen problems when used like this.
+- If you are using a Software-based dongle it will need to be installed on the license server.
+- Note, once the Software-based dongle has been installed on a device it cannot be transferred.
+
+#### Licence server setup
+
+- Install CodeMeter Runtime
+
+![](/img/licence-server-set-up.png)
+
+- Configure the CodeMeter as a network key, as follows:
+  - Open the 'CodeMeter Control' program and press the 'WebAdmin' button
+  - In the displayed webpage, browse to: Configuration -> Server
+  - Turn on the 'Network Server' and hit Apply
+
+#### Licence client setup
+
+- Install CodeMeter runtime (local admin privileges required).
+- In "About mXrap" set the server address in Licence Servers > Manual Set
+  - Alternatively, put a .txt file containing the server address in a location accessible to all users (such as within the root) and set the file as the one for checking common server settings. This allows for bulk updating of server addresses.
+
+### Data hosting
+
+There are no services for data. All data is stored in one folder on any network drive which is accessible to all mXrap users.
+
+## mXrap Clients
+
+### Software requirements
+
+All PCs running mXrap need the following:
+
+- - Windows 10/11 64-bit.
+    - Updated graphics drivers.
+    - CodeMeter runtime installed from [Downloads](https://downloads.mxrap.com).
+      - CodeMeter runtime requires local admin privileges to install.
+    - Access to the 'root folder', where the mXrap data is stored. This is usually either:
+      - On a local disk drive (for single-user sites).
+      - On a corporate network folder (for single and multi-user sites).
+      - On a shared folder on another engineer's computer (for multi-user sites).
+      - On a shared folder on the ESG server (where the ESG server cannot access the corporate network).
+    - Access to the data sources to enable data updating:
+      - IMS Seismic data:  
+         Read access to the IMS network drive, where .msrap*evp files are shared, IMS will set up a scheduled export to a \*\*\_read only*\*\* shared folder.
+      - ESG Seismic data:  
+         ESG data is exported directly to the 'root folder', so both the engineer and the ESG server will require access to the 'root folder' location.
+    - The latest version of mXrap from [Downloads](https://downloads.mxrap.com).
+      - By default, it will install 'per-user', i.e. into AppData, but you can instruct it to perform a per-machine installation.
+      - Since it is an MSI installation, a group policy push for installing can be done.
+      - Note: if you really want to install for All Users, then you can do it with the command line (requires Admin rights):  
+         `msiexec /i mXrap_install_file.msi ALLUSERS=1`
+    - The user should have read/write privileges to the PC. This is needed to save data from the software to the hard drive.
+
+### Hardware requirements
+
+mXrap is designed to be able to run on an average corporate laptop, but performance will scale with hardware.
+
+The minimum recommended requirements are:
+
+- 16GB RAM.
+- Graphics card that supports OpenGL 4.0 or higher, with updated graphics drivers.
+  - Discrete GPU or APU recommend as we have observed rendering and performance problems in the past on integrated Intel graphics.
+  - We have experienced problems with computers with 'switchable graphics', but this seems to be functioning correctly after updating graphics drivers.
+- x86-64 processor (i.e. Intel or AMD). We do not support ARM devices.
+
+## Support requirements
+
+We are asking (within reason) that IT allow us to connect to engineer's computers via Teams or Teamviewer for support purposes. Remote access is only needed 'on demand', which means we have no access unless the engineer explicitly gives us access. You can use the ['Quick Support' version](https://mxrap.com/downloads/Teamviewer/TeamViewerQS.exe), which only allows connections while it is running and the engineer is there. This software is not installed on the machine (get it [here](https://mxrap.com/downloads/Teamviewer/TeamViewerQS.exe)).
+
+Please note that **_RDP_ is not an alternative** as _the engineer is not able to see the screen._ It is therefore not useful for training and does not facilitate troubleshooting where the engineer's input is required.
+
+#### Post-installation setup
+
+Once the drivers and mXrap are done, we can assist further with remote access. These last post-installation configurations are limited to gathering and restructuring data, and a quick audit of the system.
+
+## Useful links

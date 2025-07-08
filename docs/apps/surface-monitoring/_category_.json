@@ -1,0 +1,13 @@
+{
+    "position": 11,
+    "label": "Surface Monitoring",
+    "collapsible": true,
+    "collapsed": true,
+    "link": {
+        "type": "generated-index",
+        "title": "Surface Monitoring"
+    },
+    "customProps": {
+        "description": "This description can be used in the swizzled DocCard"
+    }
+}

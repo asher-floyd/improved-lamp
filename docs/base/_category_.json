@@ -1,0 +1,13 @@
+{
+  "position": 4,
+  "label": "Base",
+  "collapsible": true,
+  "collapsed": true,
+  "link": {
+    "type": "doc",
+    "id": "base/index"
+  },
+  "customProps": {
+    "description": "Features commonly found in many mXrap apps"
+  }
+}

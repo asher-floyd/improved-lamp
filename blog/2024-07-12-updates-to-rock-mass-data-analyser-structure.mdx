@@ -1,0 +1,24 @@
+---
+title: "Updates to Rock Mass Data Analyser structure"
+date: 2024-07-12
+authors: "dan"
+slug: "/2024/updates-rmda"
+---
+
+There have been lots of recent changes to the Rock Mass Data Analyser. Some of these changes just add features, but as part of these changes we have had to re-organise how the data is structured in the app. This means that the individual databases for all of the data now come in as aliases in the root folder under `Settings/#Site Setup/RMDA/Inputs` folder (instead of places such as Rock Mass Characterisation/RMDA/Database/2 Rock Mass Quality).
+
+{/* truncate */}
+
+This means that if you have any custom apps that link to the RMDA data (or have made any site specific changes to the app), then your work may break. It's probably best to contact us if this is the case - we can help you to fix your work.
+
+There is also an additional column added to the back of the database (Imported Geotechnical Domain). This is unlikely to affect anything unless you had additional extra columns added to the back of your database.
+
+We will give more details on the new features in a later general post (as changes are still being made and new features added), but those completed so far include
+
+- An auto-report generated showing summary data and filters applied for lab test data
+- New lab test data charts
+- Improvements to filter notes in footers
+- Improvements to the way filters are applied (on/off switches, simplification)
+- General cleaning up of the app
+
+![](/img/RMDA_Report_Update.png)

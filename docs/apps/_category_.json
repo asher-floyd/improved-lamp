@@ -1,0 +1,13 @@
+{
+  "position": 18,
+  "label": "mXrap Apps",
+  "collapsible": true,
+  "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "title": "mXrap Apps"
+  },
+  "customProps": {
+    "description": "This description can be used in the swizzled DocCard"
+  }
+}

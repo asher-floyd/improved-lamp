@@ -1,0 +1,49 @@
+---
+title: "HW-FW filter"
+date: 2023-05-19
+tags:
+  - "filters"
+  - "general-analysis"
+  - "seismic"
+authors: "audrey"
+---
+
+For a few months now, a new tool has appeared in the General Analysis app; the hanging wall (HW) and footwall (FW) filter. The HW-FW filter allows you to filter your events based on where they are in relation to ticked survey/s. If more than one survey or plane is used for the HW-FW filter, they need to be somewhat parallel in order to make sense.
+
+Below is an example of the classification when one survey (**FIG 1**) and two surveys (**FIG 2**) are used. The events are categorised into four categories, which can be visualised one at a time or simultaneously:
+
+- **Hanging wall**: on the upper side of the survey.
+
+- **Footwall**: on the lower side of the survey.
+
+- **Ore**: inside the survey or between two selected planes.
+
+- **Unclassified:** unable to be classified for the given survey.
+
+![](/img/Classification_Events.png "Classification of events, using one survey")
+
+**FIG 1**: Classification of events, using one survey.
+
+![](/img/Classificaiton_2-survey.png)
+
+**FIG 2**: Classification of events, using two surveys.
+
+If mXrap does not use the terms _hanging wall_ and _footwall_ correctly, there is the option to 'flip' it. By default, the events are classified using a plane orientation that is automatically determined by averaging the orientation of the triangles in the input survey/s. It is also possible for you to specify the overall plane orientation (dip and dip direction) used in calculations, which may be useful if the automatically determined orientation does not match your expectations. The change of the overall plane orientation will affect the event's classification (**FIG 3**).
+
+![](/img/Changing-overall-plane.png)
+
+**FIG 3**: Effects of overridden overall plane on event's classification. The difference between the settings are illustrated through the unclassified events only.
+
+The events are _unclassified_ if they are outside the boundaries of the survey, or if there is a 'hole' in the survey. There is the possibility to classify the _unclassified_ events under _HW_, _FW_ and _ore_ by ticking 'using nearest vertex instead'. Examples of how the events are classified for the earlier example using the 'classify outer events by nearest vertex' way is shown (**FIG 4**).
+
+![](/img/Using-Nearest-Vertex.png)
+
+**FIG 4**: Classification of unclassified events by using the option 'classify outer events by nearest vertex'.
+
+The volumes created by the HW-FW filter can be saved. A volume will be created for each classification (HW, FW, ore, unclassified) with the defined name, which could be the name of the survey/s used for the classification. These volumes will automatically appear in the VSA table (**FIG 5**). If your surveys have dense mesh, consider using the 'simplify mesh' option as it will speed up the calculations process for the exported filter volumes.
+
+![](/img/Save-Volume.png)
+
+**FIG 5**: How to save the volumes of created HW-FW-ore-unclassified events from the HW-FW filter panel.
+
+For now, these filters are used for events. However, the same tool can be applied to other data. That classification tool can be used with multiple surveys simultaneously. It can further be applied to different data types, such as structures, rock mass classification or intact rock tests.

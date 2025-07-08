@@ -1,0 +1,43 @@
+---
+title: "Event tags and comments"
+date: 2018-02-28
+tags:
+  - "seismic"
+  - "filters"
+  - "events"
+authors: "stuart"
+---
+
+There are many reasons you might want to store a short snippet of text associated with an event. There are two ways to do this in mXrap; event tags and event comments.
+
+Event tags can be used to group events into categories. Example tags might be 'suspected blast', 'damage occurred', 'suspect location', 'outlier' or 'likely crusher noise'. These tags can be used in event filters to quickly show or hide particular categories.
+
+Event comments are a second option to assign user text to events. Each event comment can be unique and about anything. They have no effect on event filters.
+
+You can watch videos on ['Event tags'](https://www.mxrap.com/mxvideos/link/19) and ['Event comments'](https://www.mxrap.com/mxvideos/link/18)”. Both event tags and comments are shown in the main events table in General Analysis.
+
+## Modifying the Imported Tags Meaning
+
+Depending on your seismic monitoring system setup, you may be importing events with different tags into mXrap. The tag 'e' is typically used to denote real seismic events, while 'n' and 'b' are commonly used to indicate other recorded ground motions from noise sources and blasting.
+
+When you open mXrap, any events with imported tags 'b' and 'n' are turned off by default and all other imported tags (e.g. 'e') are turned on.
+
+If your database contains other imported tags, you can change the meaning (GOOD, OUTLIER, or BLAST) using: General Setup Windows > Event Tag Editor > Imported Tag Meaning.
+
+- _GOOD tags will be forced through the Quality Filter. Double check before manually setting any imported tag meanings to GOOD as these events will bypass all quality control checks._
+- _OUTLIER tags will not make it through the quality filter by default, and will need to be manually ticked on in the 'Imported Tags' panel._
+- _BLAST tags will not make it through the quality filter by default, but unlike OUTLIER tags they will be included in the 'Blasts From Tags' window found in the Short Term Response Analysis app._
+
+![](/img/Picture1.png)
+
+Edit the table and add a new row for each imported tag you want to be turned off by default. Change the meaning of the imported tag to 'OUTLIER' if you want to exclude these tags from the quality filter by default.
+
+![](/img/Picture2.png)
+
+If you need to check what imported tags exist in your database, open the 'Imported Tags' panel.
+
+This panel can also be used to temporarily pass/exclude events from the quality filter by ticking individual tags on/off, respectively.
+
+![](/img/Picture3.png)
+
+The next time you open mXrap, you can verify your changes by opening the events tag filter and seeing which imported tags are ticked on/off.

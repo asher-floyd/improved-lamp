@@ -1,0 +1,29 @@
+---
+title: "Updates to survey importing"
+date: 2018-05-31
+tags:
+  - "surveys"
+  - "updates"
+  - "videos"
+authors: "stuart"
+---
+
+If you have updated your software to 5.4.0 or higher, you may have noticed some changes to the Survey Import tool. The [Survey Setup training video](https://www.mxrap.com/mxvideos/link/2) has been updated. The main changes have been to support additional properties from DXF files.
+
+{/* truncate */}
+
+## DXF text
+
+Text objects from DXF files can now be imported into mXrap and displayed in the 3D view. mXrap version 5.5.2 supports TEXT, ATEXT and MTEXT objects. Be aware that there are limits on the maximum number of texts that can be displayed and MTEXT (multi-line) objects will be converted to one line.
+
+Below is an example of DXT text shown in the Monitoring application. In this case it can be handy for the control room operator to see where the exclusion areas are. You should start seeing more text series in 3D views, where you can adjust the size of the text and set to always face the 3D camera during rotation. This may include event magnitude labels, sensor IDs, etc.
+
+For basic site surveys, you may want to separate your text files from your regular surfaces and lines content so you can turn them on/off independently. Otherwise when you tick a file from the list, all surface, line and text will be displayed together. You can control whether each survey displays its surface, line or text content from the survey import tool.
+
+![](/img/Monitoring-text.png)
+
+## DXF colours
+
+The colours from DXF files can now be used in mXrap and this option will be enabled by default when you build the cache.
+
+BE AWARE that the DXF colours may not suit the mXrap 3D view. Most mining software packages have a dark background, so DXF colours are often light. These colours may not work so well on the white background in mXrap. This is especially true for lines. White floor strings are quite common and will be invisible in mXrap. There are some auto-correct functions built into the DXF colours for this reason. You also still have the option to override the colour displayed as before.

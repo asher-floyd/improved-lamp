@@ -1,0 +1,13 @@
+{
+  "position": 100,
+  "label": "IMS",
+  "collapsible": true,
+  "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "title": "IMS Seismic System Users"
+  },
+  "customProps": {
+    "description": "This description can be used in the swizzled DocCard"
+  }
+}

@@ -1,0 +1,13 @@
+{
+    "position": 5,
+    "label": "RMDA",
+    "collapsible": true,
+    "collapsed": true,
+    "link": {
+        "type": "generated-index",
+        "title": "Rock Mass Data Analyser"
+    },
+    "customProps": {
+        "description": "This description can be used in the swizzled DocCard"
+    }
+}

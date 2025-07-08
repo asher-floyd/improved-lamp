@@ -1,0 +1,43 @@
+---
+title: "Seismic Monitoring"
+tags: [seismic]
+draft: false
+authors: "stuart"
+date: 2019-06-14
+#commented frontmatter is optional
+#sidebar_label: "if different from title"
+#sidebar_position: 1
+#slug:/relativetobaseurl
+---
+
+import ReactPlayer from "react-player/vimeo";
+
+## Seismic activity rate monitor
+
+The seismic monitoring applications have been modified in the latest root update. There are now two seismic monitoring applications and a third app for setup. The two different monitoring apps are required because not all sites wanted to use exclusion procedures. The monitoring app with exclusions has a different user interface structure and a few extra features.
+
+A new window has been added to monitor activity rate so that both monitoring apps have windows to monitor events and to monitor activity rate. The activity rate monitor is the same in both apps. The Setup app is used to initialise and modify all of these monitoring windows. New training videos for seismic monitoring have been uploaded.
+
+[https://www.mxrap.com/mxvideos/link/23](https://www.mxrap.com/mxvideos/link/23)
+
+![](/img/Flowchart.png)
+
+Activity rate is monitored on a short-term and medium-term basis. Short and medium-term hotpots are listed in two tables based on pre-defined activity rate thresholds and users can switch between short and medium-term monitoring modes. Each hotspot can be highlighted and there are automatic controls for level plan and longsection views. An alert popup message is triggered when a new hotspot has been detected when there were no hotspots beforehand.
+
+![](/img/Hotspots2.png)
+
+The following steps are required to setup the activity rate monitor.
+
+**1. Define Grid.** Activity rate is assessed based on a grid. Specify the areas in your mine that you want to operate the activity monitor. Note that tighter grid spacings will slow down the calculations and reload speed.
+
+**2. Reference Rate.** The reference rate is the basis for the activity monitor thresholds. The reference rate may vary by location since the "normal" activity rate for a particular area will depend on the system sensitivity and rock mass response. Try and select at least a few months of events with consistent data quality and where there has been no major change in mining conditions. Use the time-of-day filter to remove the effects of blasting if desired (see diurnal chart). You can also add an extra factor to the reference activity rate or simply use a constant reference rate across all grid locations.
+
+**3. Monitoring Parameters.** You need to specify a radius around each grid point to measure the activity rate and define the time period that constitutes short-term and medium-term activity rate monitoring. You can also specify a minimum number of events to trigger an activity rate caution or alert. You probably don't want to trigger an alert whenever any event happens.
+
+**4. Activity Thresholds.** This is where to define what activity rates will trigger a caution or an alert. You can either specify activity thresholds based on a probability or based on a ratio. Ratio-based activity thresholds are a simple linear function of the reference rate. Probability thresholds are based on the work of Marsan (2003) on detecting seismicity rate changes between two time periods. The P-value refers to the probability that the ratio of the current activity rate to the reference activity rate is greater than the activity ratio (r). If the activity ratio is one, the P-value is simply the probability that the current rate is greater than the reference rate. The probability-based thresholds account for the different uncertainty introduced by using a very short time period (e.g. 30 mins) to assess the activity rate compared to a reference rate measured over a much longer period (e.g. 6 months). For further reading I recommend the Marsan and Wyss (2011) document linked below.
+
+Once you have reviewed all the parameters and thresholds, the settings must be saved before they will be applied to the activity rate monitoring window.
+
+Marsan, D 2003, 'Triggering of seismicity at short timescales following Californian earthquakes', J. Geophys. Res., 108(B5), 2266, doi:10.1029/2002JB001946. Available at: [https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1029/2002JB001946](http://dx.doi.org/10.1029/2002JB001946)
+
+Marsan, D & Wyss, M 2011, 'Seismicity rate changes', Community Online Resource for Statistical Seismicity Analysis, doi:10.5078/corssa-25837590. Available at: [http://www.corssa.org/export/sites/corssa/.galleries/articles-pdf/Marsan-Wyss-2011-CORSSA-Rate-changes.pdf](http://www.corssa.org/export/sites/corssa/.galleries/articles-pdf/Marsan-Wyss-2011-CORSSA-Rate-changes.pdf)

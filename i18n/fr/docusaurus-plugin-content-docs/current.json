@@ -1,0 +1,138 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.mainSidebar.category.Base": {
+    "message": "Base",
+    "description": "The label for category Base in sidebar mainSidebar"
+  },
+  "sidebar.mainSidebar.category.Base.link.generated-index.title": {
+    "message": "Base Features",
+    "description": "The generated-index page title for category Base in sidebar mainSidebar"
+  },
+  "sidebar.mainSidebar.category.Seismicity": {
+    "message": "Seismicity",
+    "description": "The label for category Seismicity in sidebar mainSidebar"
+  },
+  "sidebar.mainSidebar.category.Seismicity.link.generated-index.title": {
+    "message": "Mining Induced Seismicity",
+    "description": "The generated-index page title for category Seismicity in sidebar mainSidebar"
+  },
+  "sidebar.mainSidebar.category.title": {
+    "message": "title",
+    "description": "The label for category title in sidebar mainSidebar"
+  },
+  "sidebar.mainSidebar.category.Stope": {
+    "message": "Stope",
+    "description": "The label for category Stope in sidebar mainSidebar"
+  },
+  "sidebar.mainSidebar.category.Stope.link.generated-index.title": {
+    "message": "Stope Reconciliation",
+    "description": "The generated-index page title for category Stope in sidebar mainSidebar"
+  },
+  "sidebar.mainSidebar.category.RMDA": {
+    "message": "RMDA",
+    "description": "The label for category RMDA in sidebar mainSidebar"
+  },
+  "sidebar.mainSidebar.category.RMDA.link.generated-index.title": {
+    "message": "Rock Mass Data Analyser",
+    "description": "The generated-index page title for category RMDA in sidebar mainSidebar"
+  },
+  "sidebar.mainSidebar.category.Inspections": {
+    "message": "Inspections",
+    "description": "The label for category Inspections in sidebar mainSidebar"
+  },
+  "sidebar.mainSidebar.category.Inspections.link.generated-index.title": {
+    "message": "Inspections and Data Entry",
+    "description": "The generated-index page title for category Inspections in sidebar mainSidebar"
+  },
+  "sidebar.mainSidebar.category.Instrumentation": {
+    "message": "Instrumentation",
+    "description": "The label for category Instrumentation in sidebar mainSidebar"
+  },
+  "sidebar.mainSidebar.category.Caving": {
+    "message": "Caving",
+    "description": "The label for category Caving in sidebar mainSidebar"
+  },
+  "sidebar.mainSidebar.category.Caving.link.generated-index.title": {
+    "message": "Caving",
+    "description": "The generated-index page title for category Caving in sidebar mainSidebar"
+  },
+  "sidebar.mainSidebar.category.Numerical Modelling": {
+    "message": "Numerical Modelling",
+    "description": "The label for category Numerical Modelling in sidebar mainSidebar"
+  },
+  "sidebar.mainSidebar.category.Damage Mapping": {
+    "message": "Damage Mapping",
+    "description": "The label for category Damage Mapping in sidebar mainSidebar"
+  },
+  "sidebar.mainSidebar.category.Damage Mapping.link.generated-index.title": {
+    "message": "Damage Mapping",
+    "description": "The generated-index page title for category Damage Mapping in sidebar mainSidebar"
+  },
+  "sidebar.mainSidebar.category.Surface Monitoring": {
+    "message": "Surface Monitoring",
+    "description": "The label for category Surface Monitoring in sidebar mainSidebar"
+  },
+  "sidebar.mainSidebar.category.Surface Monitoring.link.generated-index.title": {
+    "message": "Surface Monitoring",
+    "description": "The generated-index page title for category Surface Monitoring in sidebar mainSidebar"
+  },
+  "sidebar.mainSidebar.category.Paste Backfill": {
+    "message": "Paste Backfill",
+    "description": "The label for category Paste Backfill in sidebar mainSidebar"
+  },
+  "sidebar.mainSidebar.category.Paste Backfill.link.generated-index.title": {
+    "message": "Paste Backfill",
+    "description": "The generated-index page title for category Paste Backfill in sidebar mainSidebar"
+  },
+  "sidebar.mainSidebar.category.Utilities": {
+    "message": "Utilities",
+    "description": "The label for category Utilities in sidebar mainSidebar"
+  },
+  "sidebar.mainSidebar.category.Utilities.link.generated-index.title": {
+    "message": "Utilities and companion apps",
+    "description": "The generated-index page title for category Utilities in sidebar mainSidebar"
+  },
+  "sidebar.mainSidebar.category.Setup": {
+    "message": "Setup",
+    "description": "The label for category Setup in sidebar mainSidebar"
+  },
+  "sidebar.mainSidebar.category.Setup.link.generated-index.title": {
+    "message": "Setting mXrap up",
+    "description": "The generated-index page title for category Setup in sidebar mainSidebar"
+  },
+  "sidebar.mainSidebar.category.mXsync": {
+    "message": "mXsync",
+    "description": "The label for category mXsync in sidebar mainSidebar"
+  },
+  "sidebar.mainSidebar.category.mXsync.link.generated-index.title": {
+    "message": "mXsync",
+    "description": "The generated-index page title for category mXsync in sidebar mainSidebar"
+  },
+  "sidebar.mainSidebar.category.Licences": {
+    "message": "Licences",
+    "description": "The label for category Licences in sidebar mainSidebar"
+  },
+  "sidebar.mainSidebar.category.Licences.link.generated-index.title": {
+    "message": "Licences",
+    "description": "The generated-index page title for category Licences in sidebar mainSidebar"
+  },
+  "sidebar.mainSidebar.category.Changelogs": {
+    "message": "Changelogs",
+    "description": "The label for category Changelogs in sidebar mainSidebar"
+  },
+  "sidebar.mainSidebar.category.Changelogs.link.generated-index.title": {
+    "message": "Changelogs",
+    "description": "The generated-index page title for category Changelogs in sidebar mainSidebar"
+  },
+  "sidebar.mainSidebar.category.dev": {
+    "message": "dev",
+    "description": "The label for category dev in sidebar mainSidebar"
+  },
+  "sidebar.mainSidebar.category.user": {
+    "message": "user",
+    "description": "The label for category user in sidebar mainSidebar"
+  }
+}

@@ -1,0 +1,85 @@
+---
+title: "Licence Deployment"
+date: 2024-10-16
+---
+
+## About CodeMeter
+
+mXrap licencing and software protection is handled using a technology called CodeMeter. There are 4 methods of deploying licences to client machines, as outlined below. Each deployment option varies in complexity, depending on factors such as the number of expected users, consistency of setups, and reliability of internet connection.
+
+[Learn more about Wibu CodeMeter.](https://www.wibu.com/products/secure-license-containers.html)
+
+![](/img/CodeMeter_types.webp)
+
+Click on the buttons in the diagram above to jump to a more detailed explanation of the deployment process for each licence type.
+
+## Quick client feature comparison
+
+This table outlines the benefits and drawbacks of each deployment method as it relates to **client** usage. [Network](#network) licence servers require a [Dongle](#dongle), [Internet](#internet), or [Software](#software) licence to broadcast to clients.
+
+|                                       | Dongle | Internet | Software | Network |
+| ------------------------------------- | ------ | -------- | -------- | ------- |
+| Offline use                           | X      |          |          |         |
+| Single deployment to multiple clients |        |          |          |         |
+| Outside site network use              |        |          |          |         |
+| Self-deployed                         |        |          |          |         |
+| Site server required                  |        |          |          |         |
+| Easy transfer between clients         |        |          |          |         |
+| Deploy to a VM                        |        |          |          |         |
+
+## Dongle
+
+Our classic licence deployment option. Available in USB-A and USB-C, these can be physically passed between users where desired. These work best for single licence sites or for network server deployments where physical server hardware is liable to change, such as cluster nodes.
+
+A physical dongle can also be plugged into a server to broadcast as Network licences.
+
+![](/img/CmStickB.webp)
+
+USB-A
+
+![](/img/CmStickD.webp)
+
+USB-C
+
+![](/img/CmStickME.webp)
+
+USB-A (Legacy)
+
+## Internet
+
+Internet licences are quick to deploy, with a user being able to do so themselves directly through mXrap if given an ID and OTP. The CodeMeter runtime needs to be installed but does not need to be interacted with.
+
+Unlike the other licence types, which validate and update licences using our mXrap servers, this makes use of Wibu's own CodeMeter Cloud service to verify validity. Reliable internet access is necessary for uninterrupted use of this licence type, so may not be suitable for certain mines.
+
+_The mXrap team have a level of control regarding the uptime of other licence deployment types, as they contact our servers, but we are unable to directly investigate or fix issues caused by Wibu's servers._
+
+## Software
+
+Software licences utilise what we refer to as a "soft dongle", which largely acts very similarly to the physical dongle option and are suitable for both client and server deployment. The only difference in practical terms (other than not being able to physically pass it around) is that the licence is best deployed to a stable hardware setup, as it binds to the host machine using a hardware fingerprint among other things. VM deployment is possible, but migrating the VM to different hardware or performing a rollback will require a fresh licence file from us.
+
+The advantages of this approach are:
+
+- Speed of deployment - no waiting for the mail to arrive
+- No USB port required - some server setups and heavily locked-down client machines don't have USB port access
+- Multiple users without setting up a licence server - we can generate as many licence files as needed, USB dongles are finite
+- Can't be lost or broken - Newton's third law has claimed a few of our legacy dongles over the years
+
+## Network
+
+A network licencing deployment requires a site IT-managed server to be running the lightweight CodeMeter runtime in Server mode. It obtains the licence(s) to be broadcast on the local subnet using a Dongle, Internet, or Software deployment itself. Reliable client VPN access will be required for any users who wish to work off-site.
+
+|                         | Dongle | Internet | Software     |
+| ----------------------- | ------ | -------- | ------------ |
+| Revoke idle user access |        |          |              |
+| Deploy to a VM          |        |          | With caveats |
+| Deploy to a cluster     |        |          |              |
+
+## The deployment process
+
+Once a deployment type has been decided on, get back in touch and we will make necessary preparations. We will send through the following:
+
+- A personalised checklist guiding you through the deployment process step-by-step.
+- Your licence, as chosen:
+  - Dongle - we will mail you a USB-A/USB-C CodeMeter dongle. This will be sent by StarTrack in Australia, DHL overseas.
+  - Internet - an email containing a licence ID and one-time-passcode.
+  - Software - as outlined in checklist.

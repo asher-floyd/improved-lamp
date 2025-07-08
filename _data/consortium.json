@@ -1,0 +1,554 @@
+[
+  {
+    "company": "Australian Centre for Geomechanics",
+    "logo": "/img/branding/ACG_square.jpg",
+    "usertype": "Research",
+    "url": "https://acg.uwa.edu.au/",
+    "name": "Perth",
+    "country": "Australia"
+  },
+  {
+    "company": "Curtin University",
+    "logo": "/img/logo/Curtin.png",
+    "usertype": "Research",
+    "url": "https://www.curtin.edu.au/",
+    "name": "Perth, Western Australia",
+    "country": "Australia"
+  },
+  {
+    "company": "Laurentian University",
+    "logo": "/img/logo/Laurentian.png",
+    "usertype": "Research",
+    "url": "https://laurentian.ca/",
+    "name": "Sudbury, Ontario",
+    "country": "Canada"
+  },
+  {
+    "company": "Université Laval",
+    "logo": "/img/logo/University-Laval.png",
+    "usertype": "Research",
+    "url": "https://www.ulaval.ca/",
+    "name": "Laval, Quebec",
+    "country": "Canada"
+  },
+  {
+    "company": "University of Leeds",
+    "logo": "/img/logo/University-of-Leeds.png",
+    "usertype": "Research",
+    "url": "http://www.leeds.ac.uk/",
+    "name": "Leeds, West Yorkshire",
+    "country": "United Kingdom"
+  },
+  {
+    "company": "Luleå University of Technology",
+    "logo": "/img/logo/Lulea-University.png",
+    "usertype": "Research",
+    "url": "http://www.ltu.se/?l=en",
+    "name": "Luleå",
+    "country": "Sweden"
+  },
+  {
+    "company": "Universidad Nacional de la Amazonía Peruana",
+    "logo": "/img/logo/Logo_UNAP.png",
+    "usertype": "Research",
+    "url": "https://enlinea.unapiquitos.edu.pe/",
+    "name": "Iquitos",
+    "country": "Peru"
+  },
+  {
+    "company": "Universidad de Santiago de Chile",
+    "logo": "/img/logo/Universidad-de-Santiago-de-Chile.png",
+    "usertype": "Research",
+    "url": "http://www.dim.usach.cl/",
+    "name": "Santiago",
+    "country": "Chile"
+  },
+  {
+    "company": "University of the Witwatersrand",
+    "logo": "/img/logo/University-of-the-Witwatersrand.png",
+    "usertype": "Research",
+    "url": "https://www.wits.ac.za/",
+    "name": "Johannesburg",
+    "country": "South Africa"
+  },
+  {
+    "company": "Queens University",
+    "logo": "/img/logo/queens-university-3-logo-png-transparent.png",
+    "usertype": "Research",
+    "url": "https://www.queensu.ca/",
+    "name": "Kingston, Ontario",
+    "country": "Canada"
+  },
+  {
+    "company": "McGill University",
+    "logo": "/img/logo/mcgillLogo.png",
+    "usertype": "Research",
+    "url": "https://www.mcgill.ca/",
+    "name": "Montreal",
+    "country": "Canada"
+  },
+  {
+    "company": "University of British Columbia",
+    "logo": "/img/logo/ubc-logo-2018-narrowsig-blue-rgb72.png",
+    "usertype": "Research",
+    "url": "https://www.ubc.ca/",
+    "name": "Vancouver, British Columbia",
+    "country": "Canada"
+  },
+  {
+    "company": "Dalhousie University",
+    "logo": "/img/logo/DAL_LogoVert_RGB_Gold_Wingtip.png",
+    "usertype": "Research",
+    "url": "https://www.dal.ca/",
+    "name": "Halifax, Nova Scotia",
+    "country": "Canada"
+  },
+  {
+    "company": "University of Pretoria",
+    "logo": "/img/logo/vertical-logo-bg.png",
+    "usertype": "Research",
+    "url": "https://www.up.ac.za/",
+    "name": "Pretoria",
+    "country": "South Africa"
+  },
+  {
+    "company": "NIOSH Spokane Mining Research Department",
+    "logo": "/img/logo/NIOSH.jpg",
+    "usertype": "Research",
+    "url": "https://www.cdc.gov/niosh/mining/index.html",
+    "name": "Spokane, Washington",
+    "country": ""
+  },
+  {
+    "company": "Universidad de Valparaíso",
+    "logo": "/img/logo/Logo_Universidad_de_Valparaiso_2023.svg",
+    "usertype": "Research",
+    "url": "https://uv.cl/",
+    "name": "Santiago",
+    "country": "Chile"
+  },
+  {
+    "company": "University of Queensland",
+    "logo": "/img/logo/U-Queensland.png",
+    "usertype": "Research",
+    "url": "https://www.uq.edu.au/",
+    "name": "Brisbane, Queensland",
+    "country": "Australia"
+  },
+  {
+    "company": "Virginia Tech",
+    "logo": "/img/logo/Vertical_VT_Full_Color_RGB.png",
+    "usertype": "Research",
+    "url": "https://www.vt.edu/",
+    "name": "Blacksburg, Virginia",
+    "country": "United States"
+  },
+  {
+    "company": "The University of Adelaide",
+    "logo": "/img/logo/University-of-Adelaide.png",
+    "usertype": "Research",
+    "url": "https://www.adelaide.edu.au/",
+    "name": "Adelaide, South Australia",
+    "country": "Australia"
+  },
+  {
+    "company": "AMC Consultants",
+    "logo": "/img/logo/AMC_Logo_Primary_CMYK-scaled.jpg",
+    "usertype": "Consulting",
+    "url": "https://www.amcconsultants.com/",
+    "name": "Perth",
+    "country": "Australia"
+  },
+  {
+    "company": "IGM Geotechnical",
+    "logo": "/img/logo/Logo-_no_grey_box_new_2-removebg-preview.png",
+    "usertype": "Consulting",
+    "url": "https://www.igmgeotechnical.com/",
+    "name": "Perth",
+    "country": "Australia"
+  },
+  {
+    "company": "Geotechnical Associates",
+    "logo": "/img/logo/Rowland-Technical-Services.png",
+    "usertype": "Consulting",
+    "url": "",
+    "name": "Perth",
+    "country": "Australia"
+  },
+  {
+    "company": "Mikula Geotechnics",
+    "logo": "/img/logo/228293_04ca957efb3646778633e09febef8516mv2.gif",
+    "usertype": "Consulting",
+    "url": "https://www.mikulageotechnics.com/",
+    "name": "Kalgoorlie",
+    "country": "Australia"
+  },
+  {
+    "company": "Open House Management Solutions",
+    "logo": "/img/logo/OHMS-logo-full300px.png",
+    "usertype": "Consulting",
+    "url": "https://www.ohms.co.za/",
+    "name": "Johannesburg",
+    "country": "South Africa"
+  },
+  {
+    "company": "SRK Consulting",
+    "logo": "/img/logo/srk-logo-only-RGB-pos-HR.jpg",
+    "usertype": "Consulting",
+    "url": "https://www.srk.com/",
+    "name": "Johannesburg (South Africa) and Vancouver (Canada)",
+    "country": ""
+  },
+  {
+    "company": "Operational Geotechs",
+    "logo": "/img/logo/OG_Ico_Type_Horizontal_GradientGrey.jpg",
+    "usertype": "Consulting",
+    "url": "https://www.operationalgeotechs.com.au/",
+    "name": "Perth",
+    "country": "Australia"
+  },
+  {
+    "company": "Mining One",
+    "logo": "/img/logo/Mining_One.png",
+    "usertype": "Consulting",
+    "url": "https://miningone.com.au/",
+    "name": "Vancouver",
+    "country": "Canada"
+  },
+  {
+    "company": "ASA Geotech",
+    "logo": "/img/logo/Logo_ASA.png",
+    "usertype": "Consulting",
+    "url": "https://asageotech.com/",
+    "name": "Montreal",
+    "country": "Canada"
+  },
+  {
+    "company": "Resolve Mining Solutions",
+    "logo": "/img/logo/Branding-_-Logo-Icon-Full-Colour-Contained.svg",
+    "usertype": "Consulting",
+    "url": "https://resolvemining.com.au/",
+    "name": "Perth",
+    "country": "Australia"
+  },
+  {
+    "company": "RockEng",
+    "logo": "/img/logo/eng-rock-logo-w-colour-FINAL-v3-res.webp",
+    "usertype": "Consulting",
+    "url": "https://rockeng.ca/",
+    "name": "Kingston",
+    "country": "Canada"
+  },
+  {
+    "company": "29Metals",
+    "logo": "/img/logo/29Metals_logo.jpg",
+    "usertype": "Consortium",
+    "url": "https://www.29metals.com/",
+    "name": "Golden Grove",
+    "country": "Australia"
+  },
+  {
+    "company": "Agnico Eagle",
+    "logo": "/img/logo/Agnico-Eagle.png",
+    "usertype": "Consortium",
+    "url": "https://www.agnicoeagle.com/",
+    "name": "Fosterville (Australia), Goldex, Kirkland Lake, LaRonde",
+    "country": "Canada"
+  },
+  {
+    "company": "Alamos Gold",
+    "logo": "/img/logo/Logo_Alamos.png",
+    "usertype": "Consortium",
+    "url": "https://www.alamosgold.com/",
+    "name": "Island Gold, Young Davidson",
+    "country": "Canada"
+  },
+  {
+    "company": "AngloGold Ashanti",
+    "logo": "/img/logo/AngloGoldAshanti.jpg",
+    "usertype": "Consortium",
+    "url": "https://www.anglogoldashanti.com/",
+    "name": "Sunrise Dam (Australia), Geita (Tanzania), Cuiaba-Lamego (Brazil)",
+    "country": ""
+  },
+  {
+    "company": "Barrick",
+    "logo": "/img/logo/Barrick.svg",
+    "usertype": "Consortium",
+    "url": "https://www.barrick.com/",
+    "name": "Hemlo (Canada), Bulyanhulu (Tanzania)",
+    "country": ""
+  },
+  {
+    "company": "Bellevue Gold",
+    "logo": "/img/logo/bellevue.png",
+    "usertype": "Consortium",
+    "url": "https://bellevuegold.com.au/",
+    "name": "Bellevue",
+    "country": "Australia"
+  },
+  {
+    "company": "Westgold",
+    "logo": "/img/logo/logo-1.png",
+    "usertype": "Consortium",
+    "url": "https://www.westgold.com.au/",
+    "name": "Big Bell",
+    "country": "Australia"
+  },
+  {
+    "company": "BHP",
+    "logo": "/img/logo/bhp_orn_rgb_pos.png",
+    "usertype": "Consortium",
+    "url": "https://www.bhp.com/",
+    "name": "Carrapateena, Olympic Dam, Prominent Hill",
+    "country": "Australia"
+  },
+  {
+    "company": "Bluestone Mines Tasmania",
+    "logo": "/img/logo/logo_cropped.png",
+    "usertype": "Consortium",
+    "url": "https://bluestonetin.com.au/",
+    "name": "Renison",
+    "country": "Australia"
+  },
+  {
+    "company": "Boliden",
+    "logo": "/img/logo/Boliden.svg_.png",
+    "usertype": "Consortium",
+    "url": "https://www.boliden.com/",
+    "name": "Garpenberg, Zinkgruvan",
+    "country": "Sweden"
+  },
+  {
+    "company": "Capstone Copper",
+    "logo": "/img/logo/CS.TO_BIG.png",
+    "usertype": "Consortium",
+    "url": "https://capstonecopper.com/",
+    "name": "Cozamin",
+    "country": "Mexico"
+  },
+  {
+    "company": "Centamin",
+    "logo": "/img/logo/1629131725-centamin_1.png",
+    "usertype": "Consortium",
+    "url": "http://www.centamin.com/",
+    "name": "Sukari",
+    "country": "Egypt"
+  },
+  {
+    "company": "Evolution Mining",
+    "logo": "/img/logo/Evolution.png",
+    "usertype": "Consortium",
+    "url": "https://evolutionmining.com.au/",
+    "name": "Red Lake (Canada), EKJV, Ernest Henry, Millennium, Northparkes",
+    "country": "Australia"
+  },
+  {
+    "company": "Genesis Minerals Mimited",
+    "logo": "/img/logo/Genesis-logo.png",
+    "usertype": "Consortium",
+    "url": "https://genesisminerals.com.au/",
+    "name": "Gwalia",
+    "country": "Australia"
+  },
+  {
+    "company": "Glencore Canada",
+    "logo": "/img/logo/Glencore.svg",
+    "usertype": "Consortium",
+    "url": "https://www.glencore.ca/",
+    "name": "Fraser, Kidd Creek, Onaping Depth, Raglan",
+    "country": "Canada"
+  },
+  {
+    "company": "Gold Fields",
+    "logo": "/img/logo/Gold-Fields.png",
+    "usertype": "Consortium",
+    "url": "https://www.goldfields.com/",
+    "name": "South Deep (South Africa), Granny Smith, Hamlet, Invincible, New Holland, Waroonga",
+    "country": "Australia"
+  },
+  {
+    "company": "Hecla",
+    "logo": "/img/logo/Hecla.png",
+    "usertype": "Consortium",
+    "url": "https://www.hecla.com/",
+    "name": "Lucky Friday",
+    "country": "United States"
+  },
+  {
+    "company": "IAMGOLD",
+    "logo": "/img/logo/IAMGOLD.png",
+    "usertype": "Consortium",
+    "url": "https://www.iamgold.com/",
+    "name": "Westwood",
+    "country": "Canada"
+  },
+  {
+    "company": "IGO",
+    "logo": "/img/logo/IGO.png",
+    "usertype": "Consortium",
+    "url": "https://www.igo.com.au/",
+    "name": "Nova, Spotted Quoll",
+    "country": "Australia"
+  },
+  {
+    "company": "LKAB",
+    "logo": "/img/logo/main-logo.png",
+    "usertype": "Consortium",
+    "url": "https://lkab.com/",
+    "name": "Kiruna, Malmberget",
+    "country": "Sweden"
+  },
+  {
+    "company": "Ma'aden Barrick Copper",
+    "logo": "/img/logo/Maaden.jpg",
+    "usertype": "Consortium",
+    "url": "https://www.maaden.com.sa/",
+    "name": "Jabal Sayid",
+    "country": "Saudi Arabia"
+  },
+  {
+    "company": "MMG",
+    "logo": "/img/logo/MMG.png",
+    "usertype": "Consortium",
+    "url": "https://www.mmg.com/",
+    "name": "Dugald River, Rosebery",
+    "country": "Australia"
+  },
+  {
+    "company": "Newmont",
+    "logo": "/img/logo/Newmont-Australia-Color-CMYK.png",
+    "usertype": "Consortium",
+    "url": "https://www.newmont.com/",
+    "name": "Cadia",
+    "country": "Australia"
+  },
+  {
+    "company": "Niobec",
+    "logo": "/img/logo/exp_logo_4640_en_2021_12_02_16_16_09.png",
+    "usertype": "Consortium",
+    "url": "https://www.magrispm.com/niobec",
+    "name": "Niobec",
+    "country": "Canada"
+  },
+  {
+    "company": "Northern Star",
+    "logo": "/img/logo/Northern-Star-Resources.png",
+    "usertype": "Consortium",
+    "url": "https://www.nsrltd.com/",
+    "name": "Carosue Dam, Kanowna Belle, Mt Charlotte, South Kalgoorlie, Superpit",
+    "country": "Australia"
+  },
+  {
+    "company": "Oyu Tolgoi",
+    "logo": "/img/logo/rtio-oyu-together.png",
+    "usertype": "Consortium",
+    "url": "https://www.ot.mn/",
+    "name": "Oyu Tolgoi",
+    "country": "Mongolia"
+  },
+  {
+    "company": "Perilya",
+    "logo": "/img/logo/Client-Logo-Web-Perilya.png",
+    "usertype": "Consortium",
+    "url": "http://www.perilya.com.au/",
+    "name": "Broken Hill",
+    "country": "Australia"
+  },
+  {
+    "company": "PT Freeport Indonesia",
+    "logo": "/img/logo/PTFreeport.png",
+    "usertype": "Consortium",
+    "url": "https://ptfi.co.id/",
+    "name": "Grasberg",
+    "country": "Indonesia"
+  },
+  {
+    "company": "Red5",
+    "logo": "/img/logo/Red-5-logo.jpg",
+    "usertype": "Consortium",
+    "url": "https://www.red5limited.com/",
+    "name": "Darlot, Deflector",
+    "country": "Australia"
+  },
+  {
+    "company": "Resolute",
+    "logo": "/img/logo/resolute.png",
+    "usertype": "Consortium",
+    "url": "https://www.rml.com.au/",
+    "name": "Syama",
+    "country": "Mali"
+  },
+  {
+    "company": "South32",
+    "logo": "/img/logo/South32.png",
+    "usertype": "Consortium",
+    "url": "https://www.south32.net/",
+    "name": "Cannington",
+    "country": "Australia"
+  },
+  {
+    "company": "Vale",
+    "logo": "/img/logo/Vale.png",
+    "usertype": "Consortium",
+    "url": "https://www.vale.com/canada/",
+    "name": "Coleman, Copper Cliff, Creighton, Garson Mine, Totten",
+    "country": "Canada"
+  },
+  {
+    "company": "Normet",
+    "logo": "/img/logo/Logo-Normet.png",
+    "usertype": "Consulting",
+    "url": "https://www.normet.com/en/",
+    "name": "Perth",
+    "country": "Australia"
+  },
+  {
+    "company": "Roxgold",
+    "logo": "/img/logo/logo-roxgold.jpg",
+    "usertype": "Consortium",
+    "url": "https://fortunamining.com/mine/yaramoko-mine-burkina-faso/",
+    "name": "Yaramoko",
+    "country": "Burkina Faso"
+  },
+  {
+    "company": "Raura",
+    "logo": "/img/logo/Logo_Raura.png",
+    "usertype": "Consortium",
+    "url": "https://raura.com.pe/",
+    "name": "Raura",
+    "country": "Peru"
+  },
+  {
+    "company": "Greatland Gold",
+    "logo": "/img/logo/Logo_Greatland.jpg",
+    "usertype": "Consortium",
+    "url": "https://greatlandgold.com/",
+    "name": "Telfer",
+    "country": "Australia"
+  },
+  {
+    "company": "ESG Solutions",
+    "logo": "/img/logo/Logo_ESG.png",
+    "usertype": "Consulting",
+    "url": "https://www.esgsolutions.com/",
+    "name": "Worldwide",
+    "country": ""
+  },
+  {
+    "company": "Minera Frisco",
+    "logo": "/img/logo/Logo_MineraFrisco.png",
+    "usertype": "Consortium",
+    "url": "https://www.minerafrisco.com.mx/",
+    "name": "Tayahua",
+    "country": "Mexico"
+  },
+  {
+    "company": "Kibali Gold Mine",
+    "logo": "/img/logo/Kibali.png",
+    "usertype": "Consortium",
+    "url": "https://www.barrick.com/English/operations/kibali/default.aspx",
+    "name": "Haut-Uélé",
+    "country": "Democratic Republic of the Congo"
+  }
+]

@@ -1,0 +1,21 @@
+---
+title: "What survey formats can be imported into mXrap?"
+date: 2018-05-31
+tags:
+  - "faqs"
+  - "surveys"
+---
+
+mXrap supports the following survey formats to be used in 3D views:
+
+- **DCF**, VDCL (Deswik)
+- DXF (AutoCAD .dxf)
+- DTM / STR (Surpac .dtm/.str)
+- PNT (.pnt)
+- INP (Map3D Geometry .inp files)
+
+{/* truncate */}
+
+Our preferred format if you are using Deswik is DCF. These files are more compact than DXF exports, and your attribute information can be imported and used in mXrap. The Deswik formats continue to evolve, so if you find that your surveys are not importing correctly or at all, please let us know.
+
+Regarding DXF files, this is a complicated format that AutoCAD often updates with new specifications. Our importer will always be behind the latest updates and therefore incompatible with loading in the very newest DXF formats. When exporting your survey files, you should have compatibility options for older formats. Look for ASCII DXF options R14 or 2000; these will work in mXrap. Otherwise it needs a bit of trial and error initially. Binary DXF files are not supported. The other option is to use the [ODA File Converter](https://mxrap.com/downloads/DataConverters/). It is free to download and use to convert DWG and DXF files into other formats.

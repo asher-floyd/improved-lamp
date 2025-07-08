@@ -1,0 +1,56 @@
+---
+title: "Marker Style Updates"
+date: 2023-02-22
+tags:
+  - "base"
+  - "updates"
+---
+
+The upgrade to mXrap version 5.16 introduced a variety of changes and improvements to marker styles. The changes can be separated into general updates which are relevant to all users and developer updates which are relevant to app developers who create and customise marker styles.
+
+{/* truncate */}
+
+## General Updates
+
+For general users the focus was on making it easier to quickly customise a series marker styles on the fly. In addition to this we have added support for displaying categorical legends.
+
+- Marker Style Overrides from series control panel
+  - Users can now quickly change the lightness and transparency of a series
+  - Users can now quickly change the colour and image of a single-point marker
+  - Users can now quickly change the colour of a survey series
+- Added support for categorical legends
+
+![](/img/Marker-Style-Updates-1.png)
+
+## Developer Updates
+
+For developers we have added a variety of new tools and features to make it faster and easier to make relevant marker styles with improved perceptual contrast.
+
+- Improved thresholds and ranges
+  - Threshold values for colour changes can now be specified as a percentage of the range between the minimum and maximum values, allowing colour schemes to be defined more generically
+  - Added ability to define diverging spectrums around a chosen mid-point
+  - Added support for using IDs as marker colour inputs
+  - Added ability to specify a start and end transparency for marker style ranges
+- Improved colour spaces and spectrums
+  - Added support for interpolation through a variety of new colour spaces including CIELAB and CIELCH
+  - New colour scheme presets with well designed colour ramps for specific kinds of data such as cyclic or diverging
+  - Added test image for evaluating how perceptible data variations are as well as simulating colour vision deficiencies
+
+For more information on colour schemes please refer to the following resources:
+
+- [**Peter Kovesi. Good Colour Maps: How to Design Them. arXiv:1509.03700 \[cs.GR\] 2015**](https://arxiv.org/abs/1509.03700)
+- [**Paul Tol's Notes**](https://personal.sron.nl/~pault/)
+
+**For more information of if you would like to upgrade to the latest version of mXrap please contact our support email address.**
+
+**ACG News:**
+
+Welcome to the Team!
+
+At the beginning of February Audrey Goulet joined the ACG as a research fellow while finishing her PhD degree in mining engineering at Université Laval (Quebec, Canada). Audrey is a part of the mXrap team and is going to be working on the application of probabilistic ground support design tools which is a subproject of the third phase of Ground Support Systems Optimisation (GSSO3). She will be focusing on improving automation of data input in the RMDA application and the DFN calibration processes.
+
+Course Reminder
+
+The Managing Seismic Risk in Underground Metalliferous Mines Course will be held 13-16 March 2023, in Perth, Western Australia and streamed online.
+
+View the course program, learn more about the event and register your attendance at [acg.uwa.edu.au/events](http://acg.uwa.edu.au/events).

@@ -1,0 +1,75 @@
+---
+title: "Accessing unauthenticated shared folders"
+date: 2023-01-13
+---
+
+# There are two main errors that you can see
+
+1. Unauthenticated Guest Access
+2. Invalid Protocol
+
+See the below sections for instructions on how to resolve these errors.
+
+## Error message: “Unauthenticated Guest Access”
+
+You may see an error such as, particularly when attempting to update IMS events in mXrap:
+
+Tooltip content
+
+Error checking Source file:  
+status: You can't access this shared folder because your organization's security policies block unauthenticated guest access. These policies help protect your PC from unsafe or malicious devices on the network…
+
+or perhaps a Windows pop-up error message with some obscure error numbers like 0x80004005 or 0x80070035.
+
+This is due to a change in Windows 10 and onwards' default security settings, and there are two ways of resolving the issue:
+
+1. The IMS (Linux) server can be reconfigured to work with these new restrictions (requires IMS to assist, or a local IT admin with Linux experience).
+2. The security settings of the Windows client can be reduced.
+
+#### Procedure to Adjust Linux Server Settings
+
+1. You can ask IMS to make this adjustment, or, ONLY do this if you are an experienced Linux admin.
+2. Use SSH to log into your site IMS server.
+3. Edit /etc/samba/smb.conf,  
+   ie `sudo vim /etc/samba/smb.conf`  
+   and in the \[global\] section:
+   1. Add “client min protocol = SMB2”
+   2. Ensure this line does not exist, or is commented out with the #  
+      \# map to guest = bad user
+
+4. Restart the samba service, ie:  
+   sudo systemctl restart smbd
+5. Back on the Windows client, use Windows Explorer (NOT Internet Explorer) to go to:  
+   \\ip.address
+6. It should pop up a Username/Password dialog box. Enter:  
+   Username: ims (remember to add the slash before ims)  
+   Password: whatever-is-your-IMS-password
+7. You should now be able to see the files on the server.  
+   If not, then you may need to talk to IMS about upgrading the “samba software” on the Linux server so that it supports SMBv2.
+
+It can be frustrating to diagnose authentication issues because Windows caches the credentials and will keep reusing the last user/pass that “worked”, ie the unauthenticated-guest-access login.  
+To clear the client credentials on the client, open the command line  
+CMD  
+and type:  
+net use \\ip.address /delete
+
+#### Reduce the Windows Client Security Settings
+
+There are a couple of problems with adjusting the IMS server configuration (as per the above section). It requires Linux expertise, and it requires all the users to enter the special password.
+
+Instead, you can reduce the security of the Windows client computers, at least temporarily, until the server can be adjusted.
+
+For more information about this setting and how to change it, see the following blog post and the referenced Microsoft Support article:  
+[https://tech.nicolonsky.ch/windows-10-1709-cannot-access-smb2-share-guest-access/](https://tech.nicolonsky.ch/windows-10-1709-cannot-access-smb2-share-guest-access/)  
+[https://support.microsoft.com/en-au/help/4046019/guest-access-in-smb2-disabled-by-default-in-windows-10-and-windows-ser](https://support.microsoft.com/en-au/help/4046019/guest-access-in-smb2-disabled-by-default-in-windows-10-and-windows-ser)
+
+If you do not have administrator privileges on your local computer then you may need your IT department to make this change for you.
+
+## Error message: “Invalid protocol”
+
+![](/img/You-cant-connect-to-the-file-share-because-its-not-secure-Snap1.png)
+
+This would be related to SMBv1 - its no longer installed by default with the new Windows.  
+IT can either enable SMBv1, or follow the procedure for adjusting the server in the previous section - the “client min protocol = SMB2” is the key parameter for this particular error.
+
+[https://docs.microsoft.com/en-us/windows-server/storage/file-server/troubleshoot/smbv1-not-installed-by-default-in-windows](https://docs.microsoft.com/en-us/windows-server/storage/file-server/troubleshoot/smbv1-not-installed-by-default-in-windows)

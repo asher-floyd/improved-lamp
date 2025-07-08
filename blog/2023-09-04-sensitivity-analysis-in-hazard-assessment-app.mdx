@@ -1,0 +1,85 @@
+---
+title: "Sensitivity Analysis in Hazard Assessment app"
+date: 2023-09-04
+tags:
+  - "base"
+  - "hazard-assessment"
+authors: "audrey"
+---
+
+A new window has been added to the Hazard Assessment app (Figure 1)**.** The sensitivity analysis aims to quantify the effect of the variation of the input parameters on the hazard. These analyses can also help the user to determine the optimal settings to use for many of the parameters. This window allows the user to vary only one parameter at the time.
+
+{/* truncate */}
+
+![](/img/Fig1-better.jpg)
+
+**Figure 1** \- **Overview of the Sensitivity Analysis Window in the Hazard Assessment app**
+
+The **steps** to realize such a sensitivity analysis are quite simple (Figure 2).
+
+![](/img/Fig2.png)
+
+**Figure 2 - Steps to perform a sensitivity analysis**
+
+All the input parameters that can be studied are:
+
+- **_Grid Spacing_**: Spacing of each grid point defining the grid points in the studied volume (preconfigured grid or override grid extent).
+
+- **_R max_**: Maximum search distance (radius) to obtain events for assessing the b-value at a grid point.
+
+- **_Limit Search N_**: Search for _this_ many of the nearest events around each grid point. The most important measure to evaluate this parameter is the stability of the b-value fit.
+
+- **_Min N above Mmin_**: At least _this_ many events have to be above the local grid Mmin. Choosing a value is a balance between having more stability in the b-value fits and having more grid points using the mine-wide b-value instead of a local one.
+
+- **_M_UL_**: Often referred to as MMAX in earthquake seismology, the $M_{UL}$ is a conservative, but realistic estimate of the upper limit of the next largest event the mine could possibly experience. It does not represent the hazard; it is simply a limit that needs to be imposed on the hazard calculation.
+
+- **_Time Period for Event Rate Calcs_**: When selecting a time period for event rate calculations, the aim is to find a time period long enough to get a stable result, but short enough to be more representative of the 'current' hazard state.
+
+- **_Time Period for b-value Calcs_**: The time period used for b-value calculations must be kept long, because a shorter period will mean some areas will not have a hazard. The most important result to consider when evaluating time period for b-value calculations is getting a stable b-value fit, which is quantified by the KS-fit of the Frequency-Magnitude relation.
+
+Examples presented are from the Unicorn Gold root and expressed a sensitivity analysis for the grid spacing.
+
+## Annualised probability
+
+The following hazard calculations all refer to the annualized hazard and apply to the entire volume of the chosen grid:
+
+- **P\[ML > ML Design\]:** Annualized hazard for the entire volume of the chosen grid (grid points for the chosen volume) to exceed the design magnitude.
+
+- **P \[ML within R\]**: Annualized probability of exceeding the design magnitude within the design distance (R) of the minode location.
+
+- **P \[PPV > PPVDESIGN\]:** Annualized probability of exceeding the design PPV, anywhere within the volume associated with the minode (the tunnel section).
+
+The overall variation for the three main hazard assessment are shown in Figure 3.
+
+![](/img/Fig3.png)
+
+**Figure 3 - Evolution per step of the hazard, expressed as the annualised probability**
+
+## Grid-based Hazard (Hazard Iso's window)
+
+The _Iso View_ describes the hazard at all locations within the mine but when you are considering the seismic risk for a particular work area, large events and strong ground motions may come from multiple sources.  
+Details on hazard Iso's can be found in the blog post: [https://mxrap.com/2018/12/01/what-do-the-hazard-isos-mean/](https://mxrap.com/2018/12/01/what-do-the-hazard-isos-mean/)
+
+For the grid-based hazard, the distribution of parameters listed in Table 1 can be investigated. The distribution refers to the value for each grid point composing the volume studied, for which the grid extent and spacing are set.
+
+| **Hazard Parameters**                             | **Other Parameters**                             |
+| ------------------------------------------------- | ------------------------------------------------ |
+| **_ML Rating_**: **_Seismic Rate_** **_b-value_** | **_Mmin_** **_KS Frequency-Magnitude relation_** |
+
+**Table 1 - Parameters for which the impact of parameter input variation are studied**
+
+The ML Rating is the design magnitude that would have a probability of exceedance of 15%. The ML Rating Isossurface can be visualised in the 3D view for each ML Rating Level ticked for each step (Figure 4).
+
+![](/img/Fig4.png)
+
+**Figure 4 - ML Rating Iso's for different Step of the sensitivity window, for the ML Rating Level = -1**
+
+## Hazard on excavations
+
+The _Excavation View_ estimates the seismic hazard associated with working areas ([minode locations](https://mxrap.com/what-are-minodes/)) in a few different ways. More details can be found on blog post : [https://mxrap.com/2019/01/12/hazard-assessment-app-excavation-view/](https://mxrap.com/2019/01/12/hazard-assessment-app-excavation-view/)
+
+The effect of the input parameters variations can be visualised on the hazard on excavation, expressed by the P \[ML within R\] and P \[PPV > PPVDESIGN\]. The distribution of both parameters for each minode can be seen for each step (Figure 5).
+
+![](/img/Fig5.png)
+
+**Figure 5 - Distribution of each parameter related to hazard on excavations per step**

@@ -1,0 +1,22 @@
+---
+title: "Omori Analysis Tools"
+tags: [seismic, theory]
+draft: false
+authors: "stuart"
+#commented frontmatter is optional
+#sidebar_label: "if different from title"
+#sidebar_position: 1
+#slug:/relativetobaseurl
+---
+
+import ReactPlayer from "react-player/vimeo";
+
+## Where is the cumulative energy line on the Omori chart?
+
+In early versions of MS-RAP, the Omori chart included the cumulative energy as a function of time after blasting. You won't find that line anymore in the default Omori Analysis Tools app.
+
+Although the total energy released has a value, the shape of the cumulative energy graph inherently has no meaning. The accumulation of a logarithmic parameter is dominated by the largest events and results in a curve with a somewhat arbitrary, random shape. The total energy released is included in the blast table in the Omori Analysis Tools app but the cumulative energy line has no diagnostic value (in fact, it could be misleading) and does not represent the underlying stochastic process.
+
+To illustrate further, the video below shows a repeated generation of synthetic seismic data where each sample has the same number of events, the same b-value, and the same Omori relationship.
+
+<ReactPlayer controls src="https://vimeo.com/974722967/d4d9e83bac" />

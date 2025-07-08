@@ -1,0 +1,40 @@
+---
+title: "Stochastic declustering explained"
+date: 2020-03-13
+tags:
+  - "base"
+  - "general-analysis"
+  - "hazard-assessment"
+  - "theory"
+authors: "stuart"
+---
+
+As mentioned in the [last blog post](https://mxrap.com/new-background-filters/), a stochastic declustering algorithm has been implemented in mXrap to separate events into 'clustered' and 'background' components. It can be useful when designing seismic exclusions and re-entry procedures to separate seismicity that occurs in short bursts from seismicity that has low variability in space and time. Short-term exclusions cannot be used to manage the risk associated with background seismicity, since the hazard inside a potential exclusion would be the same as outside the exclusion. Efficient exclusion and re-entry procedures target areas where seismicity is most clustered and where the seismic hazard to which people are exposed can be reduced with a short disruption to production.
+
+{/* truncate */}
+
+The filter controls for stochastic declustering in General Analysis are in '_Event Filters / Background Activity_' and a new chart has been added to show the cumulative events of the two components in _'Charts / Time Series / Declustered CNE'_. An example of the cumulative declustered events chart is shown below for a week's worth of events at the Unicorn Gold mine. In this case approximately 32 % of events have been classified as 'background'.
+
+![](/img/Declustered-CNE.png)
+
+The declustering is based on the distribution of inter-event times (time between successive events). The distribution (PDF) of inter-event times has been shown to follow the gamma distribution ([Corral 2004](http://dx.doi.org/10.1103/PhysRevLett.92.108501)). The chart below shows how the events in the example above (black crosses) closely follow the gamma distribution (red line). [Hainzl et al. (2006)](https://doi.org/10.1785/0120050053) showed how to estimate the rate of background events from the gamma distribution, based on the mean (µ) and standard deviation ($σ$).
+
+Background Proportion = $µ2 / σ2$
+
+Background seismicity is generally assumed to be stationary and Poissonian. In other words, the average time between events is constant and known, but the exact timing between events is random. Each event is assumed to be independent and not affect the occurrence of other events. The inter-event time of a Poisson process follows the exponential distribution (green line).
+
+The event distribution clearly deviates from the background distribution for small inter-event times. This deviation is caused by the clustered component of seismicity. The distribution of small inter-event times corresponds to the inverse distribution (yellow line), which is explained by sequences that follow the Modified Omori Law (MOL). In this case the slope of the distribution corresponds to the MOL with decay parameter, $p ≈ 0.8$.
+
+The declustering method was described by [van Stiphout et al. (2012)](http://www.corssa.org/export/sites/corssa/.galleries/articles-pdf/vanStiphout_et_al.pdf). The probability that an event is part of the background (purple line) is calculated based on the inter-event time and the ratio between the background and gamma PDF's. Events with small inter-event times are more likely to be clustered events. Events with large inter-event times are more likely to be background events.
+
+![](/img/IET-Distribution.png)
+
+It is important to note the random component in the declustering process. Each specific event may be classed as either 'clustered' or 'background' each time you run the declustering, although the overall proportions will remain the same (hence the 'stochastic' in stochastic declustering). There is also no consideration given to the spatial clustering of events, all events are assessed together in the time domain. There is also no consideration given to the magnitude of events.
+
+The rate of background events is assumed to be constant although in reality the background rate will slowly vary over time, related to changes in system sensitivity, general rates of extraction and different mining locations. To account for long-term fluctuations in background rate, events are broken down into groups, and the background proportion is computed separately for each group. Groups of events are kept as small as possible, with a minimum number of events and minimum time period (user defined). The background rate is constant within each group.
+
+Aside from General Analysis, the stochastic declustering process has been added to the Hazard Assessment, Short-term Response Analysis, and Seismic Monitoring apps. The background filters in the hazard app can be used to compare the seismic hazard of clustered and background seismicity (as per below). Background rates are also calculated for triggers in the short-term responses app and for the reference rate in the activity rate monitoring window.
+
+![](/img/Declustered-Hazard.png)
+
+For those wishing to read more about the declustering process, the CORSSA article by [van Stiphout et al. (2012)](http://www.corssa.org/export/sites/corssa/.galleries/articles-pdf/vanStiphout_et_al.pdf) is a good summary of many different approaches used in earthquake seismology, including the method described here.

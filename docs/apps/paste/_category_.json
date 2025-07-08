@@ -1,0 +1,13 @@
+{
+    "position": 12,
+    "label": "Paste Backfill",
+    "collapsible": true,
+    "collapsed": true,
+    "link": {
+        "type": "generated-index",
+        "title": "Paste Backfill"
+    },
+    "customProps": {
+        "description": "This description can be used in the swizzled DocCard"
+    }
+}

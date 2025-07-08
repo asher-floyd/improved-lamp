@@ -1,0 +1,29 @@
+---
+title: "Event Magnitudes"
+date: 2018-02-21
+tags: [events, faqs, seismic, ims, esg, theory]
+authors: "stuart"
+sidebar_label: "Event Magnitudes"
+---
+
+## Why are the event magnitudes different in mXrap?
+
+People often notice that the local magnitude of an event in mXrap is different from the magnitude shown in their other seismic software. This is usually because the local magnitude equations do not match.
+
+Local magnitude is a calculated (derived) parameter. Normally its either based on seismic energy, moment/potency, or a combination of both. You should be able to find the relevant details for your site local magnitude in your seismic waveform processing software (e.g. WaveVis, Trace), otherwise contact your seismic service provider.
+
+In mXrap, local magnitude can be imported along with the other event details from your seismic service provider although this does have low precision which can effect some of the charts and calculations. The reason for the 'stepping' sometimes seen in the frequency-magnitude chart is due to an imported local magnitude of only 1dp precision.
+
+![](/img/ML-settings-FM.png)
+
+The limited precision is why we usually recalculate the local magnitude from the source parameters according to the following equation.
+
+ML = CE x log10(Energy) + CM x log10(Moment) + C
+
+CE, CM and C are the input parameters required. The most common local magnitude scales are below.
+
+CE = 0, CM = 2/3, C = -6 (moment magnitude, Hanks Kanamori [^1]) CE = 0.272, CM = 0.392, C = -4.63 (IMS scale)
+
+ESG have a few other local magnitude options depending on whether they use uniaxial and/or triaxial sensors. These settings are in the ESG Events Import app. The other settings for local magnitude are in the General Setup app under the Magnitude tab. The ['Local magnitude settings' video](https://www.mxrap.com/mxvideos/link/11) runs through how to change these settings in mXrap.
+
+[^1]: [A moment magnitude scale](https://doi.org/10.1029/JB084iB05p02348)

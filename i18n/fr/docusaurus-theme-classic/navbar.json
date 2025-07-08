@@ -1,0 +1,98 @@
+{
+  "logo.alt": {
+    "message": "mXrap Logo",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.Docs": {
+    "message": "Docs",
+    "description": "Navbar item with label Docs"
+  },
+  "item.label.Apps": {
+    "message": "Apps",
+    "description": "Navbar item with label Apps"
+  },
+  "item.label.Blog": {
+    "message": "Blog",
+    "description": "Navbar item with label Blog"
+  },
+  "item.label.Support": {
+    "message": "Support",
+    "description": "Navbar item with label Support"
+  },
+  "item.label.About": {
+    "message": "About",
+    "description": "Navbar item with label About"
+  },
+  "item.label.Downloads": {
+    "message": "Downloads",
+    "description": "Navbar item with label Downloads"
+  },
+  "item.label.Training": {
+    "message": "Training",
+    "description": "Navbar item with label Training"
+  },
+  "item.label.Contact": {
+    "message": "Contact",
+    "description": "Navbar item with label Contact"
+  },
+  "item.label.Mining Induced Seismicity": {
+    "message": "Mining Induced Seismicity",
+    "description": "Navbar item with label Mining Induced Seismicity"
+  },
+  "item.label.Stope Reconciliation and Prediction": {
+    "message": "Stope Reconciliation and Prediction",
+    "description": "Navbar item with label Stope Reconciliation and Prediction"
+  },
+  "item.label.Rock Mass Data Analyser": {
+    "message": "Rock Mass Data Analyser",
+    "description": "Navbar item with label Rock Mass Data Analyser"
+  },
+  "item.label.Inspections and Data Entry": {
+    "message": "Inspections and Data Entry",
+    "description": "Navbar item with label Inspections and Data Entry"
+  },
+  "item.label.Instrumentation": {
+    "message": "Instrumentation",
+    "description": "Navbar item with label Instrumentation"
+  },
+  "item.label.Caving": {
+    "message": "Caving",
+    "description": "Navbar item with label Caving"
+  },
+  "item.label.Numerical Modelling Integration": {
+    "message": "Numerical Modelling Integration",
+    "description": "Navbar item with label Numerical Modelling Integration"
+  },
+  "item.label.Damage Mapping": {
+    "message": "Damage Mapping",
+    "description": "Navbar item with label Damage Mapping"
+  },
+  "item.label.Surface Monitoring": {
+    "message": "Surface Monitoring",
+    "description": "Navbar item with label Surface Monitoring"
+  },
+  "item.label.Paste Backfill": {
+    "message": "Paste Backfill",
+    "description": "Navbar item with label Paste Backfill"
+  },
+  "item.label.Utilities": {
+    "message": "Utilities",
+    "description": "Navbar item with label Utilities"
+  },
+  "item.label.ACG": {
+    "message": "ACG",
+    "description": "Navbar item with label ACG"
+  },
+  "item.label.Consortium": {
+    "message": "Consortium",
+    "description": "Navbar item with label Consortium"
+  },
+  "item.label.Papers": {
+    "message": "Papers",
+    "description": "Navbar item with label Papers"
+  },
+  "item.label.Team": {
+    "message": "Team",
+    "description": "Navbar item with label Team"
+  }
+}

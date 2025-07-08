@@ -1,0 +1,128 @@
+---
+title: "mXrap 6.1.2 - Release notes and Changelogs"
+date: 2025-03-13
+authors: "ash"
+slug: "/2025-03-612-changelog"
+---
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+This version brings several new features to mXrap 6, as well as a host of bugfixes and performance improvements.
+
+You will be prompted to upgrade by a yellow banner at the top of the Apps window. Follow the link to download and install.
+
+{/* truncate */}
+
+:::note
+The first time you run mXrap following this update it may take a minute to list the root folders, and it will need to read the root folder files from the disk again.
+:::
+
+<Tabs>
+
+<TabItem value="users" label="Users">
+
+## mXrap 6.1.2 - What's new for Users
+
+Release Date: 13 March 2025
+
+### Webforms Server
+
+The server requires an upgrade before the end of March in order to continue working properly, due to an expiring SSL certificate.
+
+- Automatically update SSL certificates - no need to rush the installation next year!
+- Tweaks to GUI to allow more servers to fit in the window.
+- Update to JRE (Java Runtime Environment) - resolves some CVEs in the Java engine.
+- Improve log file handling - don't keep a lock on the log file.
+
+### Survey File Improvements
+
+- Improve loading surveys with ellipses, it was generating too many segments and could take a long time to load simple surveys.
+- Added "Clear Cache" button, and "Clear Missing Files from Cache" button.  
+  Note that missing files should automatically be purged from the cache when "Rebuild Selected" is clicked.
+- Caching: Files are now "chunked", and can store larger survey cache files. NOTE this upgrade will require the root to be re-cached, which could take some time over VPN.
+- Improve the import report to list which files were removed from the cache, and which were imported.
+
+### User Interface Improvements
+
+- 3d View: The Quick Reference Guide (the ? at the top of a 3d view) has been extended to describe how to use the Slicing feature.
+- Variables: Panel variable editors now show "Invalid integer" and other such warnings when the input is invalid (instead of just changing the background to light red).
+- Bundles: User will now see an error if they try to Save a tool that is Bundled and not marked as "Overridable" - ie Save will not be executed.
+
+### Root Folder Maintenance
+
+- Caching: Improve the error message when root-cache file is stored on a network drive (it should be stored in the default location - the user's local disk).
+- Caching: Warn if the root-cache file is stored in the root folder (it should be stored in a private 'cache' area, not in a root folder.
+- mXsync: will automatically clear the old archive.autobackup files (they were not used).
+
+### Other Bugfixes
+
+- ImportCSV and writing CSV files from a Tableview: Correctly translate accented characters from UTF-8 to Windows-1252 (there were a few exceptional cases that were incorrect).
+- Bug fix: Don't crash when root configuration files are changed while mXrap is running (eg due to a root upgrade). It would previously say "mXrap must now close" and crash, now it will show a warning and tell the user to press "Reload Configuration".
+- Apps Window: Improved handling of root folders mapped to drives directly, eg Z:
+
+</TabItem>
+
+<TabItem value="developers" label="Developers">
+
+## mXrap 6.1.2 - What's new for Developers
+
+Release Date: 13 March 2025
+
+### (Human Language) Translations
+
+- If the user has unsaved translations, show a warning when user clicks Cog "Reload Translations" option.
+- Reload new translations the first time when mXrap starts, rather than caching and waiting for the next start-up. Further translation updates will not be loaded until the next time mXrap starts, to avoid changes during an mXrap session.
+- Improved the "Rescan root for texts" button, it now checks for changes on disk, and will auto-reload the lists when a tool is saved or loaded.
+- Fixed the "Sources" list when showing items from the "Entire Local Root" option.
+
+### App Developer Experience
+
+- Tablemap: Hide settings that are not required, to simplify the configuration GUI.
+- Action: Improve configuration GUI to make the order of actions more clear, and simplify the "Export Tool" settings by hiding the parts that are not needed.
+
+- Action: Show a warning message in ErrorConsole if an Action was running, and then cancelled due to a configuration change.  
+  This is to help App Developers. Actions can silently run in the background when connected to an Alias or App. The AppDeveloper may not realise that the background Action silent stopped running after the Developer changed the Action's configuration.
+
+- Advanced: Added command line controls to adjust compression method and strength of cache files.
+
+### 3D Views
+
+- 3d View: Extend clipping blob feature to support slicing planes.
+- Internal update to 3D Views: storage for surfaces and lines.
+- 3d View: Bugfix, use the clamped size for markers.
+
+### Actions
+
+- Action: If it cannot set a Value as requested, the Action will now Fail and the execution chain will stop. Before, it would continue executing, leading to possible confusion and incorrect results.
+
+### HTML View (and HTML in Panels)
+
+- HtmlView: Large change to URL handling, going forward from 6.2.x, URLs will need to be percent-encoded in order to work reliably.  
+  See "Help and Tips" button in the HtmlView configuration screen.  
+  Note that you SHOULD NOT use "mxUrl.encode()" yet, if you need to support 6.1.1 and older.  
+  For now, 6.1.x will continue to automatically TRY to fold the URL's #fragment into the path.
+
+- HtmlView: Now supports Markdown in addition to HTML.  
+  Where can we get a neat guide for syntax? It uses the github dialect:  
+  [https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax](https://www.google.com/url?q=https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax&sa=D&source=editors&ust=1741881078206801&usg=AOvVaw1XwliMTIKlO5FSDgSnnzeu)
+
+### HTML in Panels
+
+- Panels: Adjustments to URL handling for the Text display. See notes in HtmlView section.
+
+### HTML in Other Places
+
+- Panels, Headers and Footers can now load HTML resources (eg images) that are stored in bundles.
+
+### Javascript (Tablecalcs, Rowcalcs)
+
+- Tablecalc / Rowcalc: Developers can now check mXrap's version number with \_\_mxrap_version.compact, and .build_date and .is_beta
+
+### Other Bugfixes
+
+- Tablemap: Correctly clear the "Order-By" input when "Clear Unused" is clicked.
+- Chart: Fixed bug when showing a single-point.
+
+</TabItem>
+</Tabs>

@@ -1,0 +1,207 @@
+---
+title: "Long Paths and Root Mapping"
+date: 2025-04-07
+tags: [faqs]
+---
+
+There is an old restriction from the 1990s in the Microsoft Windows OS that limits the maximum file path to 260 characters. This limit is too low in modern work environments, and users can easily reach this limit.
+
+Example of a root folder that can hit the limit:  
+`M:17\_Underground Mining173\_Geotech111\_Data5.4\_GeotechnicalSeismicitymXraproot\_minesite`
+
+The start of the path uses 90 out of the 260 limit, leaving only 170 characters for folders and files inside the data folder.
+
+Please note that this issue is not mXrap specific so you may experience other programs having issues with this too - including with Microsoft File Explorer.
+
+If you want to read more about long file paths, you can do so here:  
+[https://learn.microsoft.com/en-us/windows/win32/fileio/maximum-file-path-limitation](https://learn.microsoft.com/en-us/windows/win32/fileio/maximum-file-path-limitation)
+
+## How do I know if I'm affected
+
+You will not be able to open, rename or delete files with MS File Explorer.
+
+mXrap and mXsync will have trouble reading and writing files, resulting in:
+
+- mXsync continuously rescanning the same files
+- mXrap is blocked and the System Health Menu mentions “Long Paths”, “Can't scan file” or “Error while reading file”
+- mXrap error console or popup appears and mentions “Long Paths”, “Can't scan file” or “Error while reading file”
+
+  ![Long Path Alert](/img/Long-Path-Alert.png)
+
+How do I enable long paths:
+
+You can enable long paths by updating the window registry on your device. This will require **administrator permissions** so please contact your IT department as required.
+
+You can find two ways to update this registry below:
+
+## Via Windows Registry Editor
+
+![Open Registry Editor](/img/Open_Registry_Editor.png)
+
+1. Navigate to the Start Menu or Search bar on the bottom left and type “Registry Editor”
+
+2. Click on the “Registry Editor” program
+
+   ![Update_LongPath_Registry](/img/Update_LongPath_Registry.png)
+
+3. Navigate to “ComputerHKEY_LOCAL_MACHINESYSTEMCurrentControlSetControlFileSystem”
+
+4. Check if “LongPathEnabled” is set to “(1)”. If not, double click the Name (ie. “LongPathEnabled”)
+
+5. Edit the Value data to be “1” and click “OK”
+
+6. Restart mXrap and check if you are still having issues
+
+## Via Powershell
+
+![Open_PowerShell](/img/Open_PowerShell.png)
+
+1. Navigate to the Start Menu or Search bar on the bottom left and type “PowerShell”
+
+2. Right-click on the “Windows PowerShell” Program and “Run as Administrator”
+
+   ![Update_LongPath_Via_PowerShell](/img/Long_Path_In_PowerShell.png)
+
+3. Copy and paste the following text in PowerShell and hit enter on the keyboard:  
+   \_\*\*New-ItemProperty -Path “HKLM:SYSTEMCurrentControlSetControlFileSystem” -Name “LongPathsEnabled” -Value 1 -PropertyType DWORD -Force
+
+   \*\*\_
+
+4. Restart mXrap and check if you are still having issues.  
+   NOTE that you do not have to reboot your computer, as each program checks the flag when it starts.  
+   A reboot may be required to make MS File Explorer work properly, depending on your settings.
+
+I am waiting for IT to enable long paths, how do I access my root in the meantime:
+
+If you have requested IT to enable long paths, it is best to wait for them.  
+If you urgently need to look at your root, you can map the folder containing your root folder to a drive. You can do so by following the instructions below:
+
+1. Navigate to the Start Menu and search for and open “Command Prompt”
+
+   ![Open_Command_Prompt](/img/Open_Command_Prompt.png)
+
+2. In Command Prompt, copy and paste the following text:  
+   _**net use x: “root_folder_parent” /PERSISTENT:YES**_  
+   Notes:
+   - Please substitute the text “_**root_folder_parent**_” to be the path to the folder containing your root folder like the example below.
+   - The “_**root_folder_parent**_” must be a folder on a network drive.
+     - If you have an issue with the root on local disk, we would recommend moving the root so it will have a shorter path.
+   - Please ensure the X: drive is currently unused on the computer before proceeding, otherwise you can use another letter that is currently unused.
+
+     ![Map_Drive](/img/Map_Drive_Command_Prompt-New.png)
+
+3. Hit “Enter”
+
+After mapping the drive, we will need to update mXrap to use that path instead of the original full path:
+
+1. Open mXrap
+
+2. If you have opened the root folder in mXrap before;
+   1. Select the root folder
+
+      ![Select_Root_mXrap](/img/Select_Root_mXrap-New.png)
+
+   2. Select “Switch”>”Forget this Root”
+
+      ![Forget_Selected_Root_mXrap](/img/Forget_Selected_Root_mXrap-New.png)
+
+3. Select “Switch”>”Add a Root”  
+   **Make sure to select your root via the new mapped drive (X:)  
+   **Don't use the old path as it will trigger the problems with Long Paths
+
+   ![Add_Root_mXrap](/img/Add_Root_mXrap-New-1.png)
+
+4. Repeat if you have multiple roots
+
+You will not be able to open, rename or delete files with MS File Explorer.
+
+mXrap and mXsync will have trouble reading and writing files, resulting in:
+
+- mXsync continuously rescanning the same files
+- mXrap is blocked and the System Health Menu mentions “Long Paths”, “Can't scan file” or “Error while reading file”
+- mXrap error console or popup appears and mentions “Long Paths”, “Can't scan file” or “Error while reading file”
+
+  ![Long Path Alert](/img/Long-Path-Alert.png)
+
+You can enable long paths by updating the window registry on your device. This will require **administrator permissions** so please contact your IT department as required.
+
+You can find two ways to update this registry below:
+
+## Update via Windows Registry Editor
+
+![Open Registry Editor](/img/Open_Registry_Editor.png)
+
+1. Navigate to the Start Menu or Search bar on the bottom left and type "Registry Editor"
+
+2. Click on the "Registry Editor" program
+
+   ![Update_LongPath_Registry](/img/Update_LongPath_Registry.png)
+
+3. Navigate to "ComputerHKEY_LOCAL_MACHINESYSTEMCurrentControlSetControlFileSystem"
+
+4. Check if "LongPathEnabled" is set to "(1)". If not, double click the Name (ie. "LongPathEnabled")
+
+5. Edit the Value data to be "1" and click "OK"
+
+6. Restart mXrap and check if you are still having issues
+
+## Update via Powershell
+
+![Open_PowerShell](/img/Open_PowerShell.png)
+
+1. Navigate to the Start Menu or Search bar on the bottom left and type "PowerShell"
+
+2. Right-click on the "Windows PowerShell" Program and "Run as Administrator"
+
+   ![Update_LongPath_Via_PowerShell](/img/Long_Path_In_PowerShell.png)
+
+3. Copy and paste the following text in PowerShell and hit enter on the keyboard:  
+   \_\*\*New-ItemProperty -Path "HKLM:SYSTEMCurrentControlSetControlFileSystem" -Name "LongPathsEnabled" -Value 1 -PropertyType DWORD -Force
+
+   \*\*\_
+
+4. Restart mXrap and check if you are still having issues.  
+   NOTE that you do not have to reboot your computer, as each program checks the flag when it starts.  
+   A reboot may be required to make MS File Explorer work properly, depending on your settings.
+
+If you have requested IT to enable long paths, it is best to wait for them.  
+If you urgently need to look at your root, you can map the folder containing your root folder to a drive. You can do so by following the instructions below:
+
+1. Navigate to the Start Menu and search for and open "Command Prompt"
+
+   ![Open_Command_Prompt](/img/Open_Command_Prompt.png)
+
+2. In Command Prompt, copy and paste the following text:  
+   _**net use x: "root_folder_parent" /PERSISTENT:YES**_  
+   Notes:
+   - Please substitute the text "_**root_folder_parent**_" to be the path to the folder containing your root folder like the example below.
+   - The "_**root_folder_parent**_" must be a folder on a network drive.
+     - If you have an issue with the root on local disk, we would recommend moving the root so it will have a shorter path.
+   - Please ensure the X: drive is currently unused on the computer before proceeding, otherwise you can use another letter that is currently unused.
+
+     ![Map_Drive](/img/Map_Drive_Command_Prompt-New.png)
+
+3. Hit "Enter"
+
+After mapping the drive, we will need to update mXrap to use that path instead of the original full path:
+
+1. Open mXrap
+
+2. If you have opened the root folder in mXrap before;
+   1. Select the root folder
+
+      ![Select_Root_mXrap](/img/Select_Root_mXrap-New.png)
+
+   2. Select "Switch">"Forget this Root"
+
+      ![Forget_Selected_Root_mXrap](/img/Forget_Selected_Root_mXrap-New.png)
+
+3. Select "Switch">"Add a Root"  
+   **Make sure to select your root via the new mapped drive (X:)  
+   **Don't use the old path as it will trigger the problems with Long Paths
+
+   ![Add_Root_mXrap](/img/Add_Root_mXrap-New-1.png)
+
+4. Repeat if you have multiple roots
+
+If you have enabled long paths and are still having issues with mXrap, please contact us at Support.

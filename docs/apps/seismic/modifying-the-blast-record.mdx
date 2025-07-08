@@ -1,0 +1,32 @@
+---
+title: "Modifying The Blast Record"
+tags: [seismic]
+date: 2024-02-05
+authors: "laura"
+---
+
+When trying to add, delete or change blasts in mXrap, best practice is to use the 'Blasts Editor' found under the 'General Set-Up Windows' tab
+
+![](/img/Blasts-Editor.png)
+
+If you need to make bulk changes however, it may be tempting to directly alter the input file in the root folder.
+
+## Problem
+
+When you open the 'Blasts.csv' in MS Excel, it automatically changes the date format and mXrap is no longer able to read the blast information
+
+![](/img/date-change.png)
+
+### Solution
+
+Prior to saving the new file, format the Date column to match the input required for your root: **yyyy-mm-dd hh:mm:ss.0**
+
+_This is the typical input format, but you may have to modify slightly in order to match the format for your specific root._
+
+This can be done by selecting the Date column, right clicking, and opening 'Format Cells'. Choose the 'Custom' category, and manually enter the input format for your root
+
+![](/img/reformat.png)
+
+To see your changes, save the file and 'Reload Data' in mXrap.
+
+![](/img/reload-data.png)

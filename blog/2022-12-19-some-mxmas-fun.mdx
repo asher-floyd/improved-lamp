@@ -1,0 +1,69 @@
+---
+title: "Some mXmas fun"
+date: 2022-12-19
+tags:
+  - "videos"
+authors: "stuart"
+---
+
+import ReactPlayer from "react-player/vimeo";
+
+With the holidays approaching we thought we would send everyone some mXmas presents! And obviously what everyone wants for mXmas are mXrap videos ?. These videos are not geotech related but come from various games, generative art, or physics simulations that we have made for fun.
+
+{/* truncate */}
+
+The mXrap team wishes everyone well for the holidays and a happy new year. Please be aware that the mXrap offices will be closed between December 23 and January 9. We will still be able to provide limited support during this period but there may be some longer than normal delays.
+
+Now, onto the videos…
+
+## Rock Paper Scissors
+
+This is a Rock - Paper - Scissors simulation where players randomly walk through the space and do battle when they come within a certain distance of one another. The losing player becomes a new member of the winners' team. There are several ups and downs with the numbers in each team over time. There are some interesting dynamics since as one team gets low in number, it affects the encounter probability to the other teams. But anyway, place your bet and play the video to see if you've won!
+
+<ReactPlayer controls src="https://vimeo.com/video/782714400" />
+
+As a fun bonus, here is another version with a more geotech flavour. Welcome to Ground Support - Rock Fall - Bogger. In this version, Ground Support stops Rock Fall, Rock Fall buries Bogger, and of course the pesky Bogger destroys Ground Support. Place your bets and don't let your geotech feelings bias you ?.
+
+<ReactPlayer controls src="https://vimeo.com/video/782714705" />
+
+## 3D Cellular Automata
+
+<ReactPlayer controls src="https://vimeo.com/video/782713264" />
+
+Cellular Automata are processes that can generative highly complex patterns from simple cell-based rules. In a 3D grid, cells are born and survive based on the status of their neighbouring cells. Different cell rules can have very different results, generating rapid expansion, slow decay, or steady-state behaviours. Cellular Automata can be used to simulate various real-world biological processes.
+
+This next video has some Sierpinski triangle vibes. It uses cell rules based only on neighbours that share a face (up to 6). The rules for the first video were based on all neighbours in the surrounding 3x3 box (up to 26).
+
+<ReactPlayer controls src="https://vimeo.com/video/782713458" />
+
+## Chladni Patterns
+
+<ReactPlayer controls src="https://vimeo.com/video/782713523" />
+
+Chladni Patterns are formed by sand or metal filings on a plate vibrating at various frequencies. A 2D standing wave pattern is formed and the particles settle in areas where the vibration is cancelled out. This video simulates several Chladni patterns increasing in vibration frequency. Particles randomly move a distance relative to the amplitude of the vibration at that location. If a particle falls off the plate it is replaced at a random location.
+
+## Diffusion-Limited Aggregation
+
+<ReactPlayer controls url="vimeo.com/video/782713862" />
+
+Diffusion-limited aggregation can be used to model various fractal growth processes. There are several real-world examples such as crystal growth, lightning paths, coalescing dust and snowflakes, plant branching, and even mineral deposits. New particles are added to the space and randomly walk until they come within a certain distance and stick to the existing structure. Different patterns can be made based on the starting structure and where new particles are added in the space. In the video above, a circular ring is added as the starting structure and new particles are added at a random place in the circle (although not too close to the existing points).
+
+The same process can be extended to 3D space. The video below starts with points at the bottom of the cube and new particles are added from the top. The pattern formed is a lot like the growth of a forest. As some structures grow higher they start to block other structures below (like blocking sunlight) and grow even faster.
+
+<ReactPlayer controls url="vimeo.com/video/782714008" />
+
+## Slime Mould Simulation
+
+<ReactPlayer controls url="vimeo.com/video/782714219" />
+
+Slime mould (_Physarum polycephalum_) is widely studied as it has no brain and yet can grow and make decisions to find food and even solve mazes. The growth behaviour can be simulated with an agent and trail system. Agents (particles) deposit chemicals as they move across the trail. An agent may continue straight or rotate left or right depending on the concentrations of chemicals it senses ahead. The chemical concentration on the trail diffuses and decays over time. Different transport networks develop over time as the agents paths interact.
+
+Ant colonies can be modelled in a similar way. Ants don't have the memory to know where home or food sources are, but they follow different pheromones left by other ants. Ant colony simulation will be a nice future project ?.
+
+## Epicycles
+
+<ReactPlayer controls src="https://vimeo.com/video/782712202" />
+
+Epicycles are radially connected circles that rotate at different frequencies. The radius and frequency of each circle comes from a Fourier transform of the input line. Any continuous line can be represented with epicycles, even an mXmas message…
+
+<ReactPlayer controls src="https://vimeo.com/video/782713070" />

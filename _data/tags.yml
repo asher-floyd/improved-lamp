@@ -1,0 +1,103 @@
+---
+backfill:
+  label: Backfill
+  permalink: /backfill
+base:
+  label: Base
+  permalink: /base
+caving:
+  label: Caving
+  permalink: /caving
+charts:
+  label: Charts
+  permalink: /charts
+damage-mapping:
+  label: Damage Mapping
+  permalink: /damage-mapping
+deployment:
+  label: Deployment
+  permalink: /deployment
+developers:
+  label: Developers
+  permalink: /developers
+esg:
+  label: ESG Seismic Systems
+  permalink: /esg
+events:
+  label: Events
+  permalink: /events
+faqs:
+  label: Frequently Asked Questions
+  permalink: /faqs
+filters:
+  label: Filters
+  permalink: /filters
+frequency-magnitude:
+  label: Frequency Magnitude
+  permalink: /frequency-magnitude
+general-analysis:
+  label: General-analysis
+  permalink: /general-analysis
+hazard-assessment:
+  label: Hazard Assessment
+  permalink: /hazard-assessment
+ims:
+  label: IMS Seismic Systems
+  permalink: /ims
+inspections:
+  label: Inspections
+  permalink: /inspections
+instrumentation:
+  label: Instrumentation
+  permalink: /instrumentation
+licence:
+  label: Licences
+  permalink: /licence
+mxsync:
+  label: mXsync
+  permalink: /mxsync
+numerical-modelling:
+  label: Numerical Modelling
+  permalink: /numerical-modelling
+paste:
+  label: Paste
+  permalink: /paste
+rmda:
+  label: Rock Mass Data Analyser
+  permalink: /rmda
+root:
+  label: Root
+  permalink: /root
+seismic:
+  label: Seismicity
+  permalink: /seismic
+stope:
+  label: Stope Reconciliation
+  permalink: /stope
+support:
+  label: Support
+  permalink: /support
+surface-monitoring:
+  label: Surface Monitoring
+  permalink: /surface-monitoring
+surveys:
+  label: Surveys
+  permalink: /surveys
+theory:
+  label: Theory
+  permalink: /theory
+training:
+  label: Training
+  permalink: /training
+updates:
+  label: Updates
+  permalink: /updates
+utilities:
+  label: Utilities
+  permalink: /utilities
+videos:
+  label: Training Videos
+  permalink: /videos
+changelogs:
+  label: Changelogs
+  permalink: /changelogs

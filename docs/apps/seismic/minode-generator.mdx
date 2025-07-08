@@ -1,0 +1,79 @@
+---
+title: "Mine Geometry Model - Minode Generator"
+tags: [seismic, stope, hazard-assessment, theory]
+#commented frontmatter is optional
+sidebar_label: "Minode Generator"
+#sidebar_position: 1
+#slug:/relativetobaseurl
+authors: "laura"
+---
+
+import ReactPlayer from "react-player/vimeo";
+
+Mine Geometry Model Minode Generator is a new utility app which enables you to generate your own new minodes from a mine geometry model. If you're not sure what minodes are or why you would want to generate them, see [What are minodes?](/blog/2025/01/20/what-are-minodes/) If you're not sure what mine geometry models are, see [Mine Geometry Models Application](https://mxrap.com/2019/06/08/new-mine-geometry-models-application/).
+
+The minode generator app operates on the geometry blocks of a single mine geometry model. Because the mine geometry model represents changing geometry over time, a geometry block might start as development at one point in time and then change to another type (e.g. stope) at a later date. The minode generator considers all blocks that are development at any point in time.
+
+![](/img/development.png)
+
+The app then thins the development blocks to create lines through the centre of the development. At each point in the line it also calculates the effective minode span (the width) and height. Finally it creates minodes along the lines, aiming to balance coverage of the geometry with the total number of minodes.
+
+![](/img/skeletor-blocks-thinned-and-relaxed-2.png)
+
+When you are happy with the generated minodes you can choose to either completely replace your existing minodes, or merge the newly generated minodes with the existing minodes (e.g. if your newly generated minodes do not cover all of your development).
+
+The newly generated minodes can be tagged with the Mine Geometry Model steps from their source geometry blocks. Just as the step information is used to show live surveys in _General Analysis_ (i.e. geometry present within the current time filters), it can be used to show live minodes in _Hazard Assessment_. That is, the assessment will only consider and display those minodes representing geometry which is development within the assessment time period: either the development step's date is within the time period, or it is before the start of the time period and is still effective (it has not been replaced by, e.g. a stope step, in the intervening time). To enable this option in _Hazard Assessment_, in the _Hazard on Excavations_ window, go to the _PPV Controls_ panel, tick _Show advanced controls_, and then tick _Filter Minodes By Assessment Time_. The below video shows an example of changing minodes over time.
+
+The minode generator also supports generating minodes for vertical development. This will happen automatically if there is vertical development in the mine geometry model. If you want to exclude vertical development in the _Hazard Assessment_ app, in the _Hazard on Excavations_ window, go to the _PPV Controls_ panel, tick _Show advanced controls_, and then untick _Include Minodes In Vertical Development_.
+
+<ReactPlayer controls src="https://vimeo.com/973814275/a8a8d224ec" />
+
+## What are minodes?
+
+Minodes are what we use in multiple places in mXrap if we want to assign information to development. They are just point locations, dotted along your development at regular intervals. Things like ground support and PPV hazard are really only relevant for development locations, so minodes are our way of denoting these places. Minodes are also used to calculate the span of the excavation at that point. The tunnel length is also used in the Hazard Assessment app.
+
+Using the 'Minode Generator' App mXrap users can create minodes using their Mine Geometry Model or survey files. Minodes are not generated automatically and should be updated periodically to reflect new development.
+
+If you're planning on using your Mine Geometry Model to update your minodes, this is a good oportunity to update your model using the 'Mine Geometry Models' app.
+
+![](/img/MGM-app.jpg)
+
+## Minode Update Procedure
+
+![](/img/Minode-Generator-select-MGM.jpg)
+
+Open the 'Minode Generator' app and choose the input you want to use to generate your minodes.
+
+First we will look at the procedure using the Mine Geometry Model or MGM (as shown left), and subsequently we will look at the procedure using Surveys.
+
+Select the Mine Geometry model you want to use, it does not have to be the currently cached model.
+
+Use the 3D Model Viewer to preview the model and 'Continue To Minode Generation'.
+
+![](/img/MGM-input.png)
+
+In the 'Minode Generation' tab use the generation parameters and other panels to generate appropriate minodes. When you are happy with the output, 'Continue to Merge Windows'.
+
+![](/img/Minode-Generation.jpg) ![](/img/merge-window.jpg)
+
+In the merge window, exsisting minodes are shown in white and newly generated minodes are shown in green. Verify the options in the 'Merge Controls' panel suit your needs before hitting the button to 'Save Merged Minodes'.
+
+Once the action is complete, your minodes have been updated and you can hit the reload data button in any open windows to see and use the new minodes.
+
+When using surveys instead of the mine geometry model to generate minodes, the desired surveys must be loaded in using the 'Survey Setup' tab or 'Load Surveys' tab found under 'Setup Inputs' as shown below.
+
+_To load the surveys, select the desired folder or file and hit 'Rebuild Cache for Selected', followed by 'Save'._
+
+![](/img/survey-select-zoom.jpg) ![](/img/Survey-Setup.jpg) ![](/img/using-surveys.jpg)
+
+In the 'Block Surveys' tab under setup inputs, select the surveys you want to use to generate minodes.
+
+Use the Model Viewer to preview the selected surveys and use the controls panel to 'Continue To Minode Generation'.
+
+Use the Minode Generation tools in the same way they were used with the mine geometry model input to generate appropriate minodes.
+
+When you're happy with the minodes, continue to the merge window as previously shown.
+
+![](/img/Minode-Generation-from-survey.jpg)
+
+For a demonstration of how to update minodes check out the [training video](https://www.mxrap.com/mxvideos/link/77).

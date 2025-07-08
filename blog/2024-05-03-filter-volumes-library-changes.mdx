@@ -1,0 +1,36 @@
+---
+title: "Filter volumes library changes"
+date: 2024-05-03
+tags:
+  - "base"
+  - "developers"
+  - "updates"
+authors: "matt"
+---
+
+We have recently updated the JavaScript library `mxjs/base/algorithms/filter_volumeset.js` to be more efficient. If you are using this library and call the `flag_members()` method of volume sets directly, then you will need to update your code slightly. If you don't call `flag_members()` directly then you'll automatically get the efficiency updates when you upgrade without needing to do anything, and you can stop reading now :)
+
+{/* truncate */}
+
+Previously code would create a finder object from the `mxjs/base/algorithms/find_neighbours_3d.js` library like so:
+
+```js
+const VolumeSets = require.mx("mxjs/base/algorithms/filter_volumeset.js");
+const Finder = require.mx("mxjs/base/algorithms/find_neighbours_3d.js");
+const finder = new Finder(Blasts.size(), Blasts.read_Location);
+```
+
+And then pass it to the `flag_members()` method:
+
+```js
+volume_set.flag_members(flags, is_ticked, Blasts.read_Location, finder, null);
+```
+
+With the updated library you should remove `find_neighbours_3d.js` and instead create a finder object like so:
+
+```js
+const VolumeSets = require.mx("mxjs/base/algorithms/filter_volumeset.js");
+const finder = VolumeSets.create_finder(Blasts.read_Location, 0, Blasts.size());
+```
+
+And then pass this finder object to `flag_members()` in the same way as above. For the moment the old style is deprecated but will continue to work, so your code will not break, but in the future we will remove support for the old style.

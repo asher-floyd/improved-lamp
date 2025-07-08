@@ -1,0 +1,77 @@
+---
+title: "Developer Updates - January 2025"
+date: 2025-02-10
+authors: "matt"
+slug: "/2025-01-dev-updates"
+---
+
+Recent updates which may be of interest to developers
+
+{/* truncate */}
+
+## Caving is now bundled
+
+The Caving suite is now bundled. If you have custom tools that connect to tools in Caving, please check for any broken links or redirections required. If you need assistance with this or if the tools that you were using are no longer accessible, please contact us
+
+## Survey surfaces has moved to !/Base
+
+The survey surfaces utilities, used when painting on surveys, have been moved from ! to !/Base so that they can be used in apps that do not require the seismic suite. If you have custom apps that are linked to the survey surfaces tools, please check them and redirect any broken links to the new location.
+
+## Library for mapping data from lines to points
+
+A new JavaScript library was added to simplify the task of mapping data from a collection of line segments to the points that are within a certain distance of those line segments. For example, this can be used to colour surveys based on borehole data by mapping from line segments along the borehole onto the vertices of survey surfaces. You can find this library at mxjs/base/algorithms/map_lines_to_points.js
+
+## Supporting extended clipping options in 3D views
+
+mXrap 6.1 has extended the 3D clipping feature to support more general clipping volumes. Previously clipping volumes were restricted to axis-aligned bounding boxes, specified using a minimum and maximum XYZ. The more general clipping volumes support shapes that can be created using the 3D view's selection box system, as shown below.
+
+![](/img/selection-box-clipping.png)
+
+To support these more general shapes, a new column needs to be linked in the clipping volumes setup of your 3D views, as shown below.
+
+![](/img/3D-view-clipping-filter-volume-link.png)
+
+Note that after saving these updated 3D views, they will only be usable with mXrap 6.1 or higher. To help you identify 3D views which need to be updated, when you have a settings window open, any 3D views that are missing the link will show a red error message at the top of their window.
+
+## Chart interaction
+
+mXrap 6.1 brought several improvements to charts, including support for user interaction with charts.
+
+You can now control whether a chart series is able to be displayed as points, lines, or both. Previously a user would always be able to turn on the points or lines options, even if the series was not intended to display that way. In the image below, you can see these options at the top of the Data panel, 'Enable plotting as points' and 'Enable plotting as lines'. All series in existing charts will default to having both of these options enabled.
+
+For lines-only series, there is also a special option which creates lines that fill either the horizontal or vertical range of the chart window. In these cases you only need to specify one coordinate, e.g. the image below shows the creation of a magnitude threshold line which crosses the chart horizontally, and is specified by a magnitude number on the left axis only.
+
+The ability to specify a single value rather than a column is also a new feature. If both the X and Y are specified as single values, or if one is a single value and the other is not specified (as with the magnitude threshold below), then no input table is needed at all. This simplifies many cases where developers previously had to create new tables in order to plot single values, indicator lines, thresholds, etc. In order to change between single values and columns, simply click on the type button for that axis (e.g. Date for X and Number for Y in the below image) and choose either the column or single value types.
+
+![](/img/chart-interction-magnitude-threshold-data-tab.png)
+
+Lines series now have the option to start and/or end each line at a particular point. This is particularly useful for histograms, for example in the below image all lines in the series will start from Y=0. Because the starting X value is unspecified, the lines will start from the X value of the first point in the line. This ensures that all lines in the histogram correctly start from the bottom of the axis, without requiring us to create a new table with extra points at the zero coordinate.
+
+![](/img/chart-configuration-lines-tab.png)
+
+The Markers, Hover tab contains the familiar marker menu configuration options, and new options for enabling hover information and for optional behaviour when double-clicking on points.
+
+![](/img/chart-configuration-marker-hover-tab.png)
+
+When hover information is enabled for a series, hovering the mouse cursor over a point in that series will display a tooltip containing information about the point. At the moment the tooltip shows the exact values for the point's X and Y coordinates, in this case an event's date and ML. If the series is using a marker with a range of colours, then the input value used for the marker colour is also displayed, in this case the event's seismic moment.
+
+![](/img/chart-hover-information-example.png)
+
+The bottom of the "Markers, Hover" tab is where you can configure what happens when the user double-clicks on a point in that series.  
+It can write the ID of that point to a Value (eg Variable), and then trigger an Action. From there, there are many possibilities for extending your chart's abilities. For example, the user could double-click on a seismic event, which would adjust a filter to show other events within a range of time and space around that event.
+
+Finally, the Editing tab is used to configure the new chart editing features. Editing can be enabled for each axis of a series independently. With editing enabled the user can hold the shift key, then click and drag a point to interactively move it to a new location in the chart. If only one axis has editing enabled, they will only be able to move the point along that axis.
+
+For the simplest case, if you are displaying a series and the axis column is editable (it is defined in a variables tool, or it comes from an import CSV tool that is write-enabled), then moving a point will cause the value to be updated in place, the same as if you had edited that value in an existing table view.
+
+![](/img/chart-configuration-editing-tab.png)
+
+More complicated situations might require us to do some calculation on the original value. For example, the image below shows someone moving a bolt in the ground support standard designer (the yellow line shows where the point will be moved to). Althought the point is displayed using X and Y coordinates, these are calculated values and the underlying data stores the bolt position as a distance along the tunnel profile, ensuring that the bolt is fixed to the profile and making it easy to calculate the spacing between bolts.
+
+To support this case we can use the optional tools shown in the Editing tab above. When the user moves the point, the ID of the point as well as the new X and Y location are written into variables that we choose. We can then make a calculation which reads those values and uses them to calculate the correct distance along the tunnel profile. Finally, we set up an action to trigger which will copy our calculated value into the correct place for the moved point.
+
+This option can also be used for validating changes caused by the user. In this case we validate the new location by ensuring it is on the tunnel profile, but event simple values may benefit from validation, e.g. ensuring that a user can't move a percentage value below zero or above one hundred.
+
+![](/img/chart-point-movement-on-ground-support-profile.png)
+
+Full changelogs for 6.1.0 are available [here](https://mxrap.com/changelog/6.1.0/devs/), with 6.1.1 specific changes [here](https://mxrap.com/changelog/6.1.1/devs/).

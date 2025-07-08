@@ -1,0 +1,128 @@
+{
+  "paulus": {
+    "name": "Paulus Angkodjojo",
+    "title": "Software Engineer",
+    "url": "https://www.linkedin.com/in/paulus-angkodjojo/",
+    "image_url": "/img/staff/Paulus_Angkodjojo.jpg",
+    "page": true,
+    "show_team": true,
+    "description": "Paulus joined the ACG in 2023 as a software engineer in the mXrap development team. He completed his Master's of Software Engineering at The University of Western Australia in 2020 and worked for a mining technology company before joining the ACG. His focus is to work alongside geotechnical engineers to maintain and develop mXrap apps and associated tools."
+  },
+  "liam": {
+    "name": "Liam Niedzielski",
+    "title": "Software Engineer",
+    "url": "https://www.linkedin.com/in/liamniedzielski/",
+    "image_url": "/img/staff/Liam_Niedzielski.jpg",
+    "page": true,
+    "show_team": true,
+    "description": "Liam completed his Bachelor of Science in Physics and Computer Science at The University of Western Australia in 2021. He joined the ACG in 2021 as a software engineer on the mXrap development team. Liam works alongside the geotechnical engineers to develop and maintain mXrap apps, as well as contribute to the libraries available for mXrap developers."
+  },
+  "laura": {
+    "name": "Laura Camball",
+    "title": "Research Fellow",
+    "url": "https://www.linkedin.com/in/laura-camball/",
+    "image_url": "/img/staff/Laura_Camball.jpg",
+    "page": true,
+    "show_team": true,
+    "description": "Laura is a specialised engineer with a focus on seismicity and geomechanics in underground hardrock mines. She has worked with Canada's deepest and highest stress mining operations for over a decade - completing her PhD in 2018. Her practical experience in seismic hazard evaluation, mine design and high stress blast response enables her to develop custom tools to overcome the dynamic challenges that mine site personnel face daily. Laura joined the ACG as a research fellow in 2023."
+  },
+  "stuart": {
+    "name": "Stuart Tierney",
+    "title": "PhD Student and Research Assistant",
+    "url": "https://www.linkedin.com/in/stuart-tierney-2275a563/",
+    "image_url": "/img/staff/Stuart_Tierney.jpg",
+    "page": true,
+    "show_team": true,
+    "description": "Stuart graduated from the University of Tasmania in 2011 with a Bachelor of Geotechnical Engineering. He has worked as a geotechnical engineer in Kalgoorlie for nearly five years, mostly focusing on managing seismic risk at Raleigh and Kanowna Belle. He completed a Master of Engineering Science (Mining Geomechanics) at Curtin University in 2016 where his thesis in the final semester was assisted by the ACG. Stuart joined the ACG as a research assistant for the mXrap Consortium in 2017 and started his PhD in 2018 looking to quantify the risk associated with short-term seismic exclusion zones."
+  },
+  "denisha": {
+    "name": "Denisha Sewnun",
+    "title": "PhD Student and Research Fellow",
+    "url": "https://www.linkedin.com/in/denisha-sewnun-33846235/",
+    "image_url": "/img/staff/Denisha_Sewnun.jpg",
+    "page": true,
+    "show_team": true,
+    "description": "Denisha has more than 13 years of experience in the geomechanics aspects of open pit and underground mining projects. She has a BSc (honours) degree in Engineering Geology from the University of KwaZulu-Natal, South Africa and a Master of Engineering degree in Geomechanics from the University of the Witwatersrand, South Africa. In 2020, Denisha joined the ACG as a research fellow and is currently a Master of Philosophy student involved in the in situ testing of ground support using blasting, which forms part of the Ground Support System Optimisation research project (GSSO3). She also assists with the Discrete Fracture Network/Block Model Limit Equilibrium Ground Support Design Tools research project and is a part of the mXrap team, where she works on the development of the Rock Mass Data Analyser application."
+  },
+  "dan": {
+    "name": "Daniel Cumming-Potvin",
+    "title": "Project Lead",
+    "url": "https://www.linkedin.com/in/daniel-cumming-potvin-13a581121/",
+    "image_url": "/img/staff/Dan_Cumming-Potvin.jpg",
+    "page": true,
+    "show_team": true,
+    "description": "Dan completed his Bachelor of Mining Engineering and PhD at The University of Western Australia in 2012 and 2018, respectively. He has worked at a number of underground metal mines in Australia, specialising in the areas of ground support, monitoring, and mine seismicity. Dan is project lead for mXrap."
+  },
+  "team": {
+    "name": "mXrap Team",
+    "page": false,
+    "show_team": false,
+    "title": "Developers",
+    "url": "mxrap.com/team",
+    "image_url": "/img/XOnly.svg",
+    "description": "The incredible people who bring you mXrap"
+  },
+  "kyle": {
+    "name": "Kyle Woodward",
+    "page": true,
+    "show_team": true,
+    "title": "Research Fellow",
+    "url": "https://www.linkedin.com/in/kyle-woodward-b0668454/",
+    "image_url": "/img/staff/Kyle_Woodward.jpg",
+    "description": "Kyle was initially associated with the ACG in 2010 through his final year research project for his undergraduate Bachelor of Engineering (Mining) degree at The University of Western Australia. Upon completion of this degree, Kyle undertook postgraduate research with the ACG which focused on time-dependent seismic responses to mining. In 2015, he was awarded a PhD (Civil and Resource Engineering) for his thesis entitled, ‘Identification and Delineation of Mining Induced Seismic Responses'. Kyle has been involved in various ACG projects including the Mine Seismicity and Rockburst Risk Management project and the mXrap Consortium. Kyle was project leader for the ACG Stope Reconciliation and Optimisation Research project from 2016 to 2019. He is currently working on Phase 2 of this research project, along with work associated with the mXrap Consortium."
+  },
+  "ben": {
+    "name": "Benoît McFadyen",
+    "page": true,
+    "show_team": true,
+    "title": "Research Fellow",
+    "url": "https://www.linkedin.com/in/beno%C3%AEt-mcfadyen-0043a7152/",
+    "image_url": "/img/staff/Benoit_McFadyen.jpg",
+    "description": "Benoit has been working with the ACG team since 2019 on the ACG Stope Reconciliation and Optimisation Research project while completing his PhD of Mining Engineering at Université Laval on the same subject. He has a BEng degree in Engineering Geology and a Master of Mining Engineering degree from Université Laval, Canada. Benoît joined the ACG full time in 2024, while finishing his PhD. His work focuses on the stope reconciliation app development as well as building stope performance prediction models for sites."
+  },
+  "pranay": {
+    "name": "Pranay Yadav",
+    "page": true,
+    "show_team": true,
+    "title": "Research Fellow",
+    "url": "https://www.linkedin.com/in/pranayism09/",
+    "image_url": "/img/staff/Pranay_Yadav.jpg",
+    "description": "Pranay is a mining engineer with over 10 years' rock mechanics experience in various underground and surface mining operations in India and Canada. He obtained his BTech from the Indian School of Mines in 2013 and MSc from Laurentian University in 2018. He previously worked at Nickel Rim South Mine as the senior ground control engineer. Pranay's rock mechanics experience includes deep and high-stress mining, late-stage extraction, squeezing ground conditions, seismic and rockburst risk management, mine design and planning, and drill and blast design."
+  },
+  "matt": {
+    "name": "Matthew Heinsen Egan",
+    "title": "Senior Software Engineer",
+    "url": "https://www.linkedin.com/in/matthew-heinsen-egan/",
+    "image_url": "/img/staff/Matt_Heinsen-Egan.jpg",
+    "page": true,
+    "show_team": true,
+    "description": "Matthew joined the ACG in 2018 as a software engineer. His focus is on further developing the libraries and tools available for mXrap app developers, and contributing to the development of specific mXrap apps."
+  },
+  "audrey": {
+    "name": "Audrey Goulet",
+    "title": "Research Fellow",
+    "url": "https://www.linkedin.com/in/audrey-goulet/",
+    "image_url": "/img/staff/Audrey_Goulet.jpg",
+    "page": true,
+    "show_team": true,
+    "description": "Audrey joined the ACG in 2023 while finishing her PhD. She completed her PhD and her master's of mining engineering in 2024 and 2018, respectively, at Université Laval (Québec, Canada). She also completed a bachelor's degree in geological engineering at Université Laval. She specialises in rock mass characterisation and seismicity in deep underground mines. Audrey is a part of the mXrap team and works on the application of probabilistic ground support design tools which is a subproject of phase 3 of Ground Support Systems Optimisation (GSSO3)."
+  },
+  "ash": {
+    "name": "Asher Floyd",
+    "title": "Project Officer",
+    "url": "https://www.linkedin.com/in/asher-floyd/",
+    "image_url": "/img/staff/Asher_Floyd.jpg",
+    "page": true,
+    "show_team": true,
+    "description": "Asher joined the ACG in 2019 as an Administrative Officer, following on from finance team positions in San Francisco, and at UWA. They hold a Masters in molecular biology from the London School of Hygiene and Tropical Medicine, University of London, and has since transferred their interest in data analysis and structural modelling to the mXrap team, where they carry out project support tasks, process development, and consortium onboarding."
+  },
+  "johan": {
+    "name": "Johan Wesseloo",
+    "page": false,
+    "show_team": true,
+    "title": "Australian Centre for Geomechanics Director",
+    "url": "https://www.linkedin.com/in/johanwesseloo/",
+    "image_url": "/img/staff/Johan_Wesseloo.jpg",
+    "description": "Since obtaining a BEng (Civil) and MEng (Geotechnical) from The University of Pretoria, Johan has been involved in geotechnical engineering in open pit and underground environments throughout 14 countries. In 2005 he was awarded a PhD (Geotechnical) from The University of Pretoria. Johan joined the Australian Centre for Geomechanics (ACG) in 2007 as a research fellow, and was appoined Director in 2019. During his time at the ACG, Johan has been involved in research, the supervision of postgraduate students and geotechnical training. Johan was instrumental in the development of the mXrap software and many of the software routines and apps available in that platform."
+  }
+}

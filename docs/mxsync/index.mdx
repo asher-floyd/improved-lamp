@@ -1,0 +1,65 @@
+---
+title: "mXsync"
+tags: [mxsync]
+hide_title: true
+pagination_next: null
+pagination_prev: null
+sidebar_position: 1
+hide_table_of_contents: true
+---
+
+import DocCardList from "@theme/DocCardList";
+import { FaSync, FaPlayCircle } from "react-icons/fa";
+import ReactPlayer from "react-player/vimeo";
+import { Collapsible } from "@base-ui-components/react/collapsible";
+
+# <FaSync /> mXsync
+
+mXsync is a piece of software installed separately to mXrap that facilitates the backup, restore and upgrading of the site root folder. This root folder management system allows new and improved apps to flow easily and quickly to sites.
+
+## About mXsync
+
+mXsync is a piece of software installed with mXrap that facilitates the backup, restoring and upgrading of the site root folder. mXrap applications can be soft-coded by researchers and site-based engineers using a number of general purpose, hard-coded tools developed by our software engineers. This allows the techniques developed in the latest research to be delivered to the industry very quickly, in an easy-to-use interface.
+
+The data and settings behind mXrap applications are kept in what is known as the root folder. Each sponsor site using mXrap has their own root folder that includes things like survey files, seismic data, instrumentation data and, site specific application settings.
+
+Applications can change regularly; a new calculation is added to a table; a new series is added to a chart or a new application is added to monitor instrumentation readings. All of these changes are made by modifying the contents of the root folder.
+
+### Why do we need mXsync?
+
+mXsync is the ACG's software solution to a few problems:
+
+- keeping the root folder up to date with the latest tools from the ACG
+- merging updates with modifications from site
+- backing up and restoring previous versions of the root folder
+- sharing root files with 3rd parties (for troubleshooting and seeing what site can see)
+
+Before mXsync there was no backup and restore system (unless site implemented their own) and upgrading roots was a difficult process. Previously root upgrades have not been done very often, due to the long process of uploading the entire root folder to a file transfer site, downloading the root and manually merging files at the ACG, and then the transfer back to site. Compressing and uploading root folders (often up to 10GB) takes a long time. Sharing large folders the first time may be simple but for large folders that slightly change over time, it is difficult to compress and upload just the changes (and merge changes from multiple sources).
+
+Existing solutions such as cloud storage, Git and apt-get apply only to certain sub-problems but no existing system fits the mXrap situation entirely.
+
+### What does mXsync do?
+
+#### Backup and Restore
+
+mXsync can store backups within the root folder. Previous versions of the root folder can be restored from the backups. The backups are stored as compressed files that contain only the root changes between versions to conserve space. Backups are also uploaded to the ACG server as a secondary storage location. The contents of the root folder that are included in the backups are manually configured during the initial upload but this does not usually need to be modified. The normal backup and upload process is a simple “one-button” process.
+
+#### Keeping root up-to-date
+
+Root folders contain several apps from various parties but the author of each app may make changes and improvements that need to be transferred to each root. If the site has not made any changes, the transfer process is simple, the updates are simply moved to the site root. In mXsync, the author uploads the changes to the app to the ACG server. Each user can then see there are updates available. The process of upgrading is a simple “one-button” process. A backup is automatically triggered prior to upgrading.
+
+![](/img/mXsync-updates.png)
+
+#### Merging updates
+
+When changes are made by both the site and a third party (e.g. ACG), the changes need to be merged. The desired third party needs to be added by site to the authorisation list and a Chat window opened up to discuss the update with the third party. mXsync will automatically merge two versions of an app unless the exact same file has been modified by both parties (i.e. a conflict). Conflicts must be dealt with individually. A patch is added by the third party and delivered via the Chat window. Files and screenshots can also be sent along with messages with the chat function.
+
+![](/img/mXsync-merge.png)
+
+### How does mXsync work?
+
+mXsync is installed on a computer with access to the internet and the site root folder. A new project is added to reference the root folder, the folders and files that will be included in default backups are selected, and the project is registered on the server for backing up and uploading.
+
+Regarding security, all uploading, downloading and messaging is done through the web and can communicate through the site's standard internet proxy servers. No changes can be made to the host root folder or network without direct action from the host side. There is no way for 3rd parties to remote in and make changes.
+
+<DocCardList />

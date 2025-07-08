@@ -1,0 +1,203 @@
+---
+title: "mXrap 6.1.0 - Release notes and Changelogs"
+date: 2025-02-10
+tags: [updates, changelogs]
+authors: "ash"
+---
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+## Highlights
+
+This version brings several new features to mXrap 6, as well as a host of bugfixes and performance improvements.
+
+{/* truncate */}
+
+![](/img/Screenshot-2025-02-10-163745.png)
+
+### 3D Interactive Slicing
+
+Slice through a 3D view to get a better view of data deep inside of a mine.
+
+![](/img/image3.gif)
+
+### Chart Interactions
+
+Manipulate elements on a chart using the mouse, or hover to see the data represented by that specific point.
+
+![](/img/image2.gif)
+
+You will be prompted to upgrade by a yellow banner at the top of the Apps window. Follow the link to download and install.
+
+<Tabs>
+
+<TabItem value="users" label="Users">
+
+## mXrap 6.1.0 - What's new for Users
+
+What's New for Users - mXrap 6.1.0
+
+Release Date: 4 December 2024
+
+### New Feature: 3D Interactive Slicing
+
+Users can now interactively slice through a 3D display of data.  
+Use the dot, line or triangle buttons to create the initial slicing tool.
+
+![](https://mxrap.com/changelog/6.1.0/users/images/image5.png?t=1739172481)
+
+Then manipulate the slicing tool with the CTRL key and the mouse.  
+Adjust the exact settings with the "Slicing" tab on the far right of the window.
+
+![](https://mxrap.com/changelog/6.1.0/users/images/image4.gif?t=1739172481)
+
+### New Feature: Extended clipping options in 3D views
+
+mXrap 6.1 has extended the 3D clipping feature to support more general clipping volumes.  
+Previously clipping volumes were restricted to axis-aligned bounding boxes, specified using a minimum and maximum XYZ.  
+The more general clipping volumes support shapes that can be created using the 3D view's selection box system, as shown below.
+
+![](https://mxrap.com/changelog/6.1.0/users/images/image2.png?t=1739172481)
+
+### New Feature: Chart Interactions
+
+Users can now manipulate elements in a chart with the mouse.  
+In this example, the mouse is used to directly edit the positions of rock bolts in a Ground Support Design.
+
+![](https://mxrap.com/changelog/6.1.0/users/images/image3.gif?t=1739172481)
+
+### New Feature: Chart Mouse-Hover Information
+
+Charts now show the location of the mouse cursor on the visible axes,  
+and will also show information about the point under the mouse.
+
+![](https://mxrap.com/changelog/6.1.0/users/images/image1.png?t=1739172481)
+
+### Bug fixes and Improvements
+
+#### User Interface
+
+- Fixed Chart picking problems on screens set to DPI scaling higher than 100%.
+- Fixed scrolling-numbers behaviour with some kinds of mice.
+- Root folder now shown at the bottom of windows, to help confirm which root you are using.
+- Fix Tableview's scrolling behaviour.
+
+#### Survey Import
+
+- Keep vertex attributes when decimating surveys (aka the error message "Lost entity IDs after polygon decimation").
+- Fix DXF imports when faces are on a different layer to vertices.
+
+#### Codemeter / Dongle
+
+- Fix problems related to cmu.exe
+- Fix button to access local Codemeter WebAdmin.
+- Fix Licence diagnostic "Send Email" button.
+- Error messages are improved and now translated into more languages.
+
+#### mXsync
+
+- Limit number of CPUs used to avoid overloading the computer (this limit can be increased via menu bar)
+- Fixed problems with roots on \\network\path locations.
+- Fixed problems when a root folder is directly mapped to a drive, eg Z:\the-root-files
+- Performance improvements... faster decompression startup, faster disk scans.
+- Correctly clean up temp files.
+- Fixed the download/upload speed estimation.
+
+</TabItem>
+
+<TabItem value="developers" label="Developers">
+
+## mXrap 6.1.0 - What's new for Developers
+
+What's New for Developers - mXrap
+
+Release Date: 4 December 2024
+
+### Supporting extended clipping options in 3D views
+
+mXrap 6.1 has extended the 3D clipping feature to support more general clipping volumes. Previously clipping volumes were restricted to axis-aligned bounding boxes, specified using a minimum and maximum XYZ. The more general clipping volumes support shapes that can be created using the 3D view's selection box system, as shown below.
+
+![](https://mxrap.com/changelog/6.1.0/devs/images/image3.png?t=1739280292)
+
+To support these more general shapes, a new column needs to be linked in the clipping volumes setup of your 3D views, as shown below.
+
+![](https://mxrap.com/changelog/6.1.0/devs/images/image6.png?t=1739280292)
+
+Note that after saving these updated 3D views, they will only be usable with mXrap 6.1 or higher. To help you identify 3D views which need to be updated, when you have a settings window open, any 3D views that are missing the link will show a red error message at the top of their window.
+
+### Chart interaction
+
+mXrap 6.1 brought several improvements to charts, including support for user interaction with charts.
+
+You can now control whether a chart series is able to be displayed as points, lines, or both. Previously a user would always be able to turn on the points or lines options, even if the series was not intended to display that way. In the image below, you can see these options at the top of the Data panel, ‘Enable plotting as points' and ‘Enable plotting as lines'. All series in existing charts will default to having both of these options enabled.
+
+For lines-only series, there is also a special option which creates lines that fill either the horizontal or vertical range of the chart window. In these cases you only need to specify one coordinate, e.g. the image below shows the creation of a magnitude threshold line which crosses the chart horizontally, and is specified by a magnitude number on the left axis only.
+
+The ability to specify a single value rather than a column is also a new feature. If both the X and Y are specified as single values, or if one is a single value and the other is not specified (as with the magnitude threshold below), then no input table is needed at all. This simplifies many cases where developers previously had to create new tables in order to plot single values, indicator lines, thresholds, etc. In order to change between single values and columns, simply click on the type button for that axis (e.g. Date for X and Number for Y in the below image) and choose either the column or single value types.
+
+![](https://mxrap.com/changelog/6.1.0/devs/images/image4.png?t=1739280292)
+
+Lines series now have the option to start and/or end each line at a particular point. This is particularly useful for histograms, for example in the below image all lines in the series will start from Y=0. Because the starting X value is unspecified, the lines will start from the X value of the first point in the line. This ensures that all lines in the histogram correctly start from the bottom of the axis, without requiring us to create a new table with extra points at the zero coordinate.
+
+![](https://mxrap.com/changelog/6.1.0/devs/images/image7.png?t=1739280292)
+
+The Markers, Hover tab contains the familiar marker menu configuration options, and new options for enabling hover information and for optional behaviour when double-clicking on points.
+
+![](https://mxrap.com/changelog/6.1.0/devs/images/image2.png?t=1739280292)
+
+When hover information is enabled for a series, hovering the mouse cursor over a point in that series will display a tooltip containing information about the point. At the moment the tooltip shows the exact values for the point's X and Y coordinates, in this case an event's date and ML. If the series is using a marker with a range of colours, then the input value used for the marker colour is also displayed, in this case the event's seismic moment.
+
+![](https://mxrap.com/changelog/6.1.0/devs/images/image1.png?t=1739280292)
+
+The bottom of the "Markers, Hover" tab is where you can configure what happens when the user double-clicks on a point in that series.  
+It can write the ID of that point to a Value (eg Variable), and then trigger an Action. From there, there are many possibilities for extending your chart's abilities. For example, the user could double-click on a seismic event, which would adjust a filter to show other events within a range of time and space around that event.
+
+Finally, the Editing tab is used to configure the new chart editing features. Editing can be enabled for each axis of a series independently. With editing enabled the user can hold the shift key, then click and drag a point to interactively move it to a new location in the chart. If only one axis has editing enabled, they will only be able to move the point along that axis.
+
+For the simplest case, if you are displaying a series and the axis column is editable (it is defined in a variables tool, or it comes from an import CSV tool that is write-enabled), then moving a point will cause the value to be updated in place, the same as if you had edited that value in an existing table view.
+
+![](https://mxrap.com/changelog/6.1.0/devs/images/image5.png?t=1739280292)
+
+More complicated situations might require us to do some calculation on the original value. For example, the image below shows someone moving a bolt in the ground support standard designer (the yellow line shows where the point will be moved to). Although the point is displayed using X and Y coordinates, these are calculated values and the underlying data stores the bolt position as a distance along the tunnel profile, ensuring that the bolt is fixed to the profile and making it easy to calculate the spacing between bolts.
+
+To support this case we can use the optional tools shown in the Editing tab above. When the user moves the point, the ID of the point as well as the new X and Y location are written into variables that we choose. We can then make a calculation which reads those values and uses them to calculate the correct distance along the tunnel profile. Finally, we set up an action to trigger which will copy our calculated value into the correct place for the moved point.
+
+This option can also be used for validating changes caused by the user. In this case we validate the new location by ensuring it is on the tunnel profile, but event simple values may benefit from validation, e.g. ensuring that a user can't move a percentage value below zero or above one hundred.
+
+![](https://mxrap.com/changelog/6.1.0/devs/images/image8.png?t=1739280292)
+
+### Tablecalc and Row Calc JS Engine Update
+
+mXrap version 6 supported ECMAScript 5.
+
+mXrap version 6.0 supported up to ECMAScript 2022 (partially)
+
+Version 6.1 now supports:
+
+- ECMAScript 2022: [https://www.w3schools.com/js/js_2022.asp](https://www.google.com/url?q=https://www.w3schools.com/js/js_2022.asp&sa=D&source=editors&ust=1739283831680042&usg=AOvVaw1vg7rW94OI7C6QgB2xV-kG)
+
+- Array.at()
+- String.at()
+- RegExp/d
+- Object.hasOwn()
+- error.cause
+- Class fields and private fields
+
+- ECMAScript 2023: [https://www.w3schools.com/js/js_2023.asp](https://www.google.com/url?q=https://www.w3schools.com/js/js_2023.asp&sa=D&source=editors&ust=1739283831680522&usg=AOvVaw0nuUOxG7VhN5MF5GFTaz_5)
+
+- `Array.findLast()`
+- `Array.findLastIndex()`
+- `Array.toReversed()`
+- `Array.toSorted()`
+- `Array.toSpliced()`
+- `Array.with()`
+
+- ECMAScript 2024 (partially): [https://www.w3schools.com/js/js_2024.asp](https://www.google.com/url?q=https://www.w3schools.com/js/js_2024.asp&sa=D&source=editors&ust=1739283831681031&usg=AOvVaw0gsKLirmL5fKhQYUSL-msp)
+
+- `Object.groupBy()`
+- `Map.groupBy()`
+- Not yet supported: Temporal
+
+</TabItem>
+</Tabs>

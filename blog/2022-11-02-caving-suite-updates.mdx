@@ -1,0 +1,77 @@
+---
+title: "Caving Suite updates"
+date: 2022-11-02
+authors: "liam"
+---
+
+The Caving Suite is a set of applications that provide tools for the analysis and interpretation of cave monitoring data sources. Currently, four apps are included in the Caving Suite: Caving Sandbox, Fragmentation, Open Hole Dipping, and Caving Hydraulic Radius (see [app overview](/apps/caving/) for more details)
+
+{/* truncate */}
+
+Over the past year, there has be numerous updates to the apps in the Caving Suite to assist with data visualisation, and analysis.
+
+**Caving Sandbox:**
+
+This app brings together all of your cave monitoring sources and puts them in one place, allowing complex multi-factor analysis.
+
+![](/img/Caving-monitoring.png)
+
+Changes include:
+
+General:
+
+- Improved controls for manipulating and filtering data. This includes the addition of filter volumes, distance to survey filters, selection box filters, and data source-specific filters and controls.
+- Users can now export event density isosurfaces, production columns, and production surfaces as DXFs to be used in external packages.
+- Users can now easily export videos of the 3D View using time slicing or cumulative date filters.
+
+Production:
+
+- Production columns can be displayed as either Height of cave, height of draw or bulked height.
+- New Charts - production versus depth, individual drawpoint production timelines, daily activity.
+
+![](/img/Production-Columns-No-Void-Compressed.png)
+
+**Production Column display modes**
+
+Instrumentation:
+
+- Alerts have been added for beacon displacement. Users can define the conditions for the alert, including the monitoring period and threshold displacement, from within the caving sandbox.
+- A device inspection window has been added where users can easily inspect individual markers and beacons.
+- Improved visualisation of beacons and network smart markers. This includes a 3D series for beacon flow, size by marker styles, and new charts.
+- Added support for the auto-export of beacon positions, RSSI, and tilt readings from GeoHive directly into mXrap.
+- Standard smart markers can now be imported into the caving sandbox.
+
+![](/img/Device-Inspection-2.png)
+
+**Cave tracker beacon inspection window**
+
+mXrap app integrations:
+
+We have started integrating data from other mXrap apps into the caving sandbox. We are working on tools to make this process easier and allow users to customise the sandbox to suit their needs. So far we have the following data sources integrated into the sandbox including 3D series, charts, and tables:
+
+- Instrumentation - extensometers
+- Instrumentation - prisms
+- RMDA - rock mass quality Intervals
+
+Other apps that we plan on integrating with the caving sandbox includes more data sources from RMDA (e.g. structures), Damage Mapping and other instrumentation.
+
+**Fragmentation:**
+
+This app allows you to import your fragmentation data into an mXrap database, then visualise and analyse the data. Analysis can be conducted in conjunction with other relevant data sources (including production data).
+
+![](/img/frag-pie.png)
+
+Changes include:
+
+- New data import interface. Users can import either fixed/variable percentage or fixed/variable size data.
+- Updated analysis tools:
+  - Cumulative fragmentation chart
+  - Particle size distribution chart
+  - User defined bin sizes
+  - Heat map
+  - Pie charts
+  - Mapping fragmentation to production columns
+
+![](/img/Fragmentation-1.png)
+
+**Fragmentation analysis window**
